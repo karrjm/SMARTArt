@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class GameManagerScript : MonoBehaviour
+public class TextData : MonoBehaviour
 {
-    public GameObject infoUI;
-    public GameObject tempUI;
+    public string Text; //stores the text data
+    public float x; //holds the x pos value
+    public float y; //holds the y pos value
     // Start is called before the first frame update
     void Start()
     {
@@ -16,11 +18,5 @@ public class GameManagerScript : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void Dismiss()
-    {
-        Destroy(GameObject.Find("TestCanvas"));
-        infoUI.SetActive(false);
     }
 }
