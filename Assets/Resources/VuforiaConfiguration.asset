@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: VuforiaConfiguration
   m_EditorClassIdentifier: 
   vuforia:
+<<<<<<< Updated upstream
     vuforiaLicenseKey: AaEnhnP/////AAABmcAwrVEpeU/3kMMgP5a4xlJl/ezSy1rtlZ/xxIHR+MJVLBYw9Ah3warIL8KK8TR+r8MQhTL3Jri2UK9kYc2lYWWJ+IYWyDB5DRSekFZdaGtTq4NwRL3NK73GjAtQVP7wW5t+J5wA4ptj+4VaHyWIyKUjr02GH9iC+tA/As8GOXGI8EiD3ALOQkoGge3jbtJUYFLcszqGudNmOWShP7Mijfmi7X4wD3Ft79PMlEveOImCU9DT+b5sb7IsVP8DiCNmSM81lIY56Ps2yOzuRIj7AfF/m4b/G/+XCiduaA2IoEug1/LAoBsAkzCR+VckSjGTtuI1tPvmej2W+Mzfn1IJ5ecYVej+nsT5I2LzSjtgG2C3
     ufoLicenseKey: QWNWSEJDMy8vLy8vQUFBQUtGSzE3cDRKUTA0SnFLelNGbkxPOC9jK3FMU0UvSkF5UVhtME11YmMvaHhEVU9hZnlXS2dEWTNmdlkvK0JieGhVVzlhaGFCQUdTNWh6UHord1NVc3E2enRIZFNQdHN1MlMzWUNoL0ZIaGh3ZTlIREE3WnIxRjkzRUpBTXlELzVZTGpDUCtUQ3Ayd0ZFL1FYR2piWnpQVnlIYlkxWFpIaEMvTUswbVhYWVozNWkvTGZzVjNNU2dySGFWMzE2OWlrZ1BUbmpQeExxVnU3a1YvKzNJZTRuaGQycUJ4TC9jQUxqU3NaUkNVZkhRWktwSHM3dVZBZjhUeFZ1UFNHdlY4NzZ0MnB4UnFPTlpjOENtV0p3dVlsditNN2taemdiVEV2VzRTU1B1aXJTaWNNWVllUzdqbnJadDVsdGtsRkhJSTdlTXlsaUNuY0VoWk9XTGlsdFNoME9uOEhKT1ZQQ3hqaVZzNmc5Mi9nU1dacUE=
+=======
+    vuforiaLicenseKey: 
+    ufoLicenseKey: QWRvdWhBLy8vLy8vQUFBQUtBa3dvYmE5cVU2NW1id1o0SHJhVW1kaTlWNThJdk1mcGwyM2FNYmZtMkJiRjJacW1YWnU0MjJ6T1YvVUFqdEhUbm1TZE8zRC9OTy9WYmExY1pmbUJCV0pmM2s3UTV3NklrME1UOHVyK0lSUDhBay9waG9hUkZHNldCQWJWWXpNOHUyVDBXbHJwTnBYakxPUk1CZG43YW1qM2NBd2Fpd0J4eGUwcUo3S1J1WjNXUXdDa1QwM3NXVzRTZXFObTRnSWZFa1k0eHBuZFA2bm9LZVdZYzRPYXZmanFKd2tXRmVlQWtZa2h6ZmRRaS9mdmRpVjk5NmtnTjhoRVFWeDlhTlFSUndhd1VyU09FYXZpRGduZHBLOFNMaGdiQ3hGMkFhRU4vMVZJTk5jTnh2WlQvY0pCZFJkdEgvR2lLdTk2bDgrTGNsUmVFNkc3QjFKSDlIVUk0L24rODRlVDNJcW5wbDJaMStXS3lCWVhUSkg=
+>>>>>>> Stashed changes
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
     maxSimultaneousImageTargets: 1
@@ -24,7 +29,11 @@ MonoBehaviour:
     modelTargetRecoWhileExtendedTracked: 1
     shareRecordingsInITunes: 0
     version: 9.8.8
+<<<<<<< Updated upstream
     eulaAcceptedVersions: '{"Values":["9.8"]}'
+=======
+    eulaAcceptedVersions: 
+>>>>>>> Stashed changes
   database:
     disableModelExtraction: 0
   shaders:
@@ -41,8 +50,16 @@ MonoBehaviour:
     autoImportArcore: 1
   playmode:
     mSequencePath: 
+<<<<<<< Updated upstream
     playModeType: 0
   webcam:
     renderTextureLayer: 30
   packageInformation:
     ARFoundationVersion: 4.1.7
+=======
+    playModeType: 1
+  webcam:
+    renderTextureLayer: 30
+  packageInformation:
+    ARFoundationVersion: 
+>>>>>>> Stashed changes
