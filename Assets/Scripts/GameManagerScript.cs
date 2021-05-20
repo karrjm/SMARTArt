@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GameManagerScript : MonoBehaviour
 {
-    public GameObject infoUI;
-    public GameObject tempUI;
+    public GameObject infoUI; //the variable holding the infoUI, or the constant UI that stays the same
+    public GameObject tempUI; //the variable holding the tempUI, or the variable UI that changes 
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +18,9 @@ public class GameManagerScript : MonoBehaviour
         
     }
 
-    public void Dismiss()
+    public void Dismiss()//declaration of the Dismiss function
     {
-        Destroy(GameObject.Find("TestCanvas"));
-        infoUI.SetActive(false);
+        Destroy(GameObject.Find("TestCanvas")); //destroy the game object in scene called "TestCanvas"
+        infoUI.SetActive(false); //set the infoUI object to inactive
     }
 }
