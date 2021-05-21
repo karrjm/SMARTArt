@@ -21,6 +21,13 @@ public class GenerateUI : MonoBehaviour
     public Sprite tr;
     public Sprite bl;
 
+    private CanvasScaler can;
+    public float resoX;
+    public float resoY;
+
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +51,15 @@ public class GenerateUI : MonoBehaviour
             myGO = new GameObject(); //sets the myGO object as a new game object
             myGO.name = "TestCanvas"; //names the object "TestCanvas"
             myGO.AddComponent<Canvas>(); //adds a canvas to the object
+            myGO.AddComponent<CanvasScaler>();
+            myGO.GetComponent<CanvasScaler>().uiScaleMode = infoUI.GetComponent<CanvasScaler>().uiScaleMode;
+
+            resoX = (float)Screen.currentResolution.width;
+            resoY = (float)Screen.currentResolution.height;
+
+            myGO.GetComponent<CanvasScaler>().referenceResolution = new Vector2(resoX, resoY);
+
+
 
             myCanvas = myGO.GetComponent<Canvas>(); //sets myCanvas as the canvas attached to the myGO ("TestCanvas") game object
             myCanvas.renderMode = RenderMode.ScreenSpaceOverlay; //something for rendering purposes
@@ -73,7 +89,7 @@ public class GenerateUI : MonoBehaviour
             //if the NumOfImg int is greater than 0
             if (NumOfImg > 0)
             {
-
+                CreateImage();
             }
 
             //if the NumOfAud int is greater than 0
@@ -102,7 +118,7 @@ public class GenerateUI : MonoBehaviour
         Text text = UItextGO.AddComponent<Text>(); //create a text component within UItextGO, naming it text
         text.text = gameObject.GetComponent<TextData>().Text; //set the text value in text as the Text string in the TextData Script
         text.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font; //set the font for text as Arial
-        text.fontSize = 24; //set the font size of text as 24
+        text.fontSize = gameObject.GetComponent<TextData>().fontSize; //set the font size of text as 24
         text.color = new Color(0, 0, 0); //set the color of text as black
         text.rectTransform.sizeDelta = new Vector2(gameObject.GetComponent<TextData>().width, gameObject.GetComponent<TextData>().height); //set the text boundaries to the width and height variables in the TextData script
 
@@ -120,7 +136,7 @@ public class GenerateUI : MonoBehaviour
 
         Image box = UIboxGO.AddComponent<Image>(); //create a text component within UItextGO, naming it text
         box.sprite = whiteBox;
-        boxtrans.localScale = new Vector2(gameObject.GetComponent<TextData>().boxWidth, gameObject.GetComponent<TextData>().boxHeight);
+        boxtrans.sizeDelta = new Vector2(gameObject.GetComponent<TextData>().boxWidth, gameObject.GetComponent<TextData>().boxHeight);
 
 
         return UIboxGO;
@@ -138,7 +154,7 @@ public class GenerateUI : MonoBehaviour
 
         Image tlc = UItlGO.AddComponent<Image>(); //create a text component within UItextGO, naming it text
         tlc.sprite = tl;
-        tltrans.localScale = new Vector2(2f, 2f);
+        tltrans.localScale = new Vector2(3f, 3f);
 
 
         return UItlGO;
@@ -156,7 +172,7 @@ public class GenerateUI : MonoBehaviour
 
         Image brc = UIbrGO.AddComponent<Image>(); //create a text component within UItextGO, naming it text
         brc.sprite = br;
-        brtrans.localScale = new Vector2(2f, 2f);
+        brtrans.localScale = new Vector2(3f, 3f);
 
 
         return UIbrGO;
@@ -176,7 +192,7 @@ public class GenerateUI : MonoBehaviour
         Text text = UItextGO.AddComponent<Text>();
         text.text = gameObject.GetComponent<TextData>().Text2;
         text.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
-        text.fontSize = 24;
+        text.fontSize = gameObject.GetComponent<TextData>().fontSize2;
         text.color = new Color(0, 0, 0);
         text.rectTransform.sizeDelta = new Vector2(gameObject.GetComponent<TextData>().width2, gameObject.GetComponent<TextData>().height2);
 
@@ -194,7 +210,7 @@ public class GenerateUI : MonoBehaviour
 
         Image box = UIboxGO.AddComponent<Image>(); //create a text component within UItextGO, naming it text
         box.sprite = whiteBox;
-        boxtrans.localScale = new Vector2(gameObject.GetComponent<TextData>().boxWidth2, gameObject.GetComponent<TextData>().boxHeight2);
+        boxtrans.sizeDelta = new Vector2(gameObject.GetComponent<TextData>().boxWidth2, gameObject.GetComponent<TextData>().boxHeight2);
 
 
         return UIboxGO;
@@ -212,7 +228,7 @@ public class GenerateUI : MonoBehaviour
 
         Image tlc = UItlGO.AddComponent<Image>(); //create a text component within UItextGO, naming it text
         tlc.sprite = tl;
-        tltrans.localScale = new Vector2(2f, 2f);
+        tltrans.localScale = new Vector2(3f, 3f);
 
 
         return UItlGO;
@@ -230,10 +246,29 @@ public class GenerateUI : MonoBehaviour
 
         Image brc = UIbrGO.AddComponent<Image>(); //create a text component within UItextGO, naming it text
         brc.sprite = br;
-        brtrans.localScale = new Vector2(2f, 2f);
+        brtrans.localScale = new Vector2(3f, 3f);
 
 
         return UIbrGO;
     }
+
+
+    GameObject CreateImage()
+    {
+        GameObject UIimgGO = new GameObject("Img");
+        UIimgGO.transform.SetParent(myGO.GetComponent<Canvas>().transform);
+
+
+        RectTransform imgtrans = UIimgGO.AddComponent<RectTransform>(); //Create a rectTransform component for UItextGO, called trans
+        imgtrans.anchoredPosition = new Vector2(gameObject.GetComponent<ImageData>().xPos, gameObject.GetComponent<ImageData>().yPos);
+
+        Image img = UIimgGO.AddComponent<Image>(); //create a text component within UItextGO, naming it text
+        img.sprite = gameObject.GetComponent<ImageData>().image;
+        imgtrans.sizeDelta = new Vector2(gameObject.GetComponent<ImageData>().width, gameObject.GetComponent<ImageData>().height);
+
+
+        return UIimgGO;
+    }
+
 
 }

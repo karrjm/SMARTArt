@@ -160,7 +160,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 480, y: 90}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &51950491
 MonoBehaviour:
@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 86726427}
   - component: {fileID: 86726426}
   - component: {fileID: 86726429}
+  - component: {fileID: 86726430}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -367,15 +368,58 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoUI: {fileID: 674822707}
   appManager: {fileID: 1365255585}
-  NumOfTxt: 0
+  NumOfTxt: 1
   NumOfImg: 0
   NumOfAud: 0
   NumOfVid: 0
-  whiteBox: {fileID: 0}
-  tl: {fileID: 0}
-  br: {fileID: 0}
-  tr: {fileID: 0}
-  bl: {fileID: 0}
+  whiteBox: {fileID: 21300000, guid: d7fe260a2cc899f4e9615190db6b4902, type: 3}
+  tl: {fileID: 21300000, guid: 97d8de9b930dce247961594282a461a8, type: 3}
+  br: {fileID: 21300000, guid: c9f29a7868c50404bb235e4bdb8ade3a, type: 3}
+  tr: {fileID: 21300000, guid: e174231b22570d84f875d463cef8d1ca, type: 3}
+  bl: {fileID: 21300000, guid: b96828c2a1870234295d1f14a9129a5b, type: 3}
+  resoX: 0
+  resoY: 0
+--- !u!114 &86726430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86726424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6b98c85716ceb44eb9270fcd370b87c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Text: These are some natives that I don't know the exact group of. They seem like
+    they're vibin with the french guys
+  x: 0
+  y: 330
+  width: 420
+  height: 210
+  fontSize: 36
+  boxPosX: -5
+  boxPosY: 327
+  boxWidth: 500
+  boxHeight: 260
+  tlx: -167.5
+  brx: 149.7
+  tly: 385
+  bry: 305.4
+  Text2: 
+  x2: 0
+  y2: 0
+  width2: 0
+  height2: 0
+  fontSize2: 0
+  boxPosX2: 0
+  boxPosY2: 0
+  boxWidth2: 0
+  boxHeight2: 0
+  tlx2: 0
+  brx2: 0
+  tly2: 0
+  bry2: 0
 --- !u!1 &212271760
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,6 +526,8 @@ MonoBehaviour:
   br: {fileID: 0}
   tr: {fileID: 0}
   bl: {fileID: 0}
+  resoX: 0
+  resoY: 0
 --- !u!1 &340764627
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,6 +634,8 @@ MonoBehaviour:
   br: {fileID: 0}
   tr: {fileID: 0}
   bl: {fileID: 0}
+  resoX: 0
+  resoY: 0
 --- !u!1 &422218013
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,6 +835,172 @@ MonoBehaviour:
   br: {fileID: 0}
   tr: {fileID: 0}
   bl: {fileID: 0}
+  resoX: 0
+  resoY: 0
+--- !u!43 &457551273
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ImageTargetMesh31128
+  serializedVersion: 10
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 6
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 4
+    localAABB:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.1, y: 0, z: 0.03857143}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000001000200020001000300
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 4
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 24
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 128
+    _typelessdata: cdccccbd0000000013fd1dbd000000000000803f000000000000000000000000cdccccbd0000000013fd1d3d000000000000803f00000000000000000000803fcdcccc3d0000000013fd1dbd000000000000803f000000000000803f00000000cdcccc3d0000000013fd1d3d000000000000803f000000000000803f0000803f
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0.1, y: 0, z: 0.03857143}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &656880745
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,13 +1072,14 @@ GameObject:
   - component: {fileID: 674822710}
   - component: {fileID: 674822709}
   - component: {fileID: 674822708}
+  - component: {fileID: 674822712}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &674822708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -946,6 +1161,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &674822712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674822707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4df22c5e6e2230248ac23f6827aefc12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resoX: 0
+  resoY: 0
 --- !u!1 &693494041
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,199 +1357,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!21 &1113843258
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'calpeters01Material
-
-    17724'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 34b8f4a1c4ad2b14e931835a7c610030, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
-  m_BuildTextureStacks: []
---- !u!43 &1306669228
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: ImageTargetMesh17714
-  serializedVersion: 10
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 6
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 4
-    localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.1, y: 0, z: 0.03857143}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000001000200020001000300
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 4
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 24
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 128
-    _typelessdata: cdccccbd0000000013fd1dbd000000000000803f000000000000000000000000cdccccbd0000000013fd1d3d000000000000803f00000000000000000000803fcdcccc3d0000000013fd1dbd000000000000803f000000000000803f00000000cdcccc3d0000000013fd1d3d000000000000803f000000000000803f0000803f
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0.1, y: 0, z: 0.03857143}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
 --- !u!1 &1354141925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1520,7 +1556,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368874960}
-  m_Mesh: {fileID: 1306669228}
+  m_Mesh: {fileID: 457551273}
 --- !u!23 &1368874962
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1540,7 +1576,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1113843258}
+  - {fileID: 1744724984}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1642,6 +1678,7 @@ GameObject:
   - component: {fileID: 1382043767}
   - component: {fileID: 1382043770}
   - component: {fileID: 1382043771}
+  - component: {fileID: 1382043772}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -1741,7 +1778,7 @@ MonoBehaviour:
   infoUI: {fileID: 674822707}
   appManager: {fileID: 1365255585}
   NumOfTxt: 1
-  NumOfImg: 0
+  NumOfImg: 1
   NumOfAud: 0
   NumOfVid: 0
   whiteBox: {fileID: 21300000, guid: d7fe260a2cc899f4e9615190db6b4902, type: 3}
@@ -1749,6 +1786,8 @@ MonoBehaviour:
   br: {fileID: 21300000, guid: c9f29a7868c50404bb235e4bdb8ade3a, type: 3}
   tr: {fileID: 21300000, guid: e174231b22570d84f875d463cef8d1ca, type: 3}
   bl: {fileID: 21300000, guid: b96828c2a1870234295d1f14a9129a5b, type: 3}
+  resoX: 0
+  resoY: 0
 --- !u!114 &1382043771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1761,32 +1800,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6b98c85716ceb44eb9270fcd370b87c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: These trees are lit
+  Text: The trees pictured here look to be western red cedars in the fall, which
+    may be where the name of this area comes from
+  x: -747
+  y: 58
+  width: 300
+  height: 330
+  fontSize: 36
+  boxPosX: -747
+  boxPosY: 56
+  boxWidth: 380
+  boxHeight: 400
+  tlx: -854.3
+  brx: -648
+  tly: 176.5
+  bry: -25
   Text2: 
-  x: 100
   x2: 0
-  y: 50
   y2: 0
-  width: 0
   width2: 0
-  height: 0
   height2: 0
-  boxPosX: 0
+  fontSize2: 0
   boxPosX2: 0
-  boxPosY: 0
   boxPosY2: 0
-  boxWidth: 0
   boxWidth2: 0
-  boxHeight: 0
   boxHeight2: 0
-  tlx: 0
   tlx2: 0
-  brx: 0
   brx2: 0
-  tly: 0
   tly2: 0
-  bry: 0
   bry2: 0
+--- !u!114 &1382043772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382043765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57d4f6eab6985244e91fbcca5d868161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: b71fe40163d901c4abbe825f10a24200, type: 3}
+  xPos: 718
+  yPos: -25
+  width: 400
+  height: 550
 --- !u!1 &1461112743
 GameObject:
   m_ObjectHideFlags: 0
@@ -1866,6 +1925,8 @@ GameObject:
   - component: {fileID: 1479223182}
   - component: {fileID: 1479223181}
   - component: {fileID: 1479223184}
+  - component: {fileID: 1479223186}
+  - component: {fileID: 1479223185}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Untagged
@@ -1964,15 +2025,76 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoUI: {fileID: 674822707}
   appManager: {fileID: 1365255585}
-  NumOfTxt: 0
-  NumOfImg: 0
+  NumOfTxt: 2
+  NumOfImg: 1
   NumOfAud: 0
   NumOfVid: 0
-  whiteBox: {fileID: 0}
-  tl: {fileID: 0}
-  br: {fileID: 0}
-  tr: {fileID: 0}
-  bl: {fileID: 0}
+  whiteBox: {fileID: 21300000, guid: d7fe260a2cc899f4e9615190db6b4902, type: 3}
+  tl: {fileID: 21300000, guid: 97d8de9b930dce247961594282a461a8, type: 3}
+  br: {fileID: 21300000, guid: c9f29a7868c50404bb235e4bdb8ade3a, type: 3}
+  tr: {fileID: 21300000, guid: e174231b22570d84f875d463cef8d1ca, type: 3}
+  bl: {fileID: 21300000, guid: b96828c2a1870234295d1f14a9129a5b, type: 3}
+  resoX: 0
+  resoY: 0
+--- !u!114 &1479223185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479223179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57d4f6eab6985244e91fbcca5d868161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: 1aafb4f4d53b963488989c52da5f1cb0, type: 3}
+  xPos: -752
+  yPos: 70
+  width: 350
+  height: 450
+--- !u!114 &1479223186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479223179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6b98c85716ceb44eb9270fcd370b87c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Text: This piece, made by Clarence "Cal" Peters, is a depiction of the french trappers
+    navigating the red cedar with the natives.
+  x: 0
+  y: 309
+  width: 450
+  height: 210
+  fontSize: 36
+  boxPosX: -17
+  boxPosY: 309
+  boxWidth: 530
+  boxHeight: 280
+  tlx: -194
+  brx: 151
+  tly: 375.7
+  bry: 280
+  Text2: Clarence Peters was a colonial ruler, explorer, polititian, and author aside
+    from his art
+  x2: -751
+  y2: -309
+  width2: 300
+  height2: 250
+  fontSize2: 36
+  boxPosX2: -766
+  boxPosY2: -304
+  boxWidth2: 360
+  boxHeight2: 300
+  tlx2: -864
+  brx2: -675
+  tly2: -228
+  bry2: -341
 --- !u!1 &1557471585
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,6 +2216,8 @@ MonoBehaviour:
   br: {fileID: 21300000, guid: c9f29a7868c50404bb235e4bdb8ade3a, type: 3}
   tr: {fileID: 21300000, guid: e174231b22570d84f875d463cef8d1ca, type: 3}
   bl: {fileID: 21300000, guid: b96828c2a1870234295d1f14a9129a5b, type: 3}
+  resoX: 0
+  resoY: 0
 --- !u!114 &1557471592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2107,31 +2231,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Text: White Guys, just chillin in a boat, bein french, trapping stuff
+  x: -777
+  y: 281
+  width: 290
+  height: 210
+  fontSize: 36
+  boxPosX: -790
+  boxPosY: 302
+  boxWidth: 350
+  boxHeight: 220
+  tlx: -882.9
+  brx: -705
+  tly: 343
+  bry: 298.8
   Text2: Their boats do be kinda sick tho, like they in that gucci
-  x: -423
-  x2: 368.8
-  y: 116
-  y2: -145.3
-  width: 160
-  width2: 160
-  height: 160
-  height2: 150
-  boxPosX: -425.7
-  boxPosX2: 368.8
-  boxPosY: 118.4
-  boxPosY2: -125.2
-  boxWidth: 2
-  boxWidth2: 2
-  boxHeight: 2
-  boxHeight2: 1.5
-  tlx: -472.3
-  tlx2: 321.8
-  brx: -383
-  brx2: 411
-  tly: 170
-  tly2: -98
-  bry: 93.4
-  bry2: -129
+  x2: 744
+  y2: -212
+  width2: 230
+  height2: 220
+  fontSize2: 36
+  boxPosX2: 743.6
+  boxPosY2: -188.3
+  boxWidth2: 290
+  boxHeight2: 225
+  tlx2: 678.9
+  brx2: 801.7
+  tly2: -146.3
+  bry2: -193.2
 --- !u!1 &1659859597
 GameObject:
   m_ObjectHideFlags: 0
@@ -2283,6 +2409,37 @@ MonoBehaviour:
   br: {fileID: 0}
   tr: {fileID: 0}
   bl: {fileID: 0}
+  resoX: 0
+  resoY: 0
+--- !u!21 &1744724984
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'calpeters01Material
+
+    31138'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 34b8f4a1c4ad2b14e931835a7c610030, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1822778824
 GameObject:
   m_ObjectHideFlags: 0
@@ -2342,11 +2499,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 42
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 42
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
