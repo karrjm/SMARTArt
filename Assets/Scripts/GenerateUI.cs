@@ -71,10 +71,17 @@ public class GenerateUI : MonoBehaviour
             //if the NumOfTxt int is greater than 0
             if (NumOfTxt > 0)
             {
-                CreateBox();
-                CreateTl();
-                CreateBr();
-                CreateText(); //run the CreateText function
+                GameObject textBox = new GameObject("TextBox"); //create UItextGO game object and name it "Text" in the heirarchy. this will be later returned as the text object
+                textBox.transform.SetParent(myGO.GetComponent<Canvas>().transform); //set the parent of UItextGO ("Text2") as the canvas attached to the myGO ("TestCanvas") object
+                textBox.AddComponent<RectTransform>();
+                textBox.AddComponent<Draggable>();
+                //textBox.AddComponent<PinchZoom>();
+
+                CreateBox(textBox);
+                CreateTl(textBox);
+                CreateBr(textBox);
+                CreateText(textBox); //run the CreateText function
+                textBox.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 0f);
                 
                 //if the NumOfText variable is greater than 1
                 if (NumOfTxt > 1)
@@ -106,11 +113,12 @@ public class GenerateUI : MonoBehaviour
         }
     }
 
-    GameObject CreateText() //declaration of the CreateText function
+    GameObject CreateText(GameObject parent) //declaration of the CreateText function
     { 
 
         GameObject UItextGO = new GameObject("Text"); //create UItextGO game object and name it "Text" in the heirarchy. this will be later returned as the text object
-        UItextGO.transform.SetParent(myGO.GetComponent<Canvas>().transform); //set the parent of UItextGO ("Text2") as the canvas attached to the myGO ("TestCanvas") object
+        UItextGO.transform.SetParent(parent.transform); //set the parent of UItextGO ("Text2") as the canvas attached to the myGO ("TestCanvas") object
+        
 
         RectTransform trans = UItextGO.AddComponent<RectTransform>(); //Create a rectTransform component for UItextGO, called trans
         trans.anchoredPosition = new Vector3(gameObject.GetComponent<TextData>().x, gameObject.GetComponent<TextData>().y, -0.1f); //set the anchored position of trans according to the x and y pos values in the TextData script
@@ -125,10 +133,10 @@ public class GenerateUI : MonoBehaviour
         return UItextGO; //return UItextGO
     }
 
-    GameObject CreateBox()
+    GameObject CreateBox(GameObject parent)
     {
         GameObject UIboxGO = new GameObject("Box");
-        UIboxGO.transform.SetParent(myGO.GetComponent<Canvas>().transform);
+        UIboxGO.transform.SetParent(parent.transform);
         
 
         RectTransform boxtrans = UIboxGO.AddComponent<RectTransform>(); //Create a rectTransform component for UItextGO, called trans
@@ -142,11 +150,11 @@ public class GenerateUI : MonoBehaviour
         return UIboxGO;
     }
 
-    GameObject CreateTl()
+    GameObject CreateTl(GameObject parent)
     {
      
         GameObject UItlGO = new GameObject("tl");
-        UItlGO.transform.SetParent(myGO.GetComponent<Canvas>().transform);
+        UItlGO.transform.SetParent(parent.transform);
 
 
         RectTransform tltrans = UItlGO.AddComponent<RectTransform>(); //Create a rectTransform component for UItextGO, called trans
@@ -160,11 +168,11 @@ public class GenerateUI : MonoBehaviour
         return UItlGO;
     }
 
-    GameObject CreateBr()
+    GameObject CreateBr(GameObject parent)
     {
 
         GameObject UIbrGO = new GameObject("br");
-        UIbrGO.transform.SetParent(myGO.GetComponent<Canvas>().transform);
+        UIbrGO.transform.SetParent(parent.transform);
 
 
         RectTransform brtrans = UIbrGO.AddComponent<RectTransform>(); //Create a rectTransform component for UItextGO, called trans
