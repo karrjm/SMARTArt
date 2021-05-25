@@ -5,16 +5,16 @@ using UnityEngine.UI;
 
 public class ScreenScaler : MonoBehaviour
 {
-    public float resoX;
-    public float resoY;
+    public float resoX; //stores the x value of the screen resolution
+    public float resoY; //stores the y value of the screen resolution
 
-    private CanvasScaler can;
+    private CanvasScaler can; //stores the canvas scaler
     // Start is called before the first frame update
     void Start()
     {
-        can = gameObject.GetComponent<CanvasScaler>();
-        SetInfo();
-        gameObject.SetActive(false);
+        can = gameObject.GetComponent<CanvasScaler>(); //sets the canvas scaler can to the canvas scaler compnent attached to the game object
+        SetInfo(); //call the SetInfo function
+        gameObject.SetActive(false); //set the game object to inactive
     }
 
     // Update is called once per frame
@@ -23,11 +23,11 @@ public class ScreenScaler : MonoBehaviour
         
     }
 
-    void SetInfo()
+    void SetInfo() //declaration of the SetInfo function
     {
-        resoX = (float)Screen.currentResolution.width;
-        resoY = (float)Screen.currentResolution.height;
+        resoX = (float)Screen.currentResolution.width; //set resoX to the screen width
+        resoY = (float)Screen.currentResolution.height; //set resoY to the screen height
 
-        can.referenceResolution = new Vector2(resoX, resoY);
+        can.referenceResolution = new Vector2(resoX, resoY); //set the reference resolution of the canvas on the object to the same values as resoX and ResoY
     }
 }

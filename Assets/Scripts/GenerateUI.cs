@@ -11,19 +11,19 @@ public class GenerateUI : MonoBehaviour
     public int NumOfImg; //number of image scripts on the object
     public int NumOfAud; //number of audio scripts on the object
     public int NumOfVid; //number of video scripts on the object
+    public int totalNum = 0;
 
     GameObject myGO; //the gameObject that crteates the temporary canvas
     Canvas myCanvas; //the temporary canvas(UI) variable
 
-    public Sprite whiteBox;
-    public Sprite tl;
-    public Sprite br;
-    public Sprite tr;
-    public Sprite bl;
+    public Sprite whiteBox; //stores the sprite image for the white box
+    public Sprite tl; //stores the sprite image for the top corner
+    public Sprite br; //stores the sprite image for the bottom corner
 
-    private CanvasScaler can;
-    public float resoX;
-    public float resoY;
+    public float resoX; //stores the x value of the current screen resolution
+    public float resoY; //stores the y value of the current screen resolution
+
+
 
 
     
@@ -40,24 +40,32 @@ public class GenerateUI : MonoBehaviour
         
     }
 
-    private void OnMouseDown() //occurs when the user clicks on the attached game object
+    private void OnMouseDown()
     {
+        gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(0f, 255f, 255f);
+    }
+
+
+    private void OnMouseUp() //occurs when the user clicks on the attached game object
+    {
+        gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f);
         //if the infoUI is not currently active
         if (!infoUI.activeSelf)
         {
             infoUI.SetActive(true); //sets the infoUI to active
+            appManager.GetComponent<GameManagerScript>().selectedPanel = this.gameObject;
 
 
             myGO = new GameObject(); //sets the myGO object as a new game object
-            myGO.name = "TestCanvas"; //names the object "TestCanvas"
-            myGO.AddComponent<Canvas>(); //adds a canvas to the object
-            myGO.AddComponent<CanvasScaler>();
-            myGO.GetComponent<CanvasScaler>().uiScaleMode = infoUI.GetComponent<CanvasScaler>().uiScaleMode;
+            myGO.name = "TestCanvas"; //names the myGO object "TestCanvas" in the heirarchy
+            myGO.AddComponent<Canvas>(); //adds a canvas to the myGO object
+            myGO.AddComponent<CanvasScaler>(); //adds a canvas scaler to the myGO object
+            myGO.GetComponent<CanvasScaler>().uiScaleMode = infoUI.GetComponent<CanvasScaler>().uiScaleMode; //sets the scale mode of the temporary UI (TestCanvas) to the same mode as the constant UI
 
-            resoX = (float)Screen.currentResolution.width;
-            resoY = (float)Screen.currentResolution.height;
+            resoX = (float)Screen.currentResolution.width; //sets resoX to the current x value of the screen resolution
+            resoY = (float)Screen.currentResolution.height; //sets resoY to the current y value of the screen resolution
 
-            myGO.GetComponent<CanvasScaler>().referenceResolution = new Vector2(resoX, resoY);
+            myGO.GetComponent<CanvasScaler>().referenceResolution = new Vector2(resoX, resoY); //sets the reference resolution of myGO canvas to the same x and y values as resoX and resoY
 
 
 
@@ -71,33 +79,51 @@ public class GenerateUI : MonoBehaviour
             //if the NumOfTxt int is greater than 0
             if (NumOfTxt > 0)
             {
-                GameObject textBox = new GameObject("TextBox"); //create UItextGO game object and name it "Text" in the heirarchy. this will be later returned as the text object
-                textBox.transform.SetParent(myGO.GetComponent<Canvas>().transform); //set the parent of UItextGO ("Text2") as the canvas attached to the myGO ("TestCanvas") object
-                textBox.AddComponent<RectTransform>();
-                textBox.AddComponent<Draggable>();
-                //textBox.AddComponent<PinchZoom>();
+                GameObject textBox = new GameObject("TextBox"); //create textBox game object and name it "TextBox" in the heirarchy. this will be later returned as the text object
+                textBox.transform.SetParent(myGO.GetComponent<Canvas>().transform); //set the parent of textBox ("TextBox") as the canvas attached to the myGO ("TestCanvas") object
+                textBox.AddComponent<RectTransform>(); //add a rectangle transform to the textBox object
+                textBox.AddComponent<Draggable>(); //give the Draggable property script to the textBox object, making it draggable
+                textBox.AddComponent<PinchZoom>(); //give the PinchZoom property script to the textBox object, making it enlargeable or reduceable
 
-                CreateBox(textBox);
-                CreateTl(textBox);
-                CreateBr(textBox);
-                CreateText(textBox); //run the CreateText function
-                textBox.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 0f);
+                CreateBox(textBox); //call the CreateBox function with textBox as the input
+                CreateTl(textBox); //call the CreateTl function with textBox as the input
+                CreateBr(textBox); //call the CreateBr function with textBox as the input
+                CreateText(textBox); //call the CreateText function with textBox as the input
+                textBox.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 0f); //set the anchored position of the textBox object to 0, 0
                 
                 //if the NumOfText variable is greater than 1
                 if (NumOfTxt > 1)
                 {
-                    CreateBox2();
-                    CreateTl2();
-                    CreateBr2();
-                    CreateText2(); //run the CreateText2 function
+                    GameObject textBox2 = new GameObject("TextBox2"); //create textBox2 game object and name it "TextBox2" in the heirarchy. this will be later returned as the text object
+                    textBox2.transform.SetParent(myGO.GetComponent<Canvas>().transform); //set the parent of textBox2 ("TextBox2") as the canvas attached to the myGO ("TestCanvas") object
+                    textBox2.AddComponent<RectTransform>(); //add a rectangle transform to textBox2
+                    textBox2.AddComponent<Draggable>(); //give the Draggable property script to the textBox2 object, making it draggable
+                    textBox2.AddComponent<PinchZoom>(); //give the PinchZoom property script to the textBox2 object, making it enlargeable or reduceable
+
+                    CreateBox2(textBox2); //call the CreateBox2 function with textBox2 as the input
+                    CreateTl2(textBox2); //call the CreateTl2 function with textBox2 as the input
+                    CreateBr2(textBox2); //call the CreateBr2 function with textBox2 as the input
+                    CreateText2(textBox2); //call the CreateText2 function with textBox2 as the input
+                    textBox2.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 0f); //set the anchored position of the textBox2 object to 0 , 0 
                 }
             }
+
+            totalNum += NumOfTxt;
 
             //if the NumOfImg int is greater than 0
             if (NumOfImg > 0)
             {
-                CreateImage();
+                GameObject image = new GameObject("image"); //create image game object and name it "image" in the heirarchy. this will be later returned as the text object
+                image.transform.SetParent(myGO.GetComponent<Canvas>().transform); //set the parent of image ("image") as the canvas attached to the myGO ("TestCanvas") object
+                image.AddComponent<RectTransform>(); //add a rectangle transform to image
+                image.AddComponent<Draggable>(); //add the dragable property script to image
+                image.AddComponent<PinchZoom>(); //add the pinch zoom property script to image
+
+                CreateImage(image); //call the CreateImage function with image as the input
+                image.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 0f); //set the anchored position for image to 0 , 0 
             }
+
+            totalNum += NumOfImg;
 
             //if the NumOfAud int is greater than 0
             if (NumOfAud > 0)
@@ -133,9 +159,9 @@ public class GenerateUI : MonoBehaviour
         return UItextGO; //return UItextGO
     }
 
-    GameObject CreateBox(GameObject parent)
+    GameObject CreateBox(GameObject parent) //declaration of the CreateBox function
     {
-        GameObject UIboxGO = new GameObject("Box");
+        GameObject UIboxGO = new GameObject("Box"); //create UIboxGO object, naming it "Box" in the heirarchy
         UIboxGO.transform.SetParent(parent.transform);
         
 
@@ -162,7 +188,7 @@ public class GenerateUI : MonoBehaviour
 
         Image tlc = UItlGO.AddComponent<Image>(); //create a text component within UItextGO, naming it text
         tlc.sprite = tl;
-        tltrans.localScale = new Vector2(3f, 3f);
+        tltrans.localScale = new Vector2(2f, 2f);
 
 
         return UItlGO;
@@ -180,7 +206,7 @@ public class GenerateUI : MonoBehaviour
 
         Image brc = UIbrGO.AddComponent<Image>(); //create a text component within UItextGO, naming it text
         brc.sprite = br;
-        brtrans.localScale = new Vector2(3f, 3f);
+        brtrans.localScale = new Vector2(2f, 2f);
 
 
         return UIbrGO;
@@ -189,10 +215,10 @@ public class GenerateUI : MonoBehaviour
 
 
 
-    GameObject CreateText2() //CreateText2 works the exact same as CreateText, but instead utilizes the text, x, y, width, and height values from the TextData script meant for the second text box instead of the first
+    GameObject CreateText2(GameObject parent) //CreateText2 works the exact same as CreateText, but instead utilizes the text, x, y, width, and height values from the TextData script meant for the second text box instead of the first
     {
         GameObject UItextGO = new GameObject("Text2");
-        UItextGO.transform.SetParent(myGO.GetComponent<Canvas>().transform);
+        UItextGO.transform.SetParent(parent.transform);
 
         RectTransform trans = UItextGO.AddComponent<RectTransform>();
         trans.anchoredPosition = new Vector3(gameObject.GetComponent<TextData>().x2, gameObject.GetComponent<TextData>().y2, -0.1f);
@@ -207,10 +233,10 @@ public class GenerateUI : MonoBehaviour
         return UItextGO;
     }
 
-    GameObject CreateBox2()
+    GameObject CreateBox2(GameObject parent)
     {
         GameObject UIboxGO = new GameObject("Box2");
-        UIboxGO.transform.SetParent(myGO.GetComponent<Canvas>().transform);
+        UIboxGO.transform.SetParent(parent.transform);
 
 
         RectTransform boxtrans = UIboxGO.AddComponent<RectTransform>(); //Create a rectTransform component for UItextGO, called trans
@@ -224,11 +250,11 @@ public class GenerateUI : MonoBehaviour
         return UIboxGO;
     }
 
-    GameObject CreateTl2()
+    GameObject CreateTl2(GameObject parent)
     {
 
         GameObject UItlGO = new GameObject("tl2");
-        UItlGO.transform.SetParent(myGO.GetComponent<Canvas>().transform);
+        UItlGO.transform.SetParent(parent.transform);
 
 
         RectTransform tltrans = UItlGO.AddComponent<RectTransform>(); //Create a rectTransform component for UItextGO, called trans
@@ -236,17 +262,17 @@ public class GenerateUI : MonoBehaviour
 
         Image tlc = UItlGO.AddComponent<Image>(); //create a text component within UItextGO, naming it text
         tlc.sprite = tl;
-        tltrans.localScale = new Vector2(3f, 3f);
+        tltrans.localScale = new Vector2(2f, 2f);
 
 
         return UItlGO;
     }
 
-    GameObject CreateBr2()
+    GameObject CreateBr2(GameObject parent)
     {
 
         GameObject UIbrGO = new GameObject("br2");
-        UIbrGO.transform.SetParent(myGO.GetComponent<Canvas>().transform);
+        UIbrGO.transform.SetParent(parent.transform);
 
 
         RectTransform brtrans = UIbrGO.AddComponent<RectTransform>(); //Create a rectTransform component for UItextGO, called trans
@@ -254,17 +280,17 @@ public class GenerateUI : MonoBehaviour
 
         Image brc = UIbrGO.AddComponent<Image>(); //create a text component within UItextGO, naming it text
         brc.sprite = br;
-        brtrans.localScale = new Vector2(3f, 3f);
+        brtrans.localScale = new Vector2(2f, 2f);
 
 
         return UIbrGO;
     }
 
 
-    GameObject CreateImage()
+    GameObject CreateImage(GameObject parent)
     {
         GameObject UIimgGO = new GameObject("Img");
-        UIimgGO.transform.SetParent(myGO.GetComponent<Canvas>().transform);
+        UIimgGO.transform.SetParent(parent.transform);
 
 
         RectTransform imgtrans = UIimgGO.AddComponent<RectTransform>(); //Create a rectTransform component for UItextGO, called trans
