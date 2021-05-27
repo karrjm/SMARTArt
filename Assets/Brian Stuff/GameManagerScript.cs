@@ -8,6 +8,8 @@ public class GameManagerScript : MonoBehaviour
     public GameObject infoUI; //the variable holding the infoUI, or the constant UI that stays the same
     public GameObject tempUI; //the variable holding the tempUI, or the variable UI that changes 
     public GameObject selectedPanel;
+
+    public bool childrenActive = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,4 +38,6 @@ public class GameManagerScript : MonoBehaviour
             tempUI.transform.GetChild(i).transform.localScale = new Vector3(1f, 1f, 1f);
         }
     }
+
+
 }
