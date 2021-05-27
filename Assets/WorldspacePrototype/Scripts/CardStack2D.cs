@@ -27,7 +27,7 @@ namespace UnityEngine.UI.Extensions
 
         ///Static variables can be used across the scene if this script is in it.
         ///Thankfully it doesn't matter if another script attempts to use the variable and this script isn't in the scene. 
-        public static bool canUseHorizontalAxis = true;
+        public bool canUseHorizontalAxis = true;
 
         void Start()
         {
@@ -115,7 +115,8 @@ namespace UnityEngine.UI.Extensions
                 }
             }
 
-            ///This loop moves the cards.  I know that none of my lerps are the "right way," but it looks much nicer.
+            /// This loop moves the cards.  I know that none of my lerps are the "right way," but it looks much nicer.
+            /// TODO: Disconnect card stacks that are not being tracked so that incrementing does not increment all card stacks in scene.
             for (int i = 0; i < cards.Length; i++)
             {
                 cards[i].localPosition = Vector3.Lerp(cards[i].localPosition, cardPositions[i + cardArrayOffset], Time.deltaTime * cardMoveSpeed);
