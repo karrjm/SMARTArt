@@ -14,7 +14,10 @@ public class ScreenScaler : MonoBehaviour
     {
         can = gameObject.GetComponent<CanvasScaler>(); //sets the canvas scaler can to the canvas scaler compnent attached to the game object
         SetInfo(); //call the SetInfo function
-        gameObject.SetActive(false); //set the game object to inactive
+        if (gameObject.tag == "InfoUI")
+        {
+            gameObject.SetActive(false); //set the game object to inactive
+        }
     }
 
     // Update is called once per frame
