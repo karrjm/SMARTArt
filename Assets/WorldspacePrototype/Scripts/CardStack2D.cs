@@ -27,7 +27,7 @@ namespace UnityEngine.UI.Extensions
 
         ///Static variables can be used across the scene if this script is in it.
         ///Thankfully it doesn't matter if another script attempts to use the variable and this script isn't in the scene. 
-        public static bool canUseHorizontalAxis = true;
+        public bool canUseHorizontalAxis = true;
 
         void Start()
         {
