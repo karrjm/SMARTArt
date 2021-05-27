@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="UW_Stout_French_Trappers_on_the_Red_Cedar" size="5.486400 2.125871" />
+    <ImageTarget name="UW_Stout_Perraults_Trading_Fort" size="6.096000 1.968101" />
+  </Tracking>
+</QCARConfig>

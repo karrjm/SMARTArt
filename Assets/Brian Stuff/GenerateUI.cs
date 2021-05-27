@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GenerateUI : MonoBehaviour
 {
+    public GameObject startUI;
     public GameObject infoUI; //the gameobject variable holding the constant UI
     public GameObject appManager; //the gameobject variable holding the app manager
     public int NumOfTxt; //number of text scripts on the object, max of 2
@@ -42,7 +43,10 @@ public class GenerateUI : MonoBehaviour
 
     private void OnMouseDown()
     {
-        gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(0f, 255f, 255f);
+        if (!infoUI.activeSelf)
+        {
+            gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(0f, 255f, 255f);
+        }
     }
 
 
@@ -52,6 +56,7 @@ public class GenerateUI : MonoBehaviour
         //if the infoUI is not currently active
         if (!infoUI.activeSelf)
         {
+            startUI.SetActive(false);
             infoUI.SetActive(true); //sets the infoUI to active
             appManager.GetComponent<GameManagerScript>().selectedPanel = this.gameObject;
 
