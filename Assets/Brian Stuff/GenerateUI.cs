@@ -7,7 +7,6 @@ public class GenerateUI : MonoBehaviour
 {
     
     public GameObject infoUI; //the gameobject variable holding the constant UI
-    public GameObject startUI;
     public GameObject appManager; //the gameobject variable holding the app manager
     public int NumOfTxt; //number of text scripts on the object, max of 2
     public int NumOfImg; //number of image scripts on the object
@@ -24,8 +23,6 @@ public class GenerateUI : MonoBehaviour
 
     public float resoX; //stores the x value of the current screen resolution
     public float resoY; //stores the y value of the current screen resolution
-
-    public Font font;
 
 
 
@@ -61,7 +58,6 @@ public class GenerateUI : MonoBehaviour
         {
            
             infoUI.SetActive(true); //sets the infoUI to active
-            startUI.SetActive(false);
             appManager.GetComponent<GameManagerScript>().selectedPanel = this.gameObject;
 
 
@@ -160,7 +156,7 @@ public class GenerateUI : MonoBehaviour
 
         Text text = UItextGO.AddComponent<Text>(); //create a text component within UItextGO, naming it text
         text.text = gameObject.GetComponent<TextData>().Text; //set the text value in text as the Text string in the TextData Script
-        text.font = font; //set the font for text as Arial
+        text.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font; //set the font for text as Arial
         text.fontSize = gameObject.GetComponent<TextData>().fontSize; //set the font size of text as 24
         text.color = new Color(0, 0, 0); //set the color of text as black
         text.rectTransform.sizeDelta = new Vector2(gameObject.GetComponent<TextData>().width, gameObject.GetComponent<TextData>().height); //set the text boundaries to the width and height variables in the TextData script
@@ -234,7 +230,7 @@ public class GenerateUI : MonoBehaviour
 
         Text text = UItextGO.AddComponent<Text>();
         text.text = gameObject.GetComponent<TextData>().Text2;
-        text.font = font;
+        text.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
         text.fontSize = gameObject.GetComponent<TextData>().fontSize2;
         text.color = new Color(0, 0, 0);
         text.rectTransform.sizeDelta = new Vector2(gameObject.GetComponent<TextData>().width2, gameObject.GetComponent<TextData>().height2);
