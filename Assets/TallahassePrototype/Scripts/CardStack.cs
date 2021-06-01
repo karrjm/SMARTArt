@@ -1,22 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class CardStack : MonoBehaviour, IDragHandler, IEndDragHandler
 {
+    #region serialized fields
     [SerializeField] private float cardMoveSpeed = 8f;
     [SerializeField] private int cardZMultiplier = 32;
     [SerializeField] private bool useDefaultUsedXPos = true;
     [SerializeField] private int usedCardXPos = 1280;
     [SerializeField] private Transform[] cards = null;
+    #endregion
 
+    #region private fields
     private int cardArrayOffset;
     private Vector3[] cardPositions;
     private int xPowerDifference;
     private Vector2 firstClickPos;
     private Vector2 secondClickPos;
+    #endregion
+
+    #region enums
     private enum DraggedDirection
     {
         Up,
@@ -24,6 +27,7 @@ public class CardStack : MonoBehaviour, IDragHandler, IEndDragHandler
         Right,
         Left
     }
+    #endregion
 
     private void Start()
     {
@@ -85,22 +89,6 @@ public class CardStack : MonoBehaviour, IDragHandler, IEndDragHandler
         }
     }
 
-
-    // must implement or IEndDraghandler will not work
-    public void OnDrag(PointerEventData eventData)
-    {
-
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        // Debug.Log("Press position + " + eventData.pressPosition);
-        // Debug.Log("End position + " + eventData.position);
-        Vector3 dragVectorDirection = (eventData.position - eventData.pressPosition).normalized;
-        // Debug.Log("norm + " + dragVectorDirection);
-        GetDragDirection(dragVectorDirection);
-    }
-
     private DraggedDirection GetDragDirection(Vector3 dragVector)
     {
         float positiveX = Mathf.Abs(dragVector.x);
@@ -128,4 +116,21 @@ public class CardStack : MonoBehaviour, IDragHandler, IEndDragHandler
         // Debug.Log(draggedDir);
         return draggedDir;
     }
+
+    #region public methods 
+    // must implement or IEndDraghandler will not work
+    public void OnDrag(PointerEventData eventData)
+    {
+
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        // Debug.Log("Press position + " + eventData.pressPosition);
+        // Debug.Log("End position + " + eventData.position);
+        Vector3 dragVectorDirection = (eventData.position - eventData.pressPosition).normalized;
+        // Debug.Log("norm + " + dragVectorDirection);
+        GetDragDirection(dragVectorDirection);
+    }
+    #endregion
 }
