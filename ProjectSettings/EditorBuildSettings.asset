@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/TallahasseePrototype/Scenes/JakeScene.unity
+    guid: c5deff9179597944eaec105008bb0a23
   m_configObjects: {}

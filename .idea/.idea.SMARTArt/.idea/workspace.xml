@@ -53,23 +53,4 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/TallahasseePrototype/Scripts/CardStack.cs</url>
-          <line>32</line>
-          <properties documentPath="C:\Users\KarrJacob\Desktop\repos\SMARTArt\Assets\TallahasseePrototype\Scripts\CardStack.cs" initialLine="32" containingFunctionPresentation="method 'Update'">
-            <startOffsets>
-              <option value="986" />
-            </startOffsets>
-            <endOffsets>
-              <option value="998" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
 </project>

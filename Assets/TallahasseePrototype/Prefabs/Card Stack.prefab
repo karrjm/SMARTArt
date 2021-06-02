@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7991524634051250789}
-  - component: {fileID: 615892987556120992}
+  - component: {fileID: 4308725547770065446}
   m_Layer: 5
   m_Name: Card Stack
   m_TagString: Untagged
@@ -36,7 +36,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &615892987556120992
+--- !u!114 &4308725547770065446
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,14 +45,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6138936159001102923}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c0edb9a3f5da4e129739a8f92a115af, type: 3}
+  m_Script: {fileID: 11500000, guid: bc96b817e4b9a3043868032a832989d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSwipeLength: 2
   cardMoveSpeed: 8
-  buttonCooldownTime: 0.125
-  cardZMultiplier: 32
+  cardZMultiplier: 8
   useDefaultUsedXPos: 0
   usedCardXPos: 5
   cards: []
-  canUseHorizontalAxis: 1
