@@ -25,7 +25,13 @@ namespace I0plus.XduiUnity.Importer.Editor
     public class RenderContext
     {
         private readonly string spriteOutputFolderAssetPath;
+
+        public string SpriteOutputFolderAssetPath => spriteOutputFolderAssetPath;
+
         private readonly string fontFolderAssetPath;
+
+        public string FontFolderAssetPath => fontFolderAssetPath;
+
         private readonly GameObject rootObject;
         public Stack<GameObject> NewPrefabs { get; } = new Stack<GameObject>();
         public Dictionary<string, GameObject> ToggleGroupMap { get; } = new Dictionary<string, GameObject>();
@@ -46,29 +52,6 @@ namespace I0plus.XduiUnity.Importer.Editor
         ///     Overwrite時、再利用されなかったXdオブジェクトを移動する
         /// </summary>
         public bool OptionMoveNotUsedXdObject { get; set; } = true;
-
-        public ToggleGroup GetToggleGroup(string name)
-        {
-            ToggleGroup toggleGroup;
-            if (!ToggleGroupMap.ContainsKey(name))
-            {
-                // まだそのグループが存在しない場合は､GameObjectを作成
-                var go = new GameObject(name);
-                // AddComponent･登録する
-                toggleGroup = go.AddComponent<ToggleGroup>();
-                // Allow Switch Off を True にする
-                // 190711 false(デフォルト)だと DoozyUIがHideするときに､トグルONボタンを初期位置に戻してしまうため
-                toggleGroup.allowSwitchOff = true;
-                ToggleGroupMap[name] = go;
-            }
-            else
-            {
-                // 存在する場合は利用する
-                toggleGroup = ToggleGroupMap[name].GetComponent<ToggleGroup>();
-            }
-
-            return toggleGroup;
-        }
 
         public RenderContext(string spriteOutputFolderAssetPath, string fontFolderAssetPath, GameObject rootObject)
         {
@@ -252,11 +235,24 @@ namespace I0plus.XduiUnity.Importer.Editor
 
         public Font GetFont(string fontName)
         {
-            var font = AssetDatabase.LoadAssetAtPath<Font>(Path.Combine(fontFolderAssetPath, fontName) + ".ttf");
-            if (font == null)
-                font = AssetDatabase.LoadAssetAtPath<Font>(Path.Combine(fontFolderAssetPath, fontName) + ".otf");
-            if (font == null) font = Resources.GetBuiltinResource<Font>(fontName + ".ttf");
-            if (font == null) Debug.LogError($"[{Importer.NAME}] font {fontName}.ttf (or .otf) is not found");
+            Font font = null;
+            
+            var ttfAssetPath = Path.Combine(fontFolderAssetPath, fontName) + ".ttf";
+            if (File.Exists(ttfAssetPath))
+            {
+                font = AssetDatabase.LoadAssetAtPath<Font>(ttfAssetPath);
+                if (font != null) return font;
+            }
+
+            var otfAssetPath = Path.Combine(fontFolderAssetPath, fontName) + ".otf";
+            if (File.Exists(otfAssetPath))
+            {
+                font = AssetDatabase.LoadAssetAtPath<Font>(otfAssetPath);
+                if (font != null) return font;
+            }
+            
+            Debug.LogError($"[{Importer.NAME}] font {fontName}.ttf (or .otf) is not found");
+            font = Resources.GetBuiltinResource<Font>("Arial.ttf");
 
             return font;
         }

@@ -39,16 +39,9 @@ namespace I0plus.XduiUnity.Importer.Editor
             var align = _textJson.Get("align");
             var type = _textJson.Get("textType");
 
-            //var text = targetObject.GetComponent<TextMeshProUGUI>();
             var text = ElementUtil.GetOrAddComponent<TextMeshProUGUI>(targetObject);
 
-            //if a text component is already present this means this go is part of a prefab and we skip the font generation
-            if (text == null)
-            {
-                text = ElementUtil.GetOrAddComponent<TextMeshProUGUI>(targetObject);
-                text.font = renderContext.GetTMPFontAsset(fontName, fontStyle);
-            }
-
+            text.font = renderContext.GetTMPFontAsset(fontName, fontStyle);
             text.text = message;
             text.fontSize = fontSize.Value;
 

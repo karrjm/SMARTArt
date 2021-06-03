@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 83a784bc6a9f40f41a7734f4dfccfef3
+guid: 81589795c7f169a48bb5a9d85dbe0e15
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -132,7 +132,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: XdUnityUI_GameSample
+  spritePackingTag: XuidUnity_GameSample
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
   userData: 

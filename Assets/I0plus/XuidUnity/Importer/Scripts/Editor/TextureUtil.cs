@@ -302,7 +302,7 @@ namespace I0plus.XduiUnity.Importer.Editor
             }
 
             // 本来はフォルダを作成しなくても良いはず
-            Importer.CreateFolder(Path.GetDirectoryName(writePngPath));
+            EditorUtil.CreateFolder(Path.GetDirectoryName(writePngPath));
             File.WriteAllBytes(writePngPath, pngData);
             SaveCache(Path.GetDirectoryName(writePngPath));
             return "Texture: Created";
@@ -366,7 +366,7 @@ namespace I0plus.XduiUnity.Importer.Editor
             try
             {
                 // 本来はフォルダを作成しなくても良いはず
-                Importer.CreateFolder(Path.GetDirectoryName(writeSpritePath));
+                EditorUtil.CreateFolder(Path.GetDirectoryName(writeSpritePath));
 
                 // PNG での保存　（多プラットフォームに対応しやすい）
                 var pngData = ImageConversion.EncodeToPNG(texture);
@@ -393,17 +393,13 @@ namespace I0plus.XduiUnity.Importer.Editor
         ///     アセットのイメージをスライスする
         ///     戻り地は、変換リザルトメッセージ
         /// </summary>
+        /// <param name="outputPath"></param>
         /// <param name="sourceImagePath"></param>
         /// <returns></returns>
-        public static string SliceSprite(string sourceImagePath)
+        public static string SliceSprite(string outputPath, string sourceImagePath)
         {
-            var directoryName = Path.GetFileName(Path.GetDirectoryName(sourceImagePath));
-            var outputDirectoryPath = Path.Combine(EditorUtil.GetOutputSpritesFolderAssetPath(), directoryName);
-            var sourceImageFileName = Path.GetFileName(sourceImagePath);
-
             // オプションJSONの読み込み
             Dictionary<string, object> json = null;
-            var filePath = Path.Combine(outputDirectoryPath, sourceImageFileName);
             var imageJsonPath = sourceImagePath + ".json";
             if (File.Exists(imageJsonPath))
             {
@@ -435,12 +431,13 @@ namespace I0plus.XduiUnity.Importer.Editor
             {
                 case null:
                 case "auto":
+                {
                     var slicedTexture = TextureSlicer.Slice(readableTexture);
-                    return CheckWriteSpriteFromTexture(filePath, slicedTexture.Texture, slicedTexture.Boarder);
+                    return CheckWriteSpriteFromTexture(outputPath, slicedTexture.Texture, slicedTexture.Boarder);
+                }
                 case "none":
                 {
-                    var newPath = Path.Combine(outputDirectoryPath, sourceImageFileName);
-                    return CheckWriteSpriteFromTexture(newPath, readableTexture, new Boarder(0, 0, 0, 0));
+                    return CheckWriteSpriteFromTexture(outputPath, readableTexture, new Boarder(0, 0, 0, 0));
                 }
                 case "border":
                 {
@@ -453,8 +450,7 @@ namespace I0plus.XduiUnity.Importer.Editor
                     var bottom = border.GetInt("bottom") ?? 0;
                     var left = border.GetInt("left") ?? 0;
 
-                    var newPath = Path.Combine(outputDirectoryPath, sourceImageFileName);
-                    return CheckWriteSpriteFromTexture(newPath, readableTexture, new Boarder(left, bottom, right, top));
+                    return CheckWriteSpriteFromTexture(outputPath, readableTexture, new Boarder(left, bottom, right, top));
                 }
             }
             Debug.LogError($"[{Importer.NAME}] SliceSpriteの処理ができませんでした");

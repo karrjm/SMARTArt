@@ -7,9 +7,9 @@ using MiniJSON;
 using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
-
 #if TMP_PRESENT
 using TMPro;
+
 #endif
 
 namespace I0plus.XduiUnity.Importer.Editor
@@ -21,7 +21,6 @@ namespace I0plus.XduiUnity.Importer.Editor
     public sealed class PrefabCreator
     {
         private static readonly string[] Versions = {"0.6.0", "0.6.1"};
-        private readonly string assetPath;
         private readonly List<GameObject> nestedPrefabs;
 
         /// <summary>
@@ -29,28 +28,18 @@ namespace I0plus.XduiUnity.Importer.Editor
         /// <param name="spriteRootPath"></param>
         /// <param name="fontRootPath"></param>
         /// <param name="assetPath">フルパスでの指定 Unity Assetフォルダ外もよみこめる</param>
-        public PrefabCreator(string assetPath, List<GameObject> prefabs)
+        public PrefabCreator(List<GameObject> prefabs)
         {
-            this.assetPath = assetPath;
             nestedPrefabs = prefabs;
         }
 
-        public void Create(ref GameObject targetObject, RenderContext renderContext)
+        public void Create(ref GameObject targetObject, RenderContext renderContext,
+            Dictionary<string, object> rootJson)
         {
             if (EditorApplication.isPlaying) EditorApplication.isPlaying = false;
 
-            var jsonText = File.ReadAllText(assetPath);
-            var json = Json.Deserialize(jsonText) as Dictionary<string, object>;
-            var info = json.GetDic("info");
-            Validation(info);
-
-            var rootJson = json.GetDic("root");
-
             var rootElement = ElementFactory.Generate(rootJson, null);
-
             rootElement.Render(ref targetObject, renderContext, null);
-
-            // Postprocess(rootObject);
 
             if (renderContext.ToggleGroupMap.Count > 0)
             {
@@ -66,26 +55,44 @@ namespace I0plus.XduiUnity.Importer.Editor
 
             // 使われなかったオブジェクトの退避グループ
             var notUsedGroupObject =
-                ElementUtil.GetOrCreateGameObject(renderContext, null, "!XuidUnity Not Used", null);
+                ElementUtil.GetOrCreateGameObject(renderContext, null, $"[{Importer.NAME}] Unused", null);
             var notUsedchilds = renderContext.FreeChildObjects;
             if (notUsedchilds.Count > 0)
             {
-                notUsedGroupObject.SetActive(false);
-                var groupRect = ElementUtil.GetOrAddComponent<RectTransform>(notUsedGroupObject);
-                groupRect.SetParent(targetObject.transform);
+                var notUsedGroupRect = ElementUtil.GetOrAddComponent<RectTransform>(notUsedGroupObject);
                 foreach (var keyValuePair in notUsedchilds)
                 {
                     var go = keyValuePair.Key;
                     if (go != null)
                     {
-                        var goRect = ElementUtil.GetOrAddComponent<RectTransform>(go);
-                        // NestedPrefabの子供を転送しようとするとエラーになる
-                        goRect.SetParent(groupRect);
+                        if (PrefabUtility.GetNearestPrefabInstanceRoot(go) == null)
+                        {
+                            // NestedPrefabの子供でなければNotUsedグループに移動できる
+                            var goRect = go.GetComponent<RectTransform>();
+                            if (goRect != null)
+                            {
+                                goRect.SetParent(notUsedGroupRect);
+                            }
+                        }
+                        else
+                        {
+                            // NestedPrefabの子供を転送しようとするとエラーになるため、
+                            // 非アクティブにする
+                            //TODO: unusedといった名前をつけるか検討
+                            go.SetActive(false);
+                        }
                     }
                     else
                     {
-                        Debug.Log("既に廃棄されています");
+                        // Debug.Log("既に廃棄されています");
                     }
+                }
+
+                // not used グループに子供があった場合のみ移動
+                if (notUsedGroupRect.childCount > 0)
+                {
+                    notUsedGroupRect.SetParent(targetObject.transform);
+                    notUsedGroupObject.SetActive(false);
                 }
             }
             else

@@ -23,20 +23,14 @@ namespace I0plus.XduiUnity.Importer.Editor
 
             var children = RenderChildren(renderContext, targetObject);
 
-            var toggle = targetObject.GetComponent<Toggle>();
+            var toggle = ElementUtil.GetOrAddComponent<Toggle>(targetObject);
 
-            //if a text toggle is already present this means this go is part of a prefab and we skip the toggle group assignment
-            if (toggle == null)
+            // トグルグループ名
+            var group = _toggleJson.Get("group");
+            if (group != null)
             {
-                toggle = ElementUtil.GetOrAddComponent<Toggle>(targetObject);
-                // トグルグループ名
-                var group = _toggleJson.Get("group");
-                if (group != null)
-                {
-                    var toggleGroup = renderContext.GetToggleGroup(group);
-                    //Debug.Log("toggleGroup:" + toggleGroup);
-                    toggle.group = toggleGroup;
-                }
+                var toggleToRadio = ElementUtil.GetOrAddComponent<ToggleToRadio>(targetObject);
+                toggleToRadio.GroupName = group;
             }
 
             GameObject targetImageObject = null;

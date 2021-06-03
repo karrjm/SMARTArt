@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -191,10 +192,13 @@ namespace I0plus.XduiUnity.Importer.Editor
          * /Assets/Top/Second/File.txt
          * return Second
          */
-        public static string GetSubFolderName(string filePath)
+        public static string GetSubFolderName(string baseFolderPath, string filePath)
         {
-            var folderPath = Path.GetDirectoryName(filePath);
-            return Path.GetFileName(folderPath);
+            filePath = filePath.Replace('\\', '/');
+            baseFolderPath = baseFolderPath.Replace('\\', '/');
+            if (!filePath.StartsWith(baseFolderPath)) return null;
+            var subFolderPath = Path.GetDirectoryName(filePath.Substring(baseFolderPath.Length+1) );
+            return subFolderPath?.Replace('\\', '/');
         }
 
         public static Color HexToColor(string hex)
@@ -220,6 +224,55 @@ namespace I0plus.XduiUnity.Importer.Editor
             to.type = self.type;
             to.color = self.color;
             return self;
+        }
+
+        /// <summary>
+        ///     複数階層のフォルダを作成する
+        /// </summary>
+        /// <param name="folderAssetPath">一番子供のフォルダまでのパスe.g.)Assets/Resources/Sound/</param>
+        /// <remarks>パスは"Assets/"で始まっている必要があります。Splitなので最後のスラッシュ(/)は不要です</remarks>
+        public static void CreateFolder(string folderAssetPath)
+        {
+            folderAssetPath = folderAssetPath.Replace("\\", "/");
+            Debug.Assert(folderAssetPath.StartsWith("Assets/"),
+                "arg `path` of CreateFolderRecursively doesn't starts with `Assets/`");
+
+            // もう存在すれば処理は不要
+            // if (AssetDatabase.IsValidFolder(folderAssetPath)) return; // AssetDatabaseでのチェックの場合、Refresh等してDBの更新が必要
+            if (IsFolder(folderAssetPath) == true) return;
+
+            // スラッシュで終わっていたら除去
+            if (folderAssetPath.EndsWith("/"))
+                folderAssetPath = folderAssetPath.Substring(0, folderAssetPath.Length - 1);
+
+            var names = folderAssetPath.Split('/');
+            for (var i = 1; i < names.Length; i++)
+            {
+                var parent = string.Join("/", names.Take(i).ToArray());
+                var target = string.Join("/", names.Take(i + 1).ToArray());
+                var subFolderName = names[i];
+                if (IsFolder(target) != true)
+                {
+                    // Debug.Log($"[{Importer.NAME}] CreateFolder: {subFolderName}");
+                    AssetDatabase.CreateFolder(parent, subFolderName);
+                }
+            }
+        }
+
+        public static bool? IsFolder(string path)
+        {
+            if (!Directory.Exists(path) && !File.Exists(path)) return null;
+            try
+            {
+                return File.GetAttributes(path).HasFlag(FileAttributes.Directory);
+            }
+            catch (Exception exception)
+            {
+                // ignored
+                Debug.LogAssertion(exception.Message);
+            }
+
+            return false;
         }
     }
 }

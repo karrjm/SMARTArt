@@ -32,13 +32,10 @@ namespace I0plus.XduiUnity.Importer.Editor
             var align = _textJson.Get("align");
             var type = _textJson.Get("textType");
 
-            var text = targetObject.GetComponent<Text>();
+            var text = ElementUtil.GetOrAddComponent<Text>(targetObject);
 
-            //if a text component is already present this means this go is part of a prefab and we skip the font generation
-            if (text == null)
+            if (text != null)
             {
-                text = ElementUtil.GetOrAddComponent<Text>(targetObject);
-
                 // 検索するフォント名を決定する
                 var fontFilename = fontName;
 
@@ -53,77 +50,76 @@ namespace I0plus.XduiUnity.Importer.Editor
 
                 text.fontSize = Mathf.RoundToInt(fontSize.Value);
                 text.font = renderContext.GetFont(fontFilename);
+
+                text.text = message;
+                text.color = Color.black;
+
+                var color = _textJson.Get("color");
+                text.color = color != null ? EditorUtil.HexToColor(color) : Color.black;
+
+                text.verticalOverflow = VerticalWrapMode.Truncate;
+
+                if (type == "point")
+                {
+                    text.horizontalOverflow = HorizontalWrapMode.Overflow;
+                    text.verticalOverflow = VerticalWrapMode.Overflow;
+                }
+                else if (type == "paragraph")
+                {
+                    text.horizontalOverflow = HorizontalWrapMode.Wrap;
+                    text.verticalOverflow = VerticalWrapMode.Overflow;
+                }
+                else
+                {
+                    Debug.LogError("unknown type " + type);
+                }
+
+                var vertical = "";
+                var horizontal = "";
+                var alignLowerString = align.ToLower();
+                if (alignLowerString.Contains("left"))
+                    horizontal = "left";
+                else if (alignLowerString.Contains("center"))
+                    horizontal = "center";
+                else if (alignLowerString.Contains("right")) horizontal = "right";
+
+                if (alignLowerString.Contains("upper"))
+                    vertical = "upper";
+                else if (alignLowerString.Contains("middle"))
+                    vertical = "middle";
+                else if (alignLowerString.Contains("lower")) vertical = "lower";
+
+                switch ((vertical + "-" + horizontal).ToLower())
+                {
+                    case "upper-left":
+                        text.alignment = TextAnchor.UpperLeft;
+                        break;
+                    case "upper-center":
+                        text.alignment = TextAnchor.UpperCenter;
+                        break;
+                    case "upper-right":
+                        text.alignment = TextAnchor.UpperRight;
+                        break;
+                    case "middle-left":
+                        text.alignment = TextAnchor.MiddleLeft;
+                        break;
+                    case "middle-center":
+                        text.alignment = TextAnchor.MiddleCenter;
+                        break;
+                    case "middle-right":
+                        text.alignment = TextAnchor.MiddleRight;
+                        break;
+                    case "lower-left":
+                        text.alignment = TextAnchor.LowerLeft;
+                        break;
+                    case "lower-center":
+                        text.alignment = TextAnchor.LowerCenter;
+                        break;
+                    case "lower-right":
+                        text.alignment = TextAnchor.LowerRight;
+                        break;
+                }
             }
-
-            text.text = message;
-            text.color = Color.black;
-
-            var color = _textJson.Get("color");
-            text.color = color != null ? EditorUtil.HexToColor(color) : Color.black;
-
-            text.verticalOverflow = VerticalWrapMode.Truncate;
-
-            if (type == "point")
-            {
-                text.horizontalOverflow = HorizontalWrapMode.Overflow;
-                text.verticalOverflow = VerticalWrapMode.Overflow;
-            }
-            else if (type == "paragraph")
-            {
-                text.horizontalOverflow = HorizontalWrapMode.Wrap;
-                text.verticalOverflow = VerticalWrapMode.Overflow;
-            }
-            else
-            {
-                Debug.LogError("unknown type " + type);
-            }
-
-            var vertical = "";
-            var horizontal = "";
-            var alignLowerString = align.ToLower();
-            if (alignLowerString.Contains("left"))
-                horizontal = "left";
-            else if (alignLowerString.Contains("center"))
-                horizontal = "center";
-            else if (alignLowerString.Contains("right")) horizontal = "right";
-
-            if (alignLowerString.Contains("upper"))
-                vertical = "upper";
-            else if (alignLowerString.Contains("middle"))
-                vertical = "middle";
-            else if (alignLowerString.Contains("lower")) vertical = "lower";
-
-            switch ((vertical + "-" + horizontal).ToLower())
-            {
-                case "upper-left":
-                    text.alignment = TextAnchor.UpperLeft;
-                    break;
-                case "upper-center":
-                    text.alignment = TextAnchor.UpperCenter;
-                    break;
-                case "upper-right":
-                    text.alignment = TextAnchor.UpperRight;
-                    break;
-                case "middle-left":
-                    text.alignment = TextAnchor.MiddleLeft;
-                    break;
-                case "middle-center":
-                    text.alignment = TextAnchor.MiddleCenter;
-                    break;
-                case "middle-right":
-                    text.alignment = TextAnchor.MiddleRight;
-                    break;
-                case "lower-left":
-                    text.alignment = TextAnchor.LowerLeft;
-                    break;
-                case "lower-center":
-                    text.alignment = TextAnchor.LowerCenter;
-                    break;
-                case "lower-right":
-                    text.alignment = TextAnchor.LowerRight;
-                    break;
-            }
-
 
             if (_textJson.ContainsKey("strokeSize"))
             {

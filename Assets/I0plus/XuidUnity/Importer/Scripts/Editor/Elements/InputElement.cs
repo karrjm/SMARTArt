@@ -29,7 +29,14 @@ namespace I0plus.XduiUnity.Importer.Editor
             {
                 var textComponent =
                     ElementUtil.FindComponentByClassName<Text>(children, InputJson.Get("text_component_class"));
-                if (textComponent != null) inputField.textComponent = textComponent;
+                if (textComponent != null)
+                {
+                    inputField.textComponent = textComponent;
+                    if (!textComponent.gameObject.activeSelf)
+                    {
+                        textComponent.gameObject.SetActive(true);
+                    }
+                }
 
                 var placeholderText =
                     ElementUtil.FindComponentByClassName<Graphic>(children, InputJson.Get("placeholder_class"));

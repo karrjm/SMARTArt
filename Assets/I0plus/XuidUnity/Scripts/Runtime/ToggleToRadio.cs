@@ -1,69 +1,65 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace I0plus.XduiUnity
 {
-    /**
-     * このクラスの仕事はEditorできるはず
-     */
+    /// <summary>
+    /// Create an Gameobject with a ToggleGroup in the Scene.
+    /// Share it with a Toggle with the same Group name.
+    /// </summary>
     public class ToggleToRadio : MonoBehaviour
     {
-        // 廃棄されないGameObjectこれにtoggleGroupをぶらさげ､マルチシーンでもつかえるグループにする
-        private static GameObject _managerGameObject;
-
-        private static readonly Dictionary<string, GameObject> ToggleGroupMap = new Dictionary<string, GameObject>();
+        private const string MANAGER_OBJECT_NAME = "[XuidUnity] ToggleGroups";
 
         [SerializeField] private string groupName;
 
-        public string GroupName => groupName;
+        public string GroupName
+        {
+            get => groupName;
+            set => groupName = value;
+        }
+        
+        private void OnEnable()
+        {
+            SetToggleGroup();
+        }
 
-        private void Awake()
+        public void SetToggleGroup()
+        {
+            if (groupName != null)
+            {
+                var toggle = GetComponent<Toggle>();
+                if (toggle != null)
+                {
+                    var toggleGroup = GetOrCreateToggleGroup(groupName);
+                    toggle.group = toggleGroup;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Create or share a ToggleGroup.
+        /// Identify it by name.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public static ToggleGroup GetOrCreateToggleGroup(string name)
         {
             // まだその名前でToggleGroupがつくられていない
-            if (_managerGameObject == null)
+            var groupsObject = GameObject.Find(MANAGER_OBJECT_NAME);
+            if (groupsObject == null) groupsObject = new GameObject(MANAGER_OBJECT_NAME);
+
+            var toggleGroupObject = groupsObject.transform.Find(name)?.gameObject;
+            if (toggleGroupObject == null)
             {
-                _managerGameObject = new GameObject("ToggleToRadioManager");
-                // 廃棄されないオブジェクトにする
-                DontDestroyOnLoad(_managerGameObject);
+                toggleGroupObject = new GameObject(name);
+                toggleGroupObject.AddComponent<ToggleGroup>();
+                toggleGroupObject.transform.SetParent(groupsObject.transform);
             }
 
-            if (GroupName == null) return;
-
-            // 初期化する
-            SetGroupName(GroupName);
-        }
-
-        public static ToggleGroup GetToggleGroup(string name)
-        {
-            ToggleGroup toggleGroup;
-            if (!ToggleGroupMap.ContainsKey(name))
-            {
-                // まだそのグループが存在しない場合は､GameObjectを作成
-                var go = new GameObject(name);
-                go.transform.SetParent(_managerGameObject.transform);
-                // AddComponent･登録する
-                toggleGroup = go.AddComponent<ToggleGroup>();
-                ToggleGroupMap[name] = go;
-            }
-            else
-            {
-                // 存在する場合は利用する
-                toggleGroup = ToggleGroupMap[name].GetComponent<ToggleGroup>();
-            }
+            var toggleGroup = toggleGroupObject.GetComponent<ToggleGroup>();
 
             return toggleGroup;
-        }
-
-        public void SetGroupName(string name)
-        {
-            groupName = name;
-            // 共有ToggleGroupを作成･取得する
-            var toggleGroup = GetToggleGroup(groupName);
-
-            // Toggleを取得し､グループを登録する
-            var toggle = gameObject.GetComponent<Toggle>();
-            toggle.group = toggleGroup;
         }
     }
 }

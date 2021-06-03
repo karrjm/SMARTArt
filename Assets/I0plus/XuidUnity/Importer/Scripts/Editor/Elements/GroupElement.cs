@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 namespace I0plus.XduiUnity.Importer.Editor
 {
@@ -54,6 +55,20 @@ namespace I0plus.XduiUnity.Importer.Editor
             GameObject parentObject)
         {
             GetOrCreateSelfObject(renderContext, ref targetObject, parentObject);
+            
+            var graphic = targetObject.GetComponent<Graphic>() as Component;
+            if (graphic != null)
+            {
+                // Groupには、描画コンポーネントは必要ない　Graphicコンポーネントがある 削除する
+                // オフにする手もあるかもだが、のちのSetupComponentsとぶつかる可能性あり
+                // Debug.LogWarning($"[{Importer.NAME}] {graphic.gameObject.name}: Graphic Component change to {typeof(T)}.", go);
+                Object.DestroyImmediate(graphic);
+            }
+            var canvasRenderer = targetObject.GetComponent<CanvasRenderer>();
+            if (canvasRenderer != null)
+            {
+                Object.DestroyImmediate(canvasRenderer);
+            }
 
             RenderedChildren = RenderChildren(renderContext, targetObject);
             ElementUtil.SetupCanvasGroup(targetObject, CanvasGroup);
@@ -70,6 +85,7 @@ namespace I0plus.XduiUnity.Importer.Editor
             if (RenderedChildren.Count > 0) goContent = RenderedChildren[0].Item1;
             ElementUtil.SetupScrollRect(targetObject, goContent, ScrollRectJson);
             ElementUtil.SetupRectTransform(targetObject, RectTransformJson);
+
         }
 
         public override void RenderPass2(List<Tuple<GameObject, Element>> selfAndSiblings)

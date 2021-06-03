@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace I0plus.XduiUnity.Importer.Editor
@@ -78,9 +79,18 @@ namespace I0plus.XduiUnity.Importer.Editor
             var rect = ElementUtil.GetOrAddComponent<RectTransform>(selfObject);
             if (parentObject)
             {
-                rect.SetParent(null);
-                //親のパラメータがある場合､親にする 後のAnchor定義のため
-                rect.SetParent(parentObject.transform);
+                var nearestPrefabInstanceRoot = PrefabUtility.GetNearestPrefabInstanceRoot(selfObject);
+                if (nearestPrefabInstanceRoot == null)
+                {
+                    // 子供の並び順を整えるため、親からはずしまたくっつける
+                    rect.SetParent(null);
+                    rect.SetParent(parentObject.transform);
+                }
+
+                if (rect.parent == null)
+                {
+                    Debug.LogError("使用されないオブジェクトが作成された");
+                }
             }
 
             if (renderContext.OptionAddXdGuidComponent) ElementUtil.SetGuid(selfObject, Guid);
