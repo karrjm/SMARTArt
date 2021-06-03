@@ -148,6 +148,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.DefaultCompany.SMARTArt
     Standalone: com.DefaultCompany.SMARTArt
+    iPhone: com.DefaultCompany.SMARTArt
   buildNumber:
     Standalone: 0
     iPhone: 0
