@@ -1,0 +1,12 @@
+This asset is governed by the Asset Store EULA; however, the following components are governed by the licenses indicated below:
+
+A. OnionRing
+-  MIT: see Importer/Scripts/Editor/Libraries/OnionRing/LICENSE.txt
+
+B. MiniJSON
+-  MIT: see Importer/Scripts/Editor/Libraries/MiniJSON/MiniJSON.cs
+
+C. Open Sans-Regular.ttf
+-  Apache 2.0: see Fonts/LICENSE.txt
+
+
