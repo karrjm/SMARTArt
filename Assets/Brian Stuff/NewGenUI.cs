@@ -35,7 +35,7 @@ public class NewGenUI : MonoBehaviour
     {
         if (!infoUI.activeSelf)
         {
-            gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(0f, 255f, 255f);
+            gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(0f, 100f, 100f);
         }
     }
 

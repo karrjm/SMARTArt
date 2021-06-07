@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HelpUI : MonoBehaviour
 {
 
     [SerializeField] private bool UIactive = false;
+    public GameObject helpButton;
+    
+
+    public Sprite helpButtonSprite;
+    public Sprite xButtonSprite;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +28,7 @@ public class HelpUI : MonoBehaviour
     {
         if (!UIactive)
         {
+            helpButton.GetComponent<Image>().sprite = xButtonSprite;
             gameObject.transform.GetChild(1).gameObject.SetActive(true);
             gameObject.transform.GetChild(2).gameObject.SetActive(true);
             gameObject.transform.GetChild(3).gameObject.SetActive(true);
@@ -31,6 +38,7 @@ public class HelpUI : MonoBehaviour
         }
         else
         {
+            helpButton.GetComponent<Image>().sprite = helpButtonSprite;
             gameObject.transform.GetChild(1).gameObject.SetActive(false);
             gameObject.transform.GetChild(2).gameObject.SetActive(false);
             gameObject.transform.GetChild(3).gameObject.SetActive(false);
