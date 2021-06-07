@@ -123,170 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!43 &3634292
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: ImageTargetMesh21996
-  serializedVersion: 10
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 6
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 4
-    localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 2.7432, y: 0, z: 1.0629355}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000001000200020001000300
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 4
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 24
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 128
-    _typelessdata: 97902fc000000000450e88bf000000000000803f00000000000000000000000097902fc000000000450e883f000000000000803f00000000000000000000803f97902f4000000000450e88bf000000000000803f000000000000803f0000000097902f4000000000450e883f000000000000803f000000000000803f0000803f
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 2.7432, y: 0, z: 1.0629355}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
 --- !u!1 &110790540
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,7 +135,6 @@ GameObject:
   - component: {fileID: 110790546}
   - component: {fileID: 110790545}
   - component: {fileID: 110790544}
-  - component: {fileID: 110790543}
   - component: {fileID: 110790542}
   m_Layer: 0
   m_Name: Cube
@@ -332,63 +167,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 110790540}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6b98c85716ceb44eb9270fcd370b87c, type: 3}
+  m_Script: {fileID: 11500000, guid: b2d0cbedb439ee24cbacab79bbc5ac18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: More of these canoes seen around the perault trading fort, as just like most
-    places in this area, could be reached via the red cedar
-  x: -300
-  y: 200
-  width: 300
-  height: 400
-  fontSize: 36
-  boxPosX: -300
-  boxPosY: 240
-  boxWidth: 400
-  boxHeight: 420
-  tlx: -391
-  brx: -210
-  tly: 333
-  bry: 146
-  Text2: 
-  x2: 0
-  y2: 0
-  width2: 0
-  height2: 0
-  fontSize2: 0
-  boxPosX2: 0
-  boxPosY2: 0
-  boxWidth2: 0
-  boxHeight2: 0
-  tlx2: 0
-  brx2: 0
-  tly2: 0
-  bry2: 0
---- !u!114 &110790543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 110790540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7862e4cc267626346800e4e62d4a7a92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  ui: {fileID: 3050582559873357153, guid: 739844de25680ce44aead434b329b80a, type: 3}
   startUI: {fileID: 1381134472}
   infoUI: {fileID: 1787874248}
   appManager: {fileID: 595995913}
-  NumOfTxt: 1
-  NumOfImg: 0
-  NumOfAud: 0
-  NumOfVid: 0
-  totalNum: 0
-  whiteBox: {fileID: 21300000, guid: 9b92d9ee916c40a4e8a355de51686d06, type: 3}
-  tl: {fileID: 21300000, guid: 357ee2116e176c04b82b2ed2b1c8e8b2, type: 3}
-  br: {fileID: 21300000, guid: 8ccc23fc5fabc3842a87ce95f67db322, type: 3}
   resoX: 0
   resoY: 0
+  numOfThings: 1
 --- !u!65 &110790544
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -461,7 +249,6 @@ GameObject:
   m_Component:
   - component: {fileID: 133756723}
   - component: {fileID: 133756725}
-  - component: {fileID: 133756724}
   m_Layer: 0
   m_Name: Land
   m_TagString: Untagged
@@ -483,31 +270,6 @@ Transform:
   m_Father: {fileID: 1259983935}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &133756724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 133756722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7862e4cc267626346800e4e62d4a7a92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startUI: {fileID: 0}
-  infoUI: {fileID: 1787874248}
-  appManager: {fileID: 0}
-  NumOfTxt: 0
-  NumOfImg: 0
-  NumOfAud: 0
-  NumOfVid: 0
-  totalNum: 0
-  whiteBox: {fileID: 0}
-  tl: {fileID: 0}
-  br: {fileID: 0}
-  resoX: 0
-  resoY: 0
 --- !u!212 &133756725
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -559,6 +321,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!21 &154021870
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'UW_Stout_French_Trappers_on_the_Red_CedarMaterial
+
+    32546'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 0f98326918354aa8b1ec949835ce9949, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &195920920
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,7 +360,6 @@ GameObject:
   m_Component:
   - component: {fileID: 195920921}
   - component: {fileID: 195920923}
-  - component: {fileID: 195920922}
   m_Layer: 0
   m_Name: Native
   m_TagString: Untagged
@@ -591,31 +381,6 @@ Transform:
   m_Father: {fileID: 1623885180}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &195920922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195920920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7862e4cc267626346800e4e62d4a7a92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startUI: {fileID: 0}
-  infoUI: {fileID: 1787874248}
-  appManager: {fileID: 0}
-  NumOfTxt: 0
-  NumOfImg: 0
-  NumOfAud: 0
-  NumOfVid: 0
-  totalNum: 0
-  whiteBox: {fileID: 0}
-  tl: {fileID: 0}
-  br: {fileID: 0}
-  resoX: 0
-  resoY: 0
 --- !u!212 &195920923
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -907,7 +672,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254355700}
-  m_Mesh: {fileID: 1491529489}
+  m_Mesh: {fileID: 409266063}
 --- !u!23 &254355702
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -927,7 +692,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1944011118}
+  - {fileID: 1880441176}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1318,6 +1083,334 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!43 &354915439
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ImageTargetMesh27244
+  serializedVersion: 10
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 6
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 4
+    localAABB:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 2.7432, y: 0, z: 1.0629355}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000001000200020001000300
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 4
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 24
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 128
+    _typelessdata: 97902fc000000000450e88bf000000000000803f00000000000000000000000097902fc000000000450e883f000000000000803f00000000000000000000803f97902f4000000000450e88bf000000000000803f000000000000803f0000000097902f4000000000450e883f000000000000803f000000000000803f0000803f
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 2.7432, y: 0, z: 1.0629355}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
+--- !u!43 &409266063
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ImageTargetMesh32274
+  serializedVersion: 10
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 6
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 4
+    localAABB:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 3.048, y: 0, z: 0.9840505}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000001000200020001000300
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 4
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 24
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 128
+    _typelessdata: 6f1243c000000000bcea7bbf000000000000803f0000000000000000000000006f1243c000000000bcea7b3f000000000000803f00000000000000000000803f6f12434000000000bcea7bbf000000000000803f000000000000803f000000006f12434000000000bcea7b3f000000000000803f000000000000803f0000803f
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 3.048, y: 0, z: 0.9840505}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &453668523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,7 +1596,6 @@ GameObject:
   m_Component:
   - component: {fileID: 704370608}
   - component: {fileID: 704370610}
-  - component: {fileID: 704370609}
   m_Layer: 0
   m_Name: Art
   m_TagString: Untagged
@@ -1525,31 +1617,6 @@ Transform:
   m_Father: {fileID: 1084900508}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &704370609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 704370607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7862e4cc267626346800e4e62d4a7a92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startUI: {fileID: 0}
-  infoUI: {fileID: 1787874248}
-  appManager: {fileID: 0}
-  NumOfTxt: 0
-  NumOfImg: 0
-  NumOfAud: 0
-  NumOfVid: 0
-  totalNum: 0
-  whiteBox: {fileID: 0}
-  tl: {fileID: 0}
-  br: {fileID: 0}
-  resoX: 0
-  resoY: 0
 --- !u!212 &704370610
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2104,8 +2171,6 @@ GameObject:
   - component: {fileID: 1084900514}
   - component: {fileID: 1084900513}
   - component: {fileID: 1084900512}
-  - component: {fileID: 1084900511}
-  - component: {fileID: 1084900510}
   - component: {fileID: 1084900509}
   m_Layer: 0
   m_Name: Cube (2)
@@ -2138,80 +2203,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1084900507}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57d4f6eab6985244e91fbcca5d868161, type: 3}
+  m_Script: {fileID: 11500000, guid: b2d0cbedb439ee24cbacab79bbc5ac18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: b71fe40163d901c4abbe825f10a24200, type: 3}
-  xPos: 718
-  yPos: -25
-  width: 400
-  height: 550
---- !u!114 &1084900510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1084900507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6b98c85716ceb44eb9270fcd370b87c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Text: The trees pictured here look to be western red cedars in the fall, which
-    may be where the name of this area comes from
-  x: -747
-  y: 58
-  width: 300
-  height: 330
-  fontSize: 36
-  boxPosX: -747
-  boxPosY: 56
-  boxWidth: 380
-  boxHeight: 400
-  tlx: -833
-  brx: -664
-  tly: 147
-  bry: -29
-  Text2: 
-  x2: 0
-  y2: 0
-  width2: 0
-  height2: 0
-  fontSize2: 0
-  boxPosX2: 0
-  boxPosY2: 0
-  boxWidth2: 0
-  boxHeight2: 0
-  tlx2: 0
-  brx2: 0
-  tly2: 0
-  bry2: 0
---- !u!114 &1084900511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1084900507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7862e4cc267626346800e4e62d4a7a92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  ui: {fileID: 1071975015884818870, guid: e7273dcf9c5a6fa4d8a241ceea1bd66f, type: 3}
   startUI: {fileID: 1381134472}
   infoUI: {fileID: 1787874248}
   appManager: {fileID: 595995913}
-  NumOfTxt: 1
-  NumOfImg: 1
-  NumOfAud: 0
-  NumOfVid: 0
-  totalNum: 0
-  whiteBox: {fileID: 21300000, guid: 9b92d9ee916c40a4e8a355de51686d06, type: 3}
-  tl: {fileID: 21300000, guid: 357ee2116e176c04b82b2ed2b1c8e8b2, type: 3}
-  br: {fileID: 21300000, guid: 8ccc23fc5fabc3842a87ce95f67db322, type: 3}
   resoX: 0
   resoY: 0
+  numOfThings: 2
 --- !u!65 &1084900512
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2418,8 +2419,6 @@ GameObject:
   - component: {fileID: 1259983941}
   - component: {fileID: 1259983940}
   - component: {fileID: 1259983939}
-  - component: {fileID: 1259983938}
-  - component: {fileID: 1259983937}
   - component: {fileID: 1259983936}
   m_Layer: 0
   m_Name: Cube (4)
@@ -2452,81 +2451,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1259983934}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57d4f6eab6985244e91fbcca5d868161, type: 3}
+  m_Script: {fileID: 11500000, guid: b2d0cbedb439ee24cbacab79bbc5ac18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 1aafb4f4d53b963488989c52da5f1cb0, type: 3}
-  xPos: -752
-  yPos: 70
-  width: 350
-  height: 450
---- !u!114 &1259983937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1259983934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6b98c85716ceb44eb9270fcd370b87c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Text: This piece, made by Clarence "Cal" Peters, is a depiction of the french trappers
-    navigating the red cedar with the natives.
-  x: 0
-  y: 309
-  width: 450
-  height: 210
-  fontSize: 36
-  boxPosX: -17
-  boxPosY: 309
-  boxWidth: 530
-  boxHeight: 280
-  tlx: -172.7
-  brx: 135.3
-  tly: 345.4
-  bry: 276.9
-  Text2: Clarence Peters was a colonial ruler, explorer, polititian, and author aside
-    from his art
-  x2: -751
-  y2: -309
-  width2: 300
-  height2: 250
-  fontSize2: 36
-  boxPosX2: -766
-  boxPosY2: -304
-  boxWidth2: 360
-  boxHeight2: 300
-  tlx2: -842.5
-  brx2: -692.5
-  tly2: -258.4
-  bry2: -344
---- !u!114 &1259983938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1259983934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7862e4cc267626346800e4e62d4a7a92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  ui: {fileID: 730758696785197611, guid: 4a22e6c451124564894aff2f91e5ff81, type: 3}
   startUI: {fileID: 1381134472}
   infoUI: {fileID: 1787874248}
   appManager: {fileID: 595995913}
-  NumOfTxt: 2
-  NumOfImg: 1
-  NumOfAud: 0
-  NumOfVid: 0
-  totalNum: 0
-  whiteBox: {fileID: 21300000, guid: 9b92d9ee916c40a4e8a355de51686d06, type: 3}
-  tl: {fileID: 21300000, guid: 357ee2116e176c04b82b2ed2b1c8e8b2, type: 3}
-  br: {fileID: 21300000, guid: 8ccc23fc5fabc3842a87ce95f67db322, type: 3}
   resoX: 0
   resoY: 0
+  numOfThings: 3
 --- !u!65 &1259983939
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2877,170 +2811,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1414041132}
   m_CullTransparentMesh: 1
---- !u!43 &1491529489
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: ImageTargetMesh25170
-  serializedVersion: 10
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 6
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 4
-    localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 3.048, y: 0, z: 0.9840505}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000001000200020001000300
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 4
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 24
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 128
-    _typelessdata: 6f1243c000000000bcea7bbf000000000000803f0000000000000000000000006f1243c000000000bcea7b3f000000000000803f00000000000000000000803f6f12434000000000bcea7bbf000000000000803f000000000000803f000000006f12434000000000bcea7b3f000000000000803f000000000000803f0000803f
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 3.048, y: 0, z: 0.9840505}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
 --- !u!1 &1598315603
 GameObject:
   m_ObjectHideFlags: 0
@@ -3128,7 +2898,6 @@ GameObject:
   - component: {fileID: 1623885185}
   - component: {fileID: 1623885184}
   - component: {fileID: 1623885183}
-  - component: {fileID: 1623885182}
   - component: {fileID: 1623885181}
   m_Layer: 0
   m_Name: Cube (3)
@@ -3161,63 +2930,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1623885179}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6b98c85716ceb44eb9270fcd370b87c, type: 3}
+  m_Script: {fileID: 11500000, guid: b2d0cbedb439ee24cbacab79bbc5ac18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: These are some natives that I don't know the exact group of. They seem like
-    they're vibin with the french guys
-  x: 0
-  y: 330
-  width: 420
-  height: 210
-  fontSize: 36
-  boxPosX: -5
-  boxPosY: 327
-  boxWidth: 500
-  boxHeight: 260
-  tlx: -147.1
-  brx: 132.5
-  tly: 355
-  bry: 304.2
-  Text2: 
-  x2: 0
-  y2: 0
-  width2: 0
-  height2: 0
-  fontSize2: 0
-  boxPosX2: 0
-  boxPosY2: 0
-  boxWidth2: 0
-  boxHeight2: 0
-  tlx2: 0
-  brx2: 0
-  tly2: 0
-  bry2: 0
---- !u!114 &1623885182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1623885179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7862e4cc267626346800e4e62d4a7a92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  ui: {fileID: 6542026804998135472, guid: 03b4d036da1fdb3408eb140e455ce616, type: 3}
   startUI: {fileID: 1381134472}
   infoUI: {fileID: 1787874248}
   appManager: {fileID: 595995913}
-  NumOfTxt: 1
-  NumOfImg: 0
-  NumOfAud: 0
-  NumOfVid: 0
-  totalNum: 0
-  whiteBox: {fileID: 21300000, guid: 9b92d9ee916c40a4e8a355de51686d06, type: 3}
-  tl: {fileID: 21300000, guid: 357ee2116e176c04b82b2ed2b1c8e8b2, type: 3}
-  br: {fileID: 21300000, guid: 8ccc23fc5fabc3842a87ce95f67db322, type: 3}
   resoX: 0
   resoY: 0
+  numOfThings: 1
 --- !u!65 &1623885183
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3623,7 +3345,6 @@ GameObject:
   - component: {fileID: 1756113225}
   - component: {fileID: 1756113224}
   - component: {fileID: 1756113223}
-  - component: {fileID: 1756113222}
   - component: {fileID: 1756113221}
   m_Layer: 0
   m_Name: Cube (1)
@@ -3656,62 +3377,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1756113219}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6b98c85716ceb44eb9270fcd370b87c, type: 3}
+  m_Script: {fileID: 11500000, guid: b2d0cbedb439ee24cbacab79bbc5ac18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: White Guys, just chillin in a boat, bein french, trapping stuff
-  x: -777
-  y: 281
-  width: 290
-  height: 210
-  fontSize: 36
-  boxPosX: -790
-  boxPosY: 302
-  boxWidth: 350
-  boxHeight: 220
-  tlx: -862.3
-  brx: -720.7
-  tly: 311.7
-  bry: 296.4
-  Text2: Their boats do be kinda sick tho, like they in that gucci
-  x2: 744
-  y2: -212
-  width2: 230
-  height2: 220
-  fontSize2: 36
-  boxPosX2: 743.6
-  boxPosY2: -188.3
-  boxWidth2: 290
-  boxHeight2: 225
-  tlx2: 699.5
-  brx2: 784.6
-  tly2: -176.3
-  bry2: -196.6
---- !u!114 &1756113222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1756113219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7862e4cc267626346800e4e62d4a7a92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  ui: {fileID: 9065084441844343307, guid: 1e735b0e9a7f1bb4ca10a75462aad3f1, type: 3}
   startUI: {fileID: 1381134472}
   infoUI: {fileID: 1787874248}
   appManager: {fileID: 595995913}
-  NumOfTxt: 2
-  NumOfImg: 0
-  NumOfAud: 0
-  NumOfVid: 0
-  totalNum: 0
-  whiteBox: {fileID: 21300000, guid: 9b92d9ee916c40a4e8a355de51686d06, type: 3}
-  tl: {fileID: 21300000, guid: 357ee2116e176c04b82b2ed2b1c8e8b2, type: 3}
-  br: {fileID: 21300000, guid: 8ccc23fc5fabc3842a87ce95f67db322, type: 3}
   resoX: 0
   resoY: 0
+  numOfThings: 2
 --- !u!65 &1756113223
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3870,7 +3545,7 @@ GameObject:
   - component: {fileID: 1787874250}
   - component: {fileID: 1787874249}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: InfoUI
   m_TagString: InfoUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3972,35 +3647,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!21 &1808790346
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'UW_Stout_French_Trappers_on_the_Red_CedarMaterial
-
-    25440'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 0f98326918354aa8b1ec949835ce9949, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &1864028726
 GameObject:
   m_ObjectHideFlags: 0
@@ -4029,7 +3675,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1864028726}
-  m_Mesh: {fileID: 3634292}
+  m_Mesh: {fileID: 354915439}
 --- !u!23 &1864028728
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4049,7 +3695,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1808790346}
+  - {fileID: 154021870}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4137,6 +3783,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!21 &1880441176
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'UW_Stout_Perraults_Trading_FortMaterial
+
+    32284'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 2fd4689b7fb74a9284a52aba75e4160c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1891198949
 GameObject:
   m_ObjectHideFlags: 0
@@ -4222,7 +3897,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1911882473}
   - component: {fileID: 1911882475}
-  - component: {fileID: 1911882474}
   m_Layer: 0
   m_Name: Contro
   m_TagString: Untagged
@@ -4244,31 +3918,6 @@ Transform:
   m_Father: {fileID: 1756113220}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &1911882474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1911882472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7862e4cc267626346800e4e62d4a7a92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startUI: {fileID: 0}
-  infoUI: {fileID: 1787874248}
-  appManager: {fileID: 0}
-  NumOfTxt: 0
-  NumOfImg: 0
-  NumOfAud: 0
-  NumOfVid: 0
-  totalNum: 0
-  whiteBox: {fileID: 0}
-  tl: {fileID: 0}
-  br: {fileID: 0}
-  resoX: 0
-  resoY: 0
 --- !u!212 &1911882475
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4320,35 +3969,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!21 &1944011118
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'UW_Stout_Perraults_Trading_FortMaterial
-
-    25180'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 2fd4689b7fb74a9284a52aba75e4160c, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &1984448519
 GameObject:
   m_ObjectHideFlags: 0

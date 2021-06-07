@@ -79,7 +79,7 @@ public class GenerateUI : MonoBehaviour
             myGO.AddComponent<CanvasScaler>(); //adds a canvas scaler to the myGO object
             myGO.AddComponent<GraphicRaycaster>(); //adds a graphic raycaster to the myGO object
 
-            appManager.GetComponent<GameManagerScript>().tempUI = myGO; //has the app manager set its tempUI value within its game manager script to myGO
+            appManager.GetComponent<GameManagerScript>().tempUI = myGO.GetComponent<Canvas>(); //has the app manager set its tempUI value within its game manager script to myGO
 
             //if the NumOfTxt int is greater than 0
             if (NumOfTxt > 0)

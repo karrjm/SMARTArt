@@ -39,10 +39,17 @@ public class TextData : MonoBehaviour
     public float tly2; //stores the y pos of the 2nd top corner
     public float bry2; //stores the y pos of the 2nd bottom corner
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
+    }
+
+    private void Awake()
+    {
+
     }
 
     // Update is called once per frame
@@ -50,4 +57,6 @@ public class TextData : MonoBehaviour
     {
         
     }
+
+    
 }
