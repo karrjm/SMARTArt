@@ -1,9 +1,8 @@
-using UnityEngine;
-using UnityEngine.EventSystems;
+﻿using UnityEngine;
 
 namespace TallahasseePrototype.Scripts
 {
-    public class CardStack : MonoBehaviour, IDragHandler, IEndDragHandler
+    public class CardStack : MonoBehaviour
     {
         [SerializeField] private float cardMoveSpeed = 8f;
         [SerializeField] private int cardZMultiplier = 32;
@@ -33,20 +32,6 @@ namespace TallahasseePrototype.Scripts
             MoveCards();
         }
 
-        // must implement or IEndDragHandler will not work
-        public void OnDrag(PointerEventData eventData)
-        {
-        }
-
-        public void OnEndDrag(PointerEventData eventData)
-        {
-            Vector3 dragVectorDirection = (eventData.position - eventData.pressPosition).normalized;
-            GetDragDirection(dragVectorDirection);
-            if (GetDragDirection(dragVectorDirection) == DraggedDirection.Left)
-                _cardArrayOffset--;
-            else if (GetDragDirection(dragVectorDirection) == DraggedDirection.Right) _cardArrayOffset++;
-        }
-
         private void MoveCards()
         {
             // This loop moves the cards.
@@ -58,8 +43,18 @@ namespace TallahasseePrototype.Scripts
                 cards[i].localPosition = _cardPositions[i + _cardArrayOffset];
 
                 // This disables interaction with cards that are not on top of the stack.
-                cards[i].GetComponent<CanvasGroup>().interactable = Mathf.Approximately(0f, cards[i].localPosition.x);
+                cards[i].GetComponent<CanvasGroup>().interactable = cards[i].localPosition.x == 0;
             }
+        }
+
+        public void IncreaseOffset()
+        {
+            _cardArrayOffset++;
+        }
+
+        public void DecreaseOffset()
+        {
+            _cardArrayOffset--;
         }
 
         private void CardInit()
@@ -77,27 +72,6 @@ namespace TallahasseePrototype.Scripts
             // This loop is for cards outside of the stack.
             for (var i = cards.Length; i < _cardPositions.Length; i++)
                 _cardPositions[i] = new Vector3(usedCardXPos + 4 * (i - cards.Length), 0, -2 + -2 * (i - cards.Length));
-        }
-
-        private static DraggedDirection GetDragDirection(Vector3 dragVector)
-        {
-            var positiveX = Mathf.Abs(dragVector.x);
-            var positiveY = Mathf.Abs(dragVector.y);
-            DraggedDirection draggedDir;
-            if (positiveX > positiveY)
-                draggedDir = dragVector.x > 0 ? DraggedDirection.Right : DraggedDirection.Left;
-            else
-                draggedDir = dragVector.y > 0 ? DraggedDirection.Up : DraggedDirection.Down;
-
-            return draggedDir;
-        }
-
-        private enum DraggedDirection
-        {
-            Up,
-            Down,
-            Right,
-            Left
         }
     }
 }
