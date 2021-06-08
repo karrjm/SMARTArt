@@ -48,7 +48,7 @@ namespace TallahasseePrototype.Scripts
                     Time.deltaTime * cardMoveSpeed);
                 if (!(Mathf.Abs(cards[i].localPosition.x - _cardPositions[i + _cardArrayOffset].x) < 0.01f)) continue;
                 cards[i].localPosition = _cardPositions[i + _cardArrayOffset];
-
+                
                 // This disables interaction with cards that are not on top of the stack.
                 cards[i].GetComponent<CanvasGroup>().interactable = cards[i].localPosition.x == 0;
             }
