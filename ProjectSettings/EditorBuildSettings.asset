@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/TallahasseePrototype/Scenes/JakeScene.unity
+  - enabled: 1
+    path: Assets/TallahasseePrototype/Scenes/ImageTargetScene.unity
     guid: c5deff9179597944eaec105008bb0a23
   - enabled: 0
     path: Assets/Brian Stuff/BlankAR.unity
     guid: 6bdce89659816455b9f906fc62d19910
-  - enabled: 1
+  - enabled: 0
     path: Assets/Brian Stuff/Miami.unity
     guid: 2860fec1275c1e64fa3819fc3b6d931b
   m_configObjects:

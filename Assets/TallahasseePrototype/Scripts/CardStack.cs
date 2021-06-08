@@ -12,12 +12,19 @@ namespace TallahasseePrototype.Scripts
 
         private int _cardArrayOffset;
         private Vector3[] _cardPositions;
+        private int _lower;
+        private int _upper;
         private int _xPowerDifference;
+
+        private void Awake()
+        {
+            _lower = cards.GetLowerBound(0);
+            _upper = cards.GetUpperBound(0);
+            _xPowerDifference = 9 - cards.Length;
+        }
 
         private void Start()
         {
-            _xPowerDifference = 9 - cards.Length;
-
             if (useDefaultUsedXPos)
             {
                 var cardWidth = (int) cards[0].GetComponent<RectTransform>().rect.width;
@@ -49,12 +56,12 @@ namespace TallahasseePrototype.Scripts
 
         public void IncreaseOffset()
         {
-            _cardArrayOffset++;
+            if (_cardArrayOffset < _upper) _cardArrayOffset++;
         }
 
         public void DecreaseOffset()
         {
-            _cardArrayOffset--;
+            if (_cardArrayOffset > _lower) _cardArrayOffset--;
         }
 
         private void CardInit()
