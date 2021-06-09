@@ -30,20 +30,12 @@ public class HelpUI : MonoBehaviour
         {
             helpButton.GetComponent<Image>().sprite = xButtonSprite;
             gameObject.transform.GetChild(1).gameObject.SetActive(true);
-            gameObject.transform.GetChild(2).gameObject.SetActive(true);
-            gameObject.transform.GetChild(3).gameObject.SetActive(true);
-            gameObject.transform.GetChild(4).gameObject.SetActive(true);
-            gameObject.transform.GetChild(5).gameObject.SetActive(true);
             UIactive = true;
         }
         else
         {
             helpButton.GetComponent<Image>().sprite = helpButtonSprite;
             gameObject.transform.GetChild(1).gameObject.SetActive(false);
-            gameObject.transform.GetChild(2).gameObject.SetActive(false);
-            gameObject.transform.GetChild(3).gameObject.SetActive(false);
-            gameObject.transform.GetChild(4).gameObject.SetActive(false);
-            gameObject.transform.GetChild(5).gameObject.SetActive(false);
             UIactive = false;
         }
     }
