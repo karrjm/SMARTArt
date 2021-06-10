@@ -19,8 +19,12 @@ namespace TallahasseePrototype.Scripts
 
         public void OnEndDrag(PointerEventData eventData)
         {
+            // current swipe
             Vector3 dragVectorDirection = (eventData.position - eventData.pressPosition).normalized;
+            
+            // get direction of current swipe
             GetDragDirection(dragVectorDirection);
+            
             if (GetDragDirection(dragVectorDirection) == DraggedDirection.Left)
                 // _cardArrayOffset--
                 CardStack.DecreaseOffset();
