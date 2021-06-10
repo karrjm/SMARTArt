@@ -24,7 +24,6 @@ public class GameManagerScript : MonoBehaviour
 
     public void Dismiss()//declaration of the Dismiss function
     {
-        selectedPanel.GetComponent<NewGenUI>().numOfThings = 0;
         Destroy(GameObject.Find("TestCanvas")); //destroy the game object in scene called "TestCanvas"
         infoUI.SetActive(false); //set the infoUI object to inactive
         startUI.SetActive(true);
