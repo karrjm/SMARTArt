@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 namespace TallahasseePrototype.Scripts
 {
-    public class CardHandler : MonoBehaviour, IDragHandler, IEndDragHandler
+    public class DragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     {
         private CardStack CardStack { get; set; }
 
@@ -33,6 +33,7 @@ namespace TallahasseePrototype.Scripts
                 CardStack.IncreaseOffset();
         }
 
+        // determine the direction of a drag
         private static DraggedDirection GetDragDirection(Vector3 dragVector)
         {
             var positiveX = Mathf.Abs(dragVector.x);
