@@ -11,7 +11,7 @@ public class NewGenUI : MonoBehaviour
     public GameObject infoUI; //the gameobject variable holding the constant UI
     public GameObject appManager; //the gameobject variable holding the app manager
 
-    GameObject myGO; //the gameObject that crteates the temporary canvas
+    GameObject myGO; //the gameObject that creates the temporary canvas
 
     public float resoX; //stores the x value of the current screen resolution
     public float resoY; //stores the y value of the current screen resolution
