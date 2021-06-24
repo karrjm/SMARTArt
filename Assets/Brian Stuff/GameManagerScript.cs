@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManagerScript : MonoBehaviour
 {
-    public GameObject startUI;
+    //public GameObject startUI;
     public GameObject infoUI; //the variable holding the infoUI, or the constant UI that stays the same
     public Canvas tempUI; //the variable holding the tempUI, or the variable UI that changes 
     public GameObject selectedPanel;
@@ -26,7 +26,7 @@ public class GameManagerScript : MonoBehaviour
     {
         Destroy(GameObject.Find("TestCanvas")); //destroy the game object in scene called "TestCanvas"
         infoUI.SetActive(false); //set the infoUI object to inactive
-        startUI.SetActive(true);
+        //startUI.SetActive(true);
     }
 
     public void Refresh()

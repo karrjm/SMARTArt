@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Brian_Stuff;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,21 +34,34 @@ public class TakeAway : MonoBehaviour
 
     public void TakeSlides()
     {
-        infoUI.SetActive(true);
-        myGO = new GameObject(); //sets the myGO object as a new game object
-        myGO.name = "TestCanvas"; //names the myGO object "TestCanvas" in the heirarchy
-        myGO.AddComponent<CanvasScaler>();
-        myGO.GetComponent<Canvas>().renderMode = infoUI.GetComponent<Canvas>().renderMode;
-        resoX = (float)Screen.currentResolution.width; //sets resoX to the current x value of the screen resolution
-        resoY = (float)Screen.currentResolution.height; //sets resoY to the current y value of the screen resolution
-        myGO.GetComponent<CanvasScaler>().uiScaleMode = infoUI.GetComponent<CanvasScaler>().uiScaleMode;
-        myGO.GetComponent<CanvasScaler>().referenceResolution = new Vector2(resoX, resoY);  //sets the reference resolution of myGO canvas to the same x and y values as resoX and resoY
+        if (!infoUI.activeSelf)
+        {
+            infoUI.SetActive(true);
+            
+            myGO = new GameObject(); //sets the myGO object as a new game object
+            myGO.name = "TestCanvas"; //names the myGO object "TestCanvas" in the heirarchy
+            myGO.AddComponent<CanvasScaler>();
+            myGO.AddComponent<GraphicRaycaster>();
+            myGO.GetComponent<Canvas>().renderMode = infoUI.GetComponent<Canvas>().renderMode;
+            resoX = (float) Screen.currentResolution.width; //sets resoX to the current x value of the screen resolution
+            resoY = (float) Screen.currentResolution.height; //sets resoY to the current y value of the screen resolution
+            myGO.GetComponent<CanvasScaler>().uiScaleMode = infoUI.GetComponent<CanvasScaler>().uiScaleMode;
+            myGO.GetComponent<CanvasScaler>().referenceResolution =
+                new Vector2(resoX,
+                    resoY); //sets the reference resolution of myGO canvas to the same x and y values as resoX and resoY
 
-        GameObject spawnStack = Instantiate(cardStack);
-        spawnStack.transform.parent = GameObject.Find("TestCanvas").transform;
-        spawnStack.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 0f);
-        spawnStack.GetComponent<RectTransform>().localScale = new Vector3(450f, 450f, 450f);
-        infoUI.SetActive(false);
+            GameObject spawnStack = Instantiate(cardStack.GetComponent<CardStackTest>()
+                .cards[cardStack.GetComponent<CardStackTest>()._cardArrayOffset].GetChild(0).gameObject);
+
+            spawnStack.transform.parent = GameObject.Find("TestCanvas").transform;
+            spawnStack.GetComponent<RectTransform>().anchoredPosition = new Vector3(0f, -50f, 0f);
+            spawnStack.GetComponent<RectTransform>().rotation = Quaternion.Euler(0f, 0f, 0f);
+            spawnStack.GetComponent<RectTransform>().localScale = new Vector3(0.9f, 0.9f, 0.9f);
+
+            spawnStack.AddComponent<Draggable>();
+            spawnStack.AddComponent<PinchZoom>();
+        }
+
     }
 
     /*
