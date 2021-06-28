@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//SCRIPT MAY NOT BE USED IN FINAL VERSION OF THE APP
 public class NewGenUI : MonoBehaviour
 {
     public Canvas ui;

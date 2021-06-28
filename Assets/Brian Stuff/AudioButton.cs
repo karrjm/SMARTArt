@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//DO NOT KNOW IF SCRIPT WILL BE IN FINAL VERSION OF APP
+
 public class AudioButton : MonoBehaviour
 {
     public AudioSource aud;

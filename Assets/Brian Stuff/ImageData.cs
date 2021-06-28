@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//SCRIPT MAY NOT BE USED IN FINAL VERSION OF THE APP
 public class ImageData : MonoBehaviour
 {
     public Sprite image; //stores the sprite image for the image to be used

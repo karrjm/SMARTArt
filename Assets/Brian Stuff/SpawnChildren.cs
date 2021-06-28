@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//SCRIPT MAY NOT BE USED IN FINAL VERSION OF THE APP
 public class SpawnChildren : MonoBehaviour
 {
     public bool childrenActive = true;

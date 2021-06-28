@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//SCRIPT MAY NOT BE USED IN FINAL VERSION OF THE APP
 public class TextData : MonoBehaviour
 {
     public string Text; //stores the text data of 1st textbox

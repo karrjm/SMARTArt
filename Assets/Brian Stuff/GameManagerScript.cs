@@ -7,7 +7,7 @@ public class GameManagerScript : MonoBehaviour
     //public GameObject startUI;
     public GameObject infoUI; //the variable holding the infoUI, or the constant UI that stays the same
     public Canvas tempUI; //the variable holding the tempUI, or the variable UI that changes 
-    public GameObject selectedPanel;
+    public GameObject selectedPanel; //the currently selected panel, only has a value during runtime
 
     public bool childrenActive = false;
     // Start is called before the first frame update

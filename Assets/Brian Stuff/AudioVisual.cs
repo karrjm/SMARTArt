@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//DONT KNOW IF SCRIPT WILL BE IN FINAL VERSION OF APP
 namespace Brian_Stuff
 {
     public class AudioVisual : MonoBehaviour

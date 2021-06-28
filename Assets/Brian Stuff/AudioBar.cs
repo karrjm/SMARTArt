@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//DO NOT KNOW IF THIS SCRIPT WILL BE IN FINAL VERSION OF APP
 public class AudioBar : MonoBehaviour
 {
     private RectTransform currentPos;

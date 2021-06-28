@@ -9,7 +9,7 @@ namespace Brian_Stuff
 
         private void Awake()
         {
-            CardStack = gameObject.GetComponent<CardStackTest>();
+            CardStack = gameObject.GetComponent<CardStackTest>(); //set the previously declared CardStack variable to the card stack script attached to the object
         }
 
         // must implement or IEndDragHandler will not work
