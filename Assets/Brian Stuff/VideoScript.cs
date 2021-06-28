@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.UI;
 
+//SCRIPT MAY NOT BE USED IN FINAL VERSION OF THE APP
 public class VideoScript : MonoBehaviour
 {
 

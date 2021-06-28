@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Brian Stuff/Miami.unity
     guid: 2860fec1275c1e64fa3819fc3b6d931b
-  - enabled: 0
+  - enabled: 1
     path: Assets/TallahasseePrototype/Scenes/Test.unity
     guid: 5efe328d48a0fb540ae98abe447b1850
   - enabled: 1
