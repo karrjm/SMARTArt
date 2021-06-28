@@ -21,10 +21,10 @@ namespace TallahasseePrototype.Scripts
         {
             // current swipe
             Vector3 dragVectorDirection = (eventData.position - eventData.pressPosition).normalized;
-            
+
             // get direction of current swipe
             GetDragDirection(dragVectorDirection);
-            
+
             if (GetDragDirection(dragVectorDirection) == DraggedDirection.Left)
                 // _cardArrayOffset--
                 CardStack.DecreaseOffset();
