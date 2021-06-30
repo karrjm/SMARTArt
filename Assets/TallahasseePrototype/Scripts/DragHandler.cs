@@ -5,11 +5,11 @@ namespace TallahasseePrototype.Scripts
 {
     public class DragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     {
-        private CardStack CardStack { get; set; }
+        private CardStack cardStack;
 
         private void Awake()
         {
-            CardStack = gameObject.GetComponent<CardStack>();
+            cardStack = gameObject.GetComponent<CardStack>();
         }
 
         // must implement or IEndDragHandler will not work
@@ -19,18 +19,24 @@ namespace TallahasseePrototype.Scripts
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            // current swipe
+            // current, most recent swipe
             Vector3 dragVectorDirection = (eventData.position - eventData.pressPosition).normalized;
 
-            // get direction of current swipe
-            GetDragDirection(dragVectorDirection);
+            // get direction of that swipe
+            var direction = GetDragDirection(dragVectorDirection);
 
-            if (GetDragDirection(dragVectorDirection) == DraggedDirection.Left)
-                // _cardArrayOffset--
-                CardStack.DecreaseOffset();
-            else if (GetDragDirection(dragVectorDirection) == DraggedDirection.Right)
-                //_cardArrayOffset++;
-                CardStack.IncreaseOffset();
+            switch (direction)
+            {
+                case DraggedDirection.Left:
+                    cardStack.DecreaseOffset();
+                    break;
+                case DraggedDirection.Right:
+                    cardStack.IncreaseOffset();
+                    break;
+                case DraggedDirection.Down:
+                    cardStack.gameObject.SetActive(false);
+                    break;
+            }
         }
 
         // determine the direction of a drag
