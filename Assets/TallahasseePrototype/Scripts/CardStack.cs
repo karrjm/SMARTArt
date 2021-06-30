@@ -68,17 +68,25 @@ namespace TallahasseePrototype.Scripts
         {
             cardPositions = new Vector3[cards.Length * 2 - 1];
 
-            // This loop is for cards still in the stack.		
-            for (var i = cards.Length; i > -1; i--)
-                if (i < cards.Length - 1)
-                    cardPositions[i] = new Vector3(-Mathf.Pow(2, i + xPowerDifference) + cardPositions[i + 1].x, 0,
-                        cardZMultiplier * Mathf.Abs(i + 1 - cards.Length));
-                else
-                    cardPositions[i] = Vector3.zero;
+            if (cardPositions.Length < 2)
+            {
+                cardPositions[0] = Vector3.zero;
+            }
+            else
+            {
+                // This loop is for cards still in the stack.		
+                for (var i = cards.Length; i > -1; i--)
+                    if (i < cards.Length - 1)
+                        cardPositions[i] = new Vector3(-Mathf.Pow(2, i + xPowerDifference) + cardPositions[i + 1].x, 0,
+                            cardZMultiplier * Mathf.Abs(i + 1 - cards.Length));
+                    else
+                        cardPositions[i] = Vector3.zero;
 
-            // This loop is for cards outside of the stack.
-            for (var i = cards.Length; i < cardPositions.Length; i++)
-                cardPositions[i] = new Vector3(usedCardXPos + 4 * (i - cards.Length), 0, -2 + -2 * (i - cards.Length));
+                // This loop is for cards outside of the stack.
+                for (var i = cards.Length; i < cardPositions.Length; i++)
+                    cardPositions[i] = new Vector3(usedCardXPos + 4 * (i - cards.Length), 0,
+                        -2 + -2 * (i - cards.Length));
+            }
         }
     }
 }
