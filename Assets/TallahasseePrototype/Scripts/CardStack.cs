@@ -9,7 +9,7 @@ namespace TallahasseePrototype.Scripts
         [SerializeField] private int cardZMultiplier = 32;
         [SerializeField] private bool useDefaultUsedXPos = true;
         [SerializeField] private int usedCardXPos = 1280;
-        [SerializeField] private Transform[] cards;
+        [SerializeField] public Transform[] cards;
 
         private int cardArrayOffset;
         private Vector3[] cardPositions;
