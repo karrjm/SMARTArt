@@ -2,7 +2,7 @@
 
 namespace TallahasseePrototype.Scripts
 {
-    public class CardStack : MonoBehaviour
+    public class PoiStack : MonoBehaviour
     {
         [SerializeField] private float cardMoveSpeed = 8f;
         [SerializeField] private int cardZMultiplier = 32;
@@ -13,7 +13,6 @@ namespace TallahasseePrototype.Scripts
         private int cardArrayOffset;
         private Vector3[] cardPositions;
         private int lower;
-        private UIFader uiFader;
         private int upper;
         private int xPowerDifference;
 
@@ -22,8 +21,6 @@ namespace TallahasseePrototype.Scripts
             lower = cards.GetLowerBound(0);
             upper = cards.GetUpperBound(0);
             xPowerDifference = 9 - cards.Length;
-
-            uiFader = gameObject.GetComponent<UIFader>();
         }
 
         private void Start()
@@ -52,19 +49,8 @@ namespace TallahasseePrototype.Scripts
                 if (!(Mathf.Abs(cards[i].localPosition.x - cardPositions[i + cardArrayOffset].x) < 0.01f)) continue;
                 cards[i].localPosition = cardPositions[i + cardArrayOffset];
 
-                var cg = cards[i].gameObject.GetComponent<CanvasGroup>();
                 // This disables interaction with cards that are not on top of the stack.
-                if (cards[i].localPosition.x == 0)
-                {
-                    cg.interactable = true;
-                    // uiFader.FadeIn(cg);
-                }
-                else
-                {
-                    cg.interactable = false;
-                    // uiFader.FadeOut(cg);
-                    // cards[i].gameObject.SetActive(false);
-                }
+                cards[i].gameObject.GetComponent<CanvasGroup>().interactable = cards[i].localPosition.x == 0;
             }
         }
 

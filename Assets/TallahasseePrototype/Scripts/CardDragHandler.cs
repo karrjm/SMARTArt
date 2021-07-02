@@ -1,11 +1,9 @@
-using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
 
 namespace TallahasseePrototype.Scripts
 {
-    public class DragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
+    public class CardDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     {
         private CardStack cardStack;
 
@@ -27,11 +25,18 @@ namespace TallahasseePrototype.Scripts
             // get direction of that swipe
             var direction = GetDragDirection(dragVectorDirection);
 
-            if (direction == DraggedDirection.Left)
-                cardStack.DecreaseOffset();
-            else if (direction == DraggedDirection.Right)
-                cardStack.IncreaseOffset();
-            else if (direction == DraggedDirection.Down) cardStack.gameObject.SetActive(false);
+            switch (direction)
+            {
+                case DraggedDirection.Left:
+                    cardStack.DecreaseOffset();
+                    break;
+                case DraggedDirection.Right:
+                    cardStack.IncreaseOffset();
+                    break;
+                case DraggedDirection.Down:
+                    cardStack.gameObject.SetActive(false);
+                    break;
+            }
         }
 
         // determine the direction of a drag
@@ -39,25 +44,20 @@ namespace TallahasseePrototype.Scripts
         {
             var positiveX = Mathf.Abs(dragVector.x); // min swipe dist?
             var positiveY = Mathf.Abs(dragVector.y); // min swipe dist?
-            var draggedDir = DraggedDirection.None;
+            DraggedDirection draggedDir;
             if (positiveX > positiveY)
-            {
                 draggedDir = dragVector.x > 0 ? DraggedDirection.Right : DraggedDirection.Left;
-            }
             else
-            {
-                draggedDir = dragVector.y > 0 ? DraggedDirection.Up : DraggedDirection.Down;
-            }
+                draggedDir = DraggedDirection.Down;
+
             return draggedDir;
         }
 
         private enum DraggedDirection
         {
-            Up,
             Down,
             Right,
-            Left,
-            None
+            Left
         }
     }
 }
