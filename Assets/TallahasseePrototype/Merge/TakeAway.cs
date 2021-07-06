@@ -41,7 +41,8 @@ namespace TallahasseePrototype.Merge
                 {
                     cardStack.GetComponent<ScreenspaceCardStack>().cards[i] = Instantiate(gameObject.transform.GetChild(cardNum - 1 - i));
                     cardStack.GetComponent<ScreenspaceCardStack>().cards[i].transform.parent = cardStack.transform;
-                    cardStack.GetComponent<ScreenspaceCardStack>().cards[i].GetComponent<RectTransform>().localScale = new Vector3(1000f, 1000f, 1f);
+                    cardStack.GetComponent<ScreenspaceCardStack>().cards[i].GetComponent<RectTransform>().localScale = new Vector3(800f, 800f, 1f);
+                    cardStack.GetComponent<ScreenspaceCardStack>().cards[i].GetComponent<CanvasGroup>().alpha = 1f;
                 }
             
                 myGO.SetActive(true);
