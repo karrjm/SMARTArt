@@ -96,8 +96,9 @@ namespace TallahasseePrototype.Scripts
 
                 // This loop is for cards outside of the stack.
                 for (var i = cards.Length; i < cardPositions.Length; i++)
-                    cardPositions[i] = new Vector3(usedCardXPos + 4 * (i - cards.Length), 0,
-                        -2 + -2 * (i - cards.Length));
+                    cardPositions[i] = new Vector3(Mathf.Pow(2,xPowerDifference) + cardPositions[i - 1].x, 0,
+                        cardZMultiplier * Mathf.Abs(i + 1 - cards.Length));
+                    // cardPositions[i] = new Vector3(usedCardXPos + 4 * (i - cards.Length), 0,-2 + -2 * (i - cards.Length));
             }
         }
     }
