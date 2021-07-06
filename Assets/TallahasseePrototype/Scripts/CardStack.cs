@@ -15,13 +15,12 @@ namespace TallahasseePrototype.Scripts
         private int lower;
         private UIFader uiFader;
         private int upper;
-        private int xPowerDifference;
+        private int xPowerDifference = 1;
 
         private void Awake()
         {
             lower = cards.GetLowerBound(0);
             upper = cards.GetUpperBound(0);
-            xPowerDifference = 9 - cards.Length;
 
             uiFader = gameObject.GetComponent<UIFader>();
         }
@@ -57,13 +56,12 @@ namespace TallahasseePrototype.Scripts
                 if (cards[i].localPosition.x == 0)
                 {
                     cg.interactable = true;
-                    // uiFader.FadeIn(cg);
+                    uiFader.FadeIn(cg);
                 }
                 else
                 {
                     cg.interactable = false;
-                    // uiFader.FadeOut(cg);
-                    // cards[i].gameObject.SetActive(false);
+                    uiFader.FadeOut(cg);
                 }
             }
         }
@@ -91,7 +89,7 @@ namespace TallahasseePrototype.Scripts
                 // This loop is for cards still in the stack.		
                 for (var i = cards.Length; i > -1; i--)
                     if (i < cards.Length - 1)
-                        cardPositions[i] = new Vector3(-Mathf.Pow(2, i + xPowerDifference) + cardPositions[i + 1].x, 0,
+                        cardPositions[i] = new Vector3(-Mathf.Pow(2,xPowerDifference) + cardPositions[i + 1].x, 0,
                             cardZMultiplier * Mathf.Abs(i + 1 - cards.Length));
                     else
                         cardPositions[i] = Vector3.zero;
