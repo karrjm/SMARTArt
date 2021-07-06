@@ -9,19 +9,17 @@ namespace TallahasseePrototype.Scripts
         [SerializeField] private bool useDefaultUsedXPos = true;
         [SerializeField] private int usedCardXPos = 1280;
         [SerializeField] public Transform[] cards;
-
         private int cardArrayOffset;
         private Vector3[] cardPositions;
         private int lower;
-        private UIFader uiFader;
         private int upper;
-        private int xPowerDifference = 1;
+        private readonly int xPowerDifference = 1;
+        private UIFader uiFader;
 
         private void Awake()
         {
             lower = cards.GetLowerBound(0);
             upper = cards.GetUpperBound(0);
-
             uiFader = gameObject.GetComponent<UIFader>();
         }
 
