@@ -1,15 +1,15 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Brian_Stuff
+namespace TallahasseePrototype.Merge
 {
-    public class DragHandlerTest : MonoBehaviour, IDragHandler, IEndDragHandler
+    public class ScreenspaceDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     {
-        private CardStackTest CardStack { get; set; }
+        private ScreenspaceCardStack ScreenspaceCardStack { get; set; }
 
         private void Awake()
         {
-            CardStack = gameObject.GetComponent<CardStackTest>(); //set the previously declared CardStack variable to the card stack script attached to the object
+            ScreenspaceCardStack = gameObject.GetComponent<ScreenspaceCardStack>(); //set the previously declared CardStack variable to the card stack script attached to the object
         }
 
         // must implement or IEndDragHandler will not work
@@ -27,10 +27,10 @@ namespace Brian_Stuff
             
             if (GetDragDirection(dragVectorDirection) == DraggedDirection.Left)
                 // _cardArrayOffset--
-                CardStack.DecreaseOffset();
+                ScreenspaceCardStack.DecreaseOffset();
             else if (GetDragDirection(dragVectorDirection) == DraggedDirection.Right)
                 //_cardArrayOffset++;
-                CardStack.IncreaseOffset();
+                ScreenspaceCardStack.IncreaseOffset();
         }
 
         // determine the direction of a drag

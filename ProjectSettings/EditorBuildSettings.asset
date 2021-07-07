@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/TallahasseePrototype/Scenes/Test.unity
     guid: 5efe328d48a0fb540ae98abe447b1850
-  - enabled: 0
+  - enabled: 1
     path: Assets/TallahasseePrototype/Scenes/poiScene.unity
     guid: 55285856f2f95064f86264e63110d559
   - enabled: 1

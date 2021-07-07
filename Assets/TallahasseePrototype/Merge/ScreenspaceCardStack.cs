@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Brian_Stuff
+namespace TallahasseePrototype.Merge
 {
-    public class CardStackTest : MonoBehaviour
+    public class ScreenspaceCardStack : MonoBehaviour
     {
         [SerializeField] private float cardMoveSpeed = 8f;
         [SerializeField] private int cardZMultiplier = 32;

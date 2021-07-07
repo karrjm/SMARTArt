@@ -15,24 +15,16 @@ namespace TallahasseePrototype.Scripts
             StartCoroutine(FadeCanvasGroup(canvasGroup, canvasGroup.alpha, 0));
         }
 
-        private IEnumerator FadeCanvasGroup(CanvasGroup cg, float start, float end, float lerpTime = 0.5f)
+        private IEnumerator FadeCanvasGroup(CanvasGroup cg, float start, float end, float duration = 0.1f)
         {
-            var timeStartedLerping = Time.time;
-
-            while (true)
+            var elapsedTime = 0f;
+            while (elapsedTime <= duration)
             {
-                var percentageComplete = timeStartedLerping / lerpTime;
-                var currentValue = Mathf.Lerp(start, end, percentageComplete);
-
-                cg.alpha = currentValue;
-
-                if (percentageComplete >= 1)
-                {
-                    break;
-                }
-                
-                yield return new WaitForEndOfFrame();
+                elapsedTime += Time.deltaTime;
+                cg.alpha = Mathf.Lerp(start, end, elapsedTime / duration);
+                yield return null;
             }
+            cg.alpha = end;
         }
     }
 }
