@@ -6,14 +6,12 @@ namespace TallahasseePrototype.Scripts
     {
         [SerializeField] private float cardMoveSpeed = 8f;
         [SerializeField] private int cardZMultiplier = 32;
-        [SerializeField] private bool useDefaultUsedXPos = true;
-        [SerializeField] private int usedCardXPos = 1280;
         [SerializeField] public Transform[] cards;
         private int cardArrayOffset;
         private Vector3[] cardPositions;
         private int lower;
         private int upper;
-        private readonly int xPowerDifference = 1;
+        private const int XPowerDifference = 1;
         private UIFader uiFader;
 
         private void Awake()
@@ -25,12 +23,6 @@ namespace TallahasseePrototype.Scripts
 
         private void Start()
         {
-            if (useDefaultUsedXPos)
-            {
-                var cardWidth = (int) cards[0].GetComponent<RectTransform>().rect.width;
-                usedCardXPos = (int) (Screen.width * 0.5f + cardWidth);
-            }
-
             CardInit();
         }
 
@@ -50,6 +42,7 @@ namespace TallahasseePrototype.Scripts
                 cards[i].localPosition = cardPositions[i + cardArrayOffset];
 
                 var cg = cards[i].gameObject.GetComponent<CanvasGroup>();
+                
                 // This disables interaction with cards that are not on top of the stack.
                 if (cards[i].localPosition.x == 0)
                 {
@@ -87,15 +80,17 @@ namespace TallahasseePrototype.Scripts
                 // This loop is for cards still in the stack.		
                 for (var i = cards.Length; i > -1; i--)
                     if (i < cards.Length - 1)
-                        cardPositions[i] = new Vector3(-Mathf.Pow(2,xPowerDifference) + cardPositions[i + 1].x, 0,
+                        cardPositions[i] = new Vector3(-Mathf.Pow(2,XPowerDifference) + cardPositions[i + 1].x, 0,
                             cardZMultiplier * Mathf.Abs(i + 1 - cards.Length));
                     else
                         cardPositions[i] = Vector3.zero;
 
                 // This loop is for cards outside of the stack.
                 for (var i = cards.Length; i < cardPositions.Length; i++)
-                    cardPositions[i] = new Vector3(Mathf.Pow(2,xPowerDifference) + cardPositions[i - 1].x, 0,
+                    cardPositions[i] = new Vector3(Mathf.Pow(2,XPowerDifference) + cardPositions[i - 1].x, 0,
                         cardZMultiplier * Mathf.Abs(i + 1 - cards.Length));
+                
+                    // old way
                     // cardPositions[i] = new Vector3(usedCardXPos + 4 * (i - cards.Length), 0,-2 + -2 * (i - cards.Length));
             }
         }

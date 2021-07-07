@@ -553,10 +553,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f55903a95ecbc74da2be63619ea3521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardMoveSpeed: 8
-  cardZMultiplier: 32
-  useDefaultUsedXPos: 0
-  usedCardXPos: 12800
+  cardMoveSpeed: 6
+  cardZMultiplier: 0
   cards: []
 --- !u!114 &106392276
 MonoBehaviour:
@@ -568,6 +566,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 756741088bfaa8a408beed4253528c14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &106392278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106392273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c5d947754d6424b8ea687055890d4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &160364210
@@ -4184,9 +4194,9 @@ GameObject:
   - component: {fileID: 883143381}
   - component: {fileID: 883143386}
   - component: {fileID: 883143385}
-  - component: {fileID: 883143384}
   - component: {fileID: 883143382}
   - component: {fileID: 883143383}
+  - component: {fileID: 883143384}
   m_Layer: 5
   m_Name: Card Stack
   m_TagString: Untagged
@@ -4234,7 +4244,7 @@ MonoBehaviour:
   cardStack: {fileID: 883143380}
   cardNum: 0
   infoUI: {fileID: 160364210}
-  testUI: {fileID: 0}
+  testUI: {fileID: 267302493}
 --- !u!114 &883143383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4287,8 +4297,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardMoveSpeed: 6
   cardZMultiplier: 0
-  useDefaultUsedXPos: 0
-  usedCardXPos: 1
   cards:
   - {fileID: 1525404252}
   - {fileID: 204475672}
@@ -4812,9 +4820,9 @@ GameObject:
   - component: {fileID: 1074854972}
   - component: {fileID: 1074854977}
   - component: {fileID: 1074854976}
-  - component: {fileID: 1074854975}
   - component: {fileID: 1074854973}
   - component: {fileID: 1074854974}
+  - component: {fileID: 1074854975}
   m_Layer: 5
   m_Name: Card Stack
   m_TagString: Untagged
@@ -4862,7 +4870,7 @@ MonoBehaviour:
   cardStack: {fileID: 1074854971}
   cardNum: 0
   infoUI: {fileID: 160364210}
-  testUI: {fileID: 0}
+  testUI: {fileID: 267302493}
 --- !u!114 &1074854974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4915,8 +4923,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardMoveSpeed: 6
   cardZMultiplier: 0
-  useDefaultUsedXPos: 0
-  usedCardXPos: 1
   cards:
   - {fileID: 586553154}
   - {fileID: 814233101}
@@ -5221,35 +5227,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1241573745}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1268650956
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'UW_Stout_Perraults_Trading_FortMaterial
-
-    49826'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 2fd4689b7fb74a9284a52aba75e4160c, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &1269402684
 GameObject:
   m_ObjectHideFlags: 0
@@ -5823,6 +5800,35 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1330865022}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &1335420406
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'UW_Stout_Perraults_Trading_FortMaterial
+
+    21336'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 2fd4689b7fb74a9284a52aba75e4160c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1001 &1375706923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6599,7 +6605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.1764706}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8063,9 +8069,9 @@ GameObject:
   - component: {fileID: 1897803635}
   - component: {fileID: 1897803640}
   - component: {fileID: 1897803639}
-  - component: {fileID: 1897803638}
   - component: {fileID: 1897803636}
   - component: {fileID: 1897803637}
+  - component: {fileID: 1897803638}
   m_Layer: 5
   m_Name: Card Stack
   m_TagString: Untagged
@@ -8166,8 +8172,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardMoveSpeed: 6
   cardZMultiplier: 0
-  useDefaultUsedXPos: 0
-  usedCardXPos: 1
   cards:
   - {fileID: 223865428}
   - {fileID: 1009299117}
@@ -10329,18 +10333,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 5359332144349829968}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6808570363681897928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6808570363681897932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68c5d947754d6424b8ea687055890d4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6808570363681897930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10367,8 +10359,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardMoveSpeed: 6
   cardZMultiplier: 0
-  useDefaultUsedXPos: 0
-  usedCardXPos: 1
   cards:
   - {fileID: 3901922475492018554}
   - {fileID: 1512939495}
@@ -10386,9 +10376,9 @@ GameObject:
   - component: {fileID: 6808570363681897933}
   - component: {fileID: 6808570363681897931}
   - component: {fileID: 6808570363681897930}
-  - component: {fileID: 6808570363681897928}
   - component: {fileID: 6808570363681897934}
   - component: {fileID: 6808570363681897935}
+  - component: {fileID: 6808570363681897936}
   m_Layer: 5
   m_Name: Card Stack
   m_TagString: Untagged
@@ -10436,7 +10426,7 @@ MonoBehaviour:
   cardStack: {fileID: 6808570363681897932}
   cardNum: 0
   infoUI: {fileID: 160364210}
-  testUI: {fileID: 0}
+  testUI: {fileID: 267302493}
 --- !u!114 &6808570363681897935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10451,6 +10441,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minScale: 0
   maxScale: 0
+--- !u!114 &6808570363681897936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6808570363681897932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c5d947754d6424b8ea687055890d4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6808570363726122982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10564,7 +10566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.1764706}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11074,7 +11076,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1268650956}
+  - {fileID: 1335420406}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11200,10 +11202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8ca5dafbe759e54085170317c4fa54a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardMoveSpeed: 8
+  cardMoveSpeed: 6
   cardZMultiplier: 0
-  useDefaultUsedXPos: 0
-  usedCardXPos: 5
   cards:
   - {fileID: 697093524}
   - {fileID: 6808570364873165689}
@@ -11252,6 +11252,7 @@ GameObject:
   - component: {fileID: 6808570364922456212}
   - component: {fileID: 6808570364922456210}
   - component: {fileID: 6808570364922456213}
+  - component: {fileID: 6808570364922456216}
   m_Layer: 5
   m_Name: Topic Stack
   m_TagString: Untagged
@@ -11259,3 +11260,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6808570364922456216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6808570364922456215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c5d947754d6424b8ea687055890d4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
