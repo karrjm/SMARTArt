@@ -35,8 +35,10 @@ namespace TallahasseePrototype.Scripts
                     break;
                 case DraggedDirection.Down:
                     cardStack.Reset();
-                    gameObject.transform.GetComponentInParent<PoiDragHandler>().Lock();
+                    gameObject.transform.GetComponentInParent<PoiDragHandler>().Unlock();
                     cardStack.gameObject.SetActive(false);
+                    break;
+                case DraggedDirection.Up:
                     break;
                 
                     
@@ -49,10 +51,13 @@ namespace TallahasseePrototype.Scripts
             var positiveX = Mathf.Abs(dragVector.x); // min swipe dist?
             var positiveY = Mathf.Abs(dragVector.y); // min swipe dist?
             DraggedDirection draggedDir;
+            
             if (positiveX > positiveY)
                 draggedDir = dragVector.x > 0 ? DraggedDirection.Right : DraggedDirection.Left;
             else
-                draggedDir = DraggedDirection.Down;
+            {
+                draggedDir = dragVector.y > 0 ? DraggedDirection.Up : DraggedDirection.Down;
+            }
 
             return draggedDir;
         }
@@ -61,7 +66,8 @@ namespace TallahasseePrototype.Scripts
         {
             Down,
             Right,
-            Left
+            Left,
+            Up
         }
     }
 }

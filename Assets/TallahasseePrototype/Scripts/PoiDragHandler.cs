@@ -57,14 +57,12 @@ namespace TallahasseePrototype.Scripts
 
         public void Lock()
         {
-            if (interactable)
-            {
-                interactable = false;
-            }
-            else
-            {
-                interactable = true;
-            }
+            interactable = false;
+        }
+        
+        public void Unlock()
+        {
+            interactable = true;
         }
     }
 }
