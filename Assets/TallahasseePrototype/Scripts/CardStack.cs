@@ -99,5 +99,10 @@ namespace TallahasseePrototype.Scripts
                     // cardPositions[i] = new Vector3(usedCardXPos + 4 * (i - cards.Length), 0,-2 + -2 * (i - cards.Length));
             }
         }
+
+        public void Reset()
+        {
+            cardArrayOffset = 0;
+        }
     }
 }

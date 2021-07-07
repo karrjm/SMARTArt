@@ -7,6 +7,8 @@ namespace TallahasseePrototype.Scripts
     {
         private PoiStack poiStack;
 
+        [SerializeField] private bool interactable = true;
+
         private void Awake()
         {
             poiStack = gameObject.GetComponent<PoiStack>();
@@ -25,14 +27,17 @@ namespace TallahasseePrototype.Scripts
             // get direction of that swipe
             var direction = GetDragDirection(dragVectorDirection);
 
-            switch (direction)
+            if (interactable)
             {
-                case DraggedDirection.Left:
-                    poiStack.DecreaseOffset();
-                    break;
-                case DraggedDirection.Right:
-                    poiStack.IncreaseOffset();
-                    break;
+                switch (direction)
+                {
+                    case DraggedDirection.Left:
+                        poiStack.DecreaseOffset();
+                        break;
+                    case DraggedDirection.Right:
+                        poiStack.IncreaseOffset();
+                        break;
+                }
             }
         }
 
@@ -48,6 +53,18 @@ namespace TallahasseePrototype.Scripts
         {
             Right,
             Left
+        }
+
+        public void Lock()
+        {
+            if (interactable)
+            {
+                interactable = false;
+            }
+            else
+            {
+                interactable = true;
+            }
         }
     }
 }

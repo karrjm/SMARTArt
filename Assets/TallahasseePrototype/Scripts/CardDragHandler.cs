@@ -34,8 +34,12 @@ namespace TallahasseePrototype.Scripts
                     cardStack.IncreaseOffset();
                     break;
                 case DraggedDirection.Down:
+                    cardStack.Reset();
+                    gameObject.transform.GetComponentInParent<PoiDragHandler>().Lock();
                     cardStack.gameObject.SetActive(false);
                     break;
+                
+                    
             }
         }
 

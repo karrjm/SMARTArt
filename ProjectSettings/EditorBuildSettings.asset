@@ -14,12 +14,17 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/TallahasseePrototype/Scenes/Test.unity
     guid: 5efe328d48a0fb540ae98abe447b1850
-  - enabled: 1
+  - enabled: 0
     path: Assets/TallahasseePrototype/Scenes/poiScene.unity
     guid: 55285856f2f95064f86264e63110d559
   - enabled: 1
+<<<<<<< Updated upstream
     path: Assets/TallahasseePrototype/Scenes/HARRISON SCENE.unity
     guid: 8bd133e538f9bdb4bbf90ba04f1c426f
+=======
+    path: Assets/TallahasseePrototype/Scenes/MergeScene.unity
+    guid: 6ea56795ff4fe254fb1f86fa09de1906
+>>>>>>> Stashed changes
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}
