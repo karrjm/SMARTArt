@@ -1,7 +1,6 @@
-using TallahasseePrototype.Scripts;
 using UnityEngine;
 
-namespace TallahasseePrototype.Merge
+namespace Scripts
 {
     public class ScreenspaceCardStack : MonoBehaviour
     {

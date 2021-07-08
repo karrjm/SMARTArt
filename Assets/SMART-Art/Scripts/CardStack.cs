@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TallahasseePrototype.Scripts
+namespace Scripts
 {
     public class CardStack : MonoBehaviour
     {

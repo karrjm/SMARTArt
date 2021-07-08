@@ -1,9 +1,7 @@
-using Scripts;
-using TallahasseePrototype.Scripts;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace TallahasseePrototype.Merge
+namespace Scripts
 {
     public class TakeAway : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace TallahasseePrototype.Merge
+namespace Scripts
 {
     public class ScreenScaler : MonoBehaviour
     {

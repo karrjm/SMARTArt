@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace TallahasseePrototype.Merge
+namespace Scripts
 {
     public class GameManagerScript : MonoBehaviour
     {
@@ -17,16 +17,6 @@ namespace TallahasseePrototype.Merge
             XButton.SetActive(false); //set the infoUI object to inactive
             //startUI.SetActive(true);
         }
-
-        public void Refresh()
-        {
-            for (int i = 0; i < selectedPanel.GetComponent<NewGenUI>().numOfThings; i++)
-            {
-                tempUI.transform.GetChild(i).GetComponent<RectTransform>().anchoredPosition = new Vector3(0f, 0f, 0f);
-                tempUI.transform.GetChild(i).transform.localScale = new Vector3(1f, 1f, 1f);
-            }
-        }
-
 
     }
 }
