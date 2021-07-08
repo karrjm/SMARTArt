@@ -1,0 +1,161 @@
+{
+  "info": {
+    "version": "0.9.8",
+    "dependency": []
+  },
+  "root": {
+    "type": "Group",
+    "name": "French Traders - Image Panel 2",
+    "elements": [
+      {
+        "type": "Image",
+        "name": "640x360",
+        "guid": "09cab7dc-2ad2-4f20-8af0-1b62a3e55a46",
+        "active": true,
+        "global_draw_bounds": {
+          "x": 4172,
+          "y": 1260,
+          "width": 1456,
+          "height": 820,
+          "ex": 5628,
+          "ey": 2080
+        },
+        "rect_transform": {
+          "fix": {
+            "left": null,
+            "right": null,
+            "top": null,
+            "bottom": null,
+            "width": null,
+            "height": null
+          },
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "anchor_min": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "anchor_max": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "offset_min": {
+            "x": -728,
+            "y": -410
+          },
+          "offset_max": {
+            "x": 728,
+            "y": 410
+          }
+        },
+        "layer": "UI",
+        "parsed_names": [
+          "_40x360"
+        ],
+        "opacity": 100,
+        "image": {
+          "source_image": "640x360+09cab"
+        }
+      },
+      {
+        "type": "Image",
+        "name": "Boundry",
+        "guid": "e7dc87a7-8cb2-40a2-81f6-5eab2df8063a",
+        "active": true,
+        "global_draw_bounds": {
+          "x": 3972,
+          "y": 1162,
+          "width": 1856,
+          "height": 1016,
+          "ex": 5828,
+          "ey": 2178
+        },
+        "rect_transform": {
+          "fix": {
+            "left": null,
+            "right": null,
+            "top": null,
+            "bottom": null,
+            "width": null,
+            "height": null
+          },
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "anchor_min": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "anchor_max": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "offset_min": {
+            "x": -928,
+            "y": -508
+          },
+          "offset_max": {
+            "x": 928,
+            "y": 508
+          }
+        },
+        "layer": "UI",
+        "parsed_names": [
+          "Boundry"
+        ],
+        "opacity": 100,
+        "image": {
+          "source_image": "Boundry+e7dc8"
+        }
+      }
+    ],
+    "guid": "4cc9f721-3e0e-42ce-b42a-753bce090ebf",
+    "active": true,
+    "global_draw_bounds": {
+      "x": 3940,
+      "y": 1130,
+      "width": 1920,
+      "height": 1080,
+      "ex": 5860,
+      "ey": 2210
+    },
+    "rect_transform": {
+      "fix": {
+        "left": null,
+        "right": null,
+        "top": null,
+        "bottom": null,
+        "width": null,
+        "height": null
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "anchor_min": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "anchor_max": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "offset_min": {
+        "x": -960,
+        "y": -540
+      },
+      "offset_max": {
+        "x": 960,
+        "y": 540
+      }
+    },
+    "layer": "UI",
+    "parsed_names": [
+      "French_Traders_-_Image_Panel_2"
+    ],
+    "fill_color": "#41c25b"
+  }
+}

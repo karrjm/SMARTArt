@@ -1,0 +1,229 @@
+{
+  "info": {
+    "version": "0.9.8",
+    "dependency": []
+  },
+  "root": {
+    "type": "Group",
+    "name": "French Traders - Text Panel",
+    "elements": [
+      {
+        "type": "Group",
+        "name": "Component 1 – 1",
+        "elements": [
+          {
+            "type": "Text",
+            "name": "Title",
+            "text": {
+              "text": "Lorem ipsum",
+              "textType": "paragraph",
+              "font": "Segoe UI",
+              "style": "Regular",
+              "size": 64,
+              "color": "#ffffff",
+              "align": "centerupper",
+              "opacity": 100
+            },
+            "guid": "487df742-e1ca-4e8e-846d-24586019abce",
+            "active": true,
+            "global_draw_bounds": {
+              "x": 32,
+              "y": 1162,
+              "width": 1856,
+              "height": 112,
+              "ex": 1888,
+              "ey": 1274,
+              "text": {
+                "fontSize": 64
+              }
+            },
+            "rect_transform": {
+              "fix": {
+                "left": true,
+                "right": true,
+                "top": true,
+                "bottom": 0.889763779527559,
+                "width": false,
+                "height": true
+              },
+              "pivot": {
+                "x": 0.5,
+                "y": 1
+              },
+              "anchor_min": {
+                "x": 0,
+                "y": 1
+              },
+              "anchor_max": {
+                "x": 1,
+                "y": 1
+              },
+              "offset_min": {
+                "x": 0,
+                "y": -112
+              },
+              "offset_max": {
+                "x": 0,
+                "y": 0
+              }
+            },
+            "layer": "UI",
+            "parsed_names": [
+              "Title"
+            ]
+          },
+          {
+            "type": "Text",
+            "name": "Body",
+            "text": {
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis ultrices turpis. Proin pellentesque semper lectus quis porta. In hac habitasse platea dictumst. Proin consequat elementum nisi, in sodales erat molestie eu. Nunc malesuada ligula quis orci porttitor, a aliquam augue fermentum. Praesent blandit efficitur mi, in tristique ex posuere et. Etiam eget finibus ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla vitae pellentesque elit. Duis lacinia ultricies nunc sed pharetra.\n\nSuspendisse sit amet dolor in mi euismod porttitor. Integer efficitur quam at congue bibendum. Nulla commodo diam ac augue tempus ullamcorper. Morbi congue velit odio, quis aliquam sem volutpat ac. Nulla facilisi. Sed vitae convallis nunc, nec convallis ante. In non odio ipsum. Nam a tellus fermentum, fringilla risus id, aliquet turpis. Etiam vitae metus urna. In ornare augue fringilla, condimentum enim vitae, aliquet justo. Donec ac facilisis felis. Proin ipsum ante, suscipit nec vehicula non, maximus id tellus. Praesent scelerisque purus ac auctor dignissim. Curabitur condimentum sit amet nibh eu dapibus. Etiam aliquam mauris vitae ex pellentesque tincidunt. Sed consectetur rutrum enim eu vehicula.\n\nMaecenas fringilla, leo eget lacinia mattis, sem neque facilisis ligula, in viverra tortor ex a nibh. Vivamus et sapien id felis faucibus semper. Ut et posuere eros. Praesent pharetra ligula ac justo congue, vitae fermentum risus rhoncus. Duis lacinia lorem vitae elit aliquam, sit amet porttitor enim malesuada. Vestibulum sit amet scelerisque lacus. Pellentesque ornare felis sed augue porta, id sodales est rhoncus. Praesent scelerisque ultrices diam, vitae sodales arcu vehicula at. Ut in urna rhoncus lectus hendrerit rhoncus eget eget justo. Curabitur sed gravida enim, quis aliquet urna. Integer bibendum turpis vel dolor dictum viverra. Nullam enim elit, facilisis in ullamcorper quis, gravida blandit est. Fusce molestie lectus ut tincidunt dapibus. Sed quis ultrices lectus. Morbi ultrices, est at placerat tincidunt, metus purus rhoncus nisi, sed euismod nibh velit vitae dui.\n\nNulla aliquet ultricies justo, nec cursus sapien accumsan sed. Nullam sodales arcu vel sollicitudin viverra. Etiam arcu justo, tempor a mauris non, sagittis consequat neque. Praesent sodales placerat risus suscipit hendrerit. Morbi sagittis imperdiet odio, vitae accumsan nunc suscipit a. Curabitur pellentesque tortor ac risus bibendum, vitae posuere eros sollicitudin. Ut id mi in leo efficitur sollicitudin. Vestibulum volutpat egestas neque, non commodo ligula efficitur sit amet. Duis varius eu ante sed congue. Maecenas viverra sit amet risus a vestibulum. Donec suscipit purus sed eleifend euismod. Praesent accumsan quam fermentum, mattis mi vitae, ornare nisi. Suspendisse potenti.\n",
+              "textType": "paragraph",
+              "font": "Segoe UI",
+              "style": "Regular",
+              "size": 28,
+              "color": "#ffffff",
+              "align": "leftupper",
+              "opacity": 100
+            },
+            "guid": "49b8dbb3-c49a-4175-8cdf-498962e3f104",
+            "active": true,
+            "global_draw_bounds": {
+              "x": 32,
+              "y": 1274,
+              "width": 1856,
+              "height": 904,
+              "ex": 1888,
+              "ey": 2178,
+              "text": {
+                "fontSize": 28
+              }
+            },
+            "rect_transform": {
+              "fix": {
+                "left": true,
+                "right": true,
+                "top": true,
+                "bottom": true,
+                "width": false,
+                "height": false
+              },
+              "pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "anchor_min": {
+                "x": 0,
+                "y": 0
+              },
+              "anchor_max": {
+                "x": 1,
+                "y": 1
+              },
+              "offset_min": {
+                "x": 0,
+                "y": 0
+              },
+              "offset_max": {
+                "x": 0,
+                "y": -112
+              }
+            },
+            "layer": "UI",
+            "parsed_names": [
+              "Body"
+            ]
+          }
+        ],
+        "guid": "23765b8d-3083-470e-af9a-aeb8c5d079cd",
+        "active": true,
+        "global_draw_bounds": {
+          "x": 32,
+          "y": 1162,
+          "width": 1856,
+          "height": 1016,
+          "ex": 1888,
+          "ey": 2178
+        },
+        "rect_transform": {
+          "fix": {
+            "left": null,
+            "right": null,
+            "top": null,
+            "bottom": null,
+            "width": null,
+            "height": null
+          },
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "anchor_min": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "anchor_max": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "offset_min": {
+            "x": -928,
+            "y": -508
+          },
+          "offset_max": {
+            "x": 928,
+            "y": 508
+          }
+        },
+        "layer": "UI",
+        "parsed_names": [
+          "Component_1___1"
+        ]
+      }
+    ],
+    "guid": "efced743-6483-4a50-8942-70290f10f150",
+    "active": true,
+    "global_draw_bounds": {
+      "x": 0,
+      "y": 1130,
+      "width": 1920,
+      "height": 1080,
+      "ex": 1920,
+      "ey": 2210
+    },
+    "rect_transform": {
+      "fix": {
+        "left": null,
+        "right": null,
+        "top": null,
+        "bottom": null,
+        "width": null,
+        "height": null
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "anchor_min": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "anchor_max": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "offset_min": {
+        "x": -960,
+        "y": -540
+      },
+      "offset_max": {
+        "x": 960,
+        "y": 540
+      }
+    },
+    "layer": "UI",
+    "parsed_names": [
+      "French_Traders_-_Text_Panel"
+    ],
+    "fill_color": "#41c25b"
+  }
+}
