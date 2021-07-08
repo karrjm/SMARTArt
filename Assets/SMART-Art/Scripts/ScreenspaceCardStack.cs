@@ -9,7 +9,7 @@ namespace TallahasseePrototype.Merge
         [SerializeField] private int cardZMultiplier = 32;
         [SerializeField] public Transform[] cards;
 
-        private int cardArrayOffset;
+        public int cardArrayOffset;
         private Vector3[] cardPositions;
         private int lower;
         private int upper;

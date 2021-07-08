@@ -99,5 +99,10 @@ namespace TallahasseePrototype.Scripts
         {
             cardArrayOffset = 0;
         }
+
+        public int GetOffset()
+        {
+            return cardArrayOffset;
+        }
     }
 }

@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Helper : MonoBehaviour
 {
-    [SerializeField] private GameObject infoUI;
+    [FormerlySerializedAs("infoUI")] [SerializeField] private GameObject XButton;
     
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,7 @@ public class Helper : MonoBehaviour
 
     public void Activate()
     {
-        if (infoUI.activeSelf)
+        if (XButton.activeSelf)
         {
             
         }
