@@ -1,3 +1,4 @@
+using Scripts;
 using TallahasseePrototype.Scripts;
 using UnityEngine;
 using UnityEngine.Serialization;
