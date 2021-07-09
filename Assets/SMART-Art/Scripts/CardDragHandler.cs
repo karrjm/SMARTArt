@@ -37,12 +37,12 @@ namespace Scripts
             // current, most recent swipe
             Vector3 dragVectorDirection = (eventData.position - eventData.pressPosition).normalized;
             float dragXDistance = Mathf.Abs(eventData.position.x - eventData.pressPosition.x);
-            Debug.Log(dragXDistance);
+            float dragYDistance = Mathf.Abs(eventData.position.y - eventData.pressPosition.y);
 
             // get direction of that swipe
             var direction = GetDragDirection(dragVectorDirection);
 
-            if (interactable && dragXDistance >= 75)
+            if (interactable && (dragXDistance >= 75 || dragYDistance >= 75))
             {
                 switch (direction)
                 {
