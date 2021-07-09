@@ -9,10 +9,19 @@ namespace Scripts
         {
             StartCoroutine(FadeCanvasGroup(canvasGroup, canvasGroup.alpha, 1));
         }
-
         public void FadeOut(CanvasGroup canvasGroup)
         {
             StartCoroutine(FadeCanvasGroup(canvasGroup, canvasGroup.alpha, 0));
+        }
+
+        public void FadeToQuarter(CanvasGroup canvasGroup)
+        {
+            StartCoroutine(FadeCanvasGroup(canvasGroup, canvasGroup.alpha, 0.25f));
+        }
+
+        public void FadeToHalf(CanvasGroup canvasGroup)
+        {
+            StartCoroutine(FadeCanvasGroup(canvasGroup, canvasGroup.alpha, 0.5f));
         }
 
         private IEnumerator FadeCanvasGroup(CanvasGroup cg, float start, float end, float duration = 0.1f)
