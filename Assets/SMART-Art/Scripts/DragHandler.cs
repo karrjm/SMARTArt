@@ -1,9 +1,7 @@
-using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
 
-namespace TallahasseePrototype.Scripts
+namespace Scripts
 {
     public class DragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     {

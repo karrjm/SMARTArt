@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace TallahasseePrototype.Scripts
+namespace Scripts
 {
     public class CardDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     {

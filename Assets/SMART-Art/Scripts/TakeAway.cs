@@ -1,18 +1,19 @@
-using TallahasseePrototype.Scripts;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-namespace TallahasseePrototype.Merge
+namespace Scripts
 {
     public class TakeAway : MonoBehaviour
     {
         public GameObject cardStack;
         public int cardNum;
+        private int cardOffset;
     
     
     
 
         //public GameObject startUI;
-        public GameObject infoUI; //the gameobject variable holding the constant UI
+        [FormerlySerializedAs("infoUI")] public GameObject XButton; //the gameobject variable holding the constant UI
         //public GameObject appManager; //the gameobject variable holding the app manager
 
         GameObject myGO; //the gameObject that creates the temporary canvas
@@ -23,16 +24,19 @@ namespace TallahasseePrototype.Merge
         public void TakeSlides()
         {
         
-            if (!infoUI.activeSelf) //if the infoUI is currently inactive
+            if (!XButton.activeSelf) //if the infoUI is currently inactive
             {
             
-                infoUI.SetActive(true); //set the infoUI to active
+                XButton.SetActive(true); //set the infoUI to active
 
                 myGO = Instantiate(testUI);
             
                 myGO.name = "TestCanvas";
                 cardStack = myGO.transform.GetChild(0).gameObject;
                 cardNum = gameObject.GetComponent<CardStack>().cards.Length;
+                cardOffset = gameObject.GetComponent<CardStack>().GetOffset();
+                
+                
 
                 cardStack.GetComponent<ScreenspaceCardStack>().cards = new Transform[cardNum];
             
@@ -47,8 +51,9 @@ namespace TallahasseePrototype.Merge
                 }
             
                 myGO.SetActive(true);
+                cardStack.GetComponent<ScreenspaceCardStack>().cardArrayOffset = cardOffset;
 
-            
+
             }
 
         }

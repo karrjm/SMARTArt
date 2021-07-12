@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TallahasseePrototype.Scripts
+namespace Scripts
 {
     public class CardStack : MonoBehaviour
     {
@@ -98,6 +98,11 @@ namespace TallahasseePrototype.Scripts
         public void Reset()
         {
             cardArrayOffset = 0;
+        }
+
+        public int GetOffset()
+        {
+            return cardArrayOffset;
         }
     }
 }

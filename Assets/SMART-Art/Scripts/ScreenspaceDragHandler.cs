@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace TallahasseePrototype.Merge
+namespace Scripts
 {
     public class ScreenspaceDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     {

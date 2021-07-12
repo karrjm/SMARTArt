@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace TallahasseePrototype.Merge
+namespace Scripts
 {
     public class PinchZoom : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
