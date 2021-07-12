@@ -13,6 +13,8 @@ namespace Scripts
         private int lower;
         private UIFader uiFader;
         private int upper;
+        
+        private bool isActive;
 
         private void Awake()
         {
@@ -57,7 +59,7 @@ namespace Scripts
                 else
                 {
                     cg.interactable = false;
-                    uiFader.FadeToQuarter(cg);
+                    uiFader.FadeToHalf(cg);
                 }
             }
         }

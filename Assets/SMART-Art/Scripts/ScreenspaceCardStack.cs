@@ -13,7 +13,7 @@ namespace Scripts
         private Vector3[] cardPositions;
         private int lower;
         private int upper;
-        private const int XPowerDifference = 10;
+        private const int XPowerDifference = 11;
         private UIFader uiFader;
 
         public void Awake()
@@ -55,12 +55,12 @@ namespace Scripts
                 if (cards[i].localPosition.x == 0)
                 {
                     cg.interactable = true;
-                    uiFader.FadeIn(cg);
+                    // uiFader.FadeIn(cg);
                 }
                 else
                 {
                     cg.interactable = false;
-                    uiFader.FadeOut(cg);
+                    // uiFader.FadeToHalf(cg);
                 }
             }
         }
