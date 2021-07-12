@@ -14,7 +14,6 @@ namespace Scripts
         public void Dismiss()//declaration of the Dismiss function
         {
             Destroy(GameObject.Find("TestCanvas")); //destroy the game object in scene called "TestCanvas"
-            XButton.SetActive(false); //set the infoUI object to inactive
             //startUI.SetActive(true);
         }
 

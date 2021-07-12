@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Scripts
@@ -21,6 +22,11 @@ namespace Scripts
             lower = cards.GetLowerBound(0);
             upper = cards.GetUpperBound(0);
             uiFader = gameObject.GetComponent<UIFader>();
+        }
+
+        public void Reset()
+        {
+            cardArrayOffset = 0;
         }
 
         private void Start()

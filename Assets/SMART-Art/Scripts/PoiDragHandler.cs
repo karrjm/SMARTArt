@@ -5,9 +5,8 @@ namespace Scripts
 {
     public class PoiDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     {
+        private bool interactable = true;
         private PoiStack poiStack;
-
-        [SerializeField] private bool interactable = true;
 
         private void Awake()
         {
@@ -23,12 +22,14 @@ namespace Scripts
         {
             // current, most recent swipe
             Vector3 dragVectorDirection = (eventData.position - eventData.pressPosition).normalized;
+            var dragXDistance = Mathf.Abs(eventData.position.x - eventData.pressPosition.x);
+            var dragYDistance = Mathf.Abs(eventData.position.y - eventData.pressPosition.y);
 
             // get direction of that swipe
             var direction = GetDragDirection(dragVectorDirection);
 
-            if (interactable)
-            {
+            var minDragDist = 100;
+            if (interactable && (dragXDistance >= minDragDist || dragYDistance >= minDragDist))
                 switch (direction)
                 {
                     case DraggedDirection.Left:
@@ -38,7 +39,6 @@ namespace Scripts
                         poiStack.IncreaseOffset();
                         break;
                 }
-            }
         }
 
         // determine the direction of a drag
@@ -49,20 +49,20 @@ namespace Scripts
             return draggedDir;
         }
 
-        private enum DraggedDirection
-        {
-            Right,
-            Left
-        }
-
         public void Lock()
         {
             interactable = false;
         }
-        
+
         public void Unlock()
         {
             interactable = true;
+        }
+
+        private enum DraggedDirection
+        {
+            Right,
+            Left
         }
     }
 }

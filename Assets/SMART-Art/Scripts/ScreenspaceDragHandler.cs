@@ -5,32 +5,56 @@ namespace Scripts
 {
     public class ScreenspaceDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     {
-        private ScreenspaceCardStack ScreenspaceCardStack { get; set; }
+        private GameManagerScript app;
+        private bool interactable = true;
+        private ScreenspaceCardStack screenspaceCardStack;
 
         private void Awake()
         {
-            ScreenspaceCardStack = gameObject.GetComponent<ScreenspaceCardStack>(); //set the previously declared CardStack variable to the card stack script attached to the object
+            screenspaceCardStack =
+                gameObject
+                    .GetComponent<
+                        ScreenspaceCardStack>(); //set the previously declared CardStack variable to the card stack script attached to the object
+            app = FindObjectOfType<GameManagerScript>();
         }
 
-        // must implement or IEndDragHandler will not work
+        private void Update()
+        {
+            if (Input.touchCount == 0) interactable = true;
+        }
+
         public void OnDrag(PointerEventData eventData)
         {
+            if (Input.touchCount > 1) interactable = false;
         }
 
         public void OnEndDrag(PointerEventData eventData)
         {
             // current swipe
             Vector3 dragVectorDirection = (eventData.position - eventData.pressPosition).normalized;
-            
+            var dragXDistance = Mathf.Abs(eventData.position.x - eventData.pressPosition.x);
+            var dragYDistance = Mathf.Abs(eventData.position.y - eventData.pressPosition.y);
+
             // get direction of current swipe
-            GetDragDirection(dragVectorDirection);
-            
-            if (GetDragDirection(dragVectorDirection) == DraggedDirection.Left)
-                // _cardArrayOffset--
-                ScreenspaceCardStack.DecreaseOffset();
-            else if (GetDragDirection(dragVectorDirection) == DraggedDirection.Right)
-                //_cardArrayOffset++;
-                ScreenspaceCardStack.IncreaseOffset();
+            var direction = GetDragDirection(dragVectorDirection);
+
+            var minDragDist = 100;
+            if (interactable && (dragXDistance >= minDragDist || dragYDistance >= minDragDist))
+                switch (direction)
+                {
+                    case DraggedDirection.Left:
+                        screenspaceCardStack.DecreaseOffset();
+                        break;
+                    case DraggedDirection.Right:
+                        screenspaceCardStack.IncreaseOffset();
+                        break;
+                    case DraggedDirection.Down:
+                        screenspaceCardStack.Reset();
+                        app.Dismiss();
+                        break;
+                    case DraggedDirection.Up:
+                        break;
+                }
         }
 
         // determine the direction of a drag
