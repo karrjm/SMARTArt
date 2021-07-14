@@ -8,8 +8,8 @@ namespace Scripts.Editor
         [MenuItem("GameObject/Create Other/SMART-Art Prefabs/POI Button")]
         private static void InstantiatePointOfInterestButton()
         {
-            GameObject go = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/SMART-Art/Prefabs/POI Button", typeof(GameObject));
-            PrefabUtility.InstantiatePrefab(go);
+            Object prefab = AssetDatabase.LoadAssetAtPath("Assets/SMART-Art/Prefabs/POI Button.prefab", typeof(GameObject));
+            PrefabUtility.InstantiatePrefab(prefab);
         }
 
         // [MenuItem("GameObject/Create Other/SMART-Art", true)]
