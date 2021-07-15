@@ -466,6 +466,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd6f0a7c580252a459831fa556a0355c, type: 3}
+--- !u!21 &44970930
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'UW_Stout_Perraults_Trading_FortMaterial
+
+    58204'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 2fd4689b7fb74a9284a52aba75e4160c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+  m_BuildTextureStacks: []
 --- !u!224 &48872029 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2256220828810246251, guid: c178dd29258f1f240ac02b9b30d0b1a0,
@@ -1327,7 +1356,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardStack: {fileID: 179514958}
   cardNum: 0
-  XButton: {fileID: 123665541}
   testUI: {fileID: 340090109}
 --- !u!114 &179514961
 MonoBehaviour:
@@ -2448,6 +2476,7 @@ MonoBehaviour:
   tempUI: {fileID: 0}
   selectedPanel: {fileID: 0}
   childrenActive: 0
+  screenSpaceActive: 0
 --- !u!4 &344256934
 Transform:
   m_ObjectHideFlags: 0
@@ -2522,7 +2551,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardStack: {fileID: 375292261}
   cardNum: 0
-  XButton: {fileID: 123665541}
   testUI: {fileID: 340090109}
 --- !u!114 &375292264
 MonoBehaviour:
@@ -5529,7 +5557,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardStack: {fileID: 695800929}
   cardNum: 0
-  XButton: {fileID: 123665541}
   testUI: {fileID: 340090109}
 --- !u!114 &695800932
 MonoBehaviour:
@@ -6023,7 +6050,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3efdf1e81de8ee4cb8d04d461463d07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: 1
 --- !u!114 &734551964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7290,7 +7316,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardStack: {fileID: 836862490}
   cardNum: 0
-  XButton: {fileID: 123665541}
   testUI: {fileID: 340090109}
 --- !u!114 &836862493
 MonoBehaviour:
@@ -8256,7 +8281,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardStack: {fileID: 983506253}
   cardNum: 0
-  XButton: {fileID: 123665541}
   testUI: {fileID: 340090109}
 --- !u!114 &983506256
 MonoBehaviour:
@@ -9074,7 +9098,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3efdf1e81de8ee4cb8d04d461463d07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: 1
 --- !u!114 &1030528660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9816,7 +9839,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardStack: {fileID: 1132732526}
   cardNum: 0
-  XButton: {fileID: 123665541}
   testUI: {fileID: 340090109}
 --- !u!114 &1132732529
 MonoBehaviour:
@@ -11143,7 +11165,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1692609767}
+  - {fileID: 44970930}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11713,7 +11735,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1588507252}
+  - {fileID: 2144008388}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13889,35 +13911,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1576810032}
   m_CullTransparentMesh: 1
---- !u!21 &1588507252
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'UW_Stout_French_Trappers_on_the_Red_CedarMaterial
-
-    30896'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 0f98326918354aa8b1ec949835ce9949, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &1596507006
 GameObject:
   m_ObjectHideFlags: 0
@@ -15165,35 +15158,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1691275799}
   m_CullTransparentMesh: 1
---- !u!21 &1692609767
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'UW_Stout_Perraults_Trading_FortMaterial
-
-    30834'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 2fd4689b7fb74a9284a52aba75e4160c, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &1733205315
 GameObject:
   m_ObjectHideFlags: 0
@@ -17085,7 +17049,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardStack: {fileID: 1913878847}
   cardNum: 0
-  XButton: {fileID: 123665541}
   testUI: {fileID: 340090109}
 --- !u!114 &1913878850
 MonoBehaviour:
@@ -17527,7 +17490,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardStack: {fileID: 1964676428}
   cardNum: 0
-  XButton: {fileID: 123665541}
   testUI: {fileID: 340090109}
 --- !u!114 &1964676431
 MonoBehaviour:
@@ -18284,6 +18246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   XButton: {fileID: 123665541}
+  appManager: {fileID: 344256932}
 --- !u!224 &2004617862
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18598,7 +18561,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardStack: {fileID: 2067708727}
   cardNum: 0
-  XButton: {fileID: 123665541}
   testUI: {fileID: 340090109}
 --- !u!114 &2067708730
 MonoBehaviour:
@@ -19139,3 +19101,32 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 36074777}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &2144008388
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'UW_Stout_French_Trappers_on_the_Red_CedarMaterial
+
+    58266'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 0f98326918354aa8b1ec949835ce9949, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+  m_BuildTextureStacks: []

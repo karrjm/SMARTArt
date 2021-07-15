@@ -6,10 +6,18 @@ namespace Scripts
     public class Helper : MonoBehaviour
     {
         [SerializeField] private GameObject XButton;
+        public GameObject appManager;
 
         public void Activate()
         {
-            gameObject.SetActive(true);
+            if (appManager.GetComponent<GameManagerScript>().screenSpaceActive)
+            {
+                
+            }
+            else
+            {
+                gameObject.SetActive(true);
+            }
         }
     }
 }

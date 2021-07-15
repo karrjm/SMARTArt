@@ -1,5 +1,9 @@
+using System;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
 namespace Scripts
 {
@@ -10,12 +14,15 @@ namespace Scripts
         public Canvas tempUI; //the variable holding the tempUI, or the variable UI that changes 
         public GameObject selectedPanel; //the currently selected panel, only has a value during runtime
         public bool childrenActive = false;
+        public bool screenSpaceActive = false;
+        
 
         public void Dismiss()//declaration of the Dismiss function
         {
             Destroy(GameObject.Find("TestCanvas")); //destroy the game object in scene called "TestCanvas"
             //startUI.SetActive(true);
         }
+
 
     }
 }

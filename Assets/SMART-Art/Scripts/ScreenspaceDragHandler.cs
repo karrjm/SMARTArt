@@ -6,6 +6,7 @@ namespace Scripts
     public class ScreenspaceDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     {
         private GameManagerScript app;
+        private GameObject appManager;
         private bool interactable = true;
         private ScreenspaceCardStack screenspaceCardStack;
 
@@ -16,6 +17,7 @@ namespace Scripts
                     .GetComponent<
                         ScreenspaceCardStack>(); //set the previously declared CardStack variable to the card stack script attached to the object
             app = FindObjectOfType<GameManagerScript>();
+            appManager = GameObject.Find("AppManager");
         }
 
         private void Update()
@@ -51,6 +53,7 @@ namespace Scripts
                     case DraggedDirection.Down:
                         screenspaceCardStack.Reset();
                         app.Dismiss();
+                        appManager.GetComponent<GameManagerScript>().screenSpaceActive = false;
                         break;
                     case DraggedDirection.Up:
                         break;
