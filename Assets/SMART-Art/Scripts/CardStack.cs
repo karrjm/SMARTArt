@@ -5,10 +5,19 @@ namespace Scripts
     [RequireComponent(typeof(CardDragHandler))]
     public class CardStack : MonoBehaviour
     {
-        [SerializeField] private int cardDistance = 1;
-        [SerializeField] private float cardMoveSpeed = 8f;
-        // [SerializeField] private int cardZMultiplier = 32;
-        [SerializeField] public Transform[] cards;
+        [Tooltip("The distance between the cards.")] [SerializeField]
+        private int cardDistance = 1;
+
+        [Tooltip("The speed at which the cards move.")] [SerializeField]
+        private float cardMoveSpeed = 8f;
+
+        [Tooltip(
+            "A collection of cards that make up the card stack. " +
+            "Drag the cards belonging to the card stack into this collection. " +
+            "Order matters, cards at element zero will be the last card in the stack.")]
+        [SerializeField]
+        public Transform[] cards;
+
         private int _cardArrayOffset;
         private Vector3[] _cardPositions;
         private int _lower;
@@ -86,17 +95,13 @@ namespace Scripts
                 // This loop is for cards still in the stack.		
                 for (var i = cards.Length; i > -1; i--)
                     if (i < cards.Length - 1)
-                        // z: cardZMultiplier * Mathf.Abs(i + 1 - cards.Length)
-                        _cardPositions[i] = new Vector3(-cardDistance + _cardPositions[i + 1].x, 0,0);
+                        _cardPositions[i] = new Vector3(-cardDistance + _cardPositions[i + 1].x, 0, 0);
                     else
                         _cardPositions[i] = Vector3.zero;
 
                 // This loop is for cards outside of the stack.
                 for (var i = cards.Length; i < _cardPositions.Length; i++)
-                    _cardPositions[i] = new Vector3(cardDistance + _cardPositions[i - 1].x, 0,0);
-
-                // old way
-                // cardPositions[i] = new Vector3(usedCardXPos + 4 * (i - cards.Length), 0,-2 + -2 * (i - cards.Length));
+                    _cardPositions[i] = new Vector3(cardDistance + _cardPositions[i - 1].x, 0, 0);
             }
         }
 
