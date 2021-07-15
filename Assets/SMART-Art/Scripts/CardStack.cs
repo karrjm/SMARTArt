@@ -20,15 +20,15 @@ namespace Scripts
 
         private int _cardArrayOffset;
         private Vector3[] _cardPositions;
+        private UIFader _fader;
         private int _lower;
-        private UIFader _uiFader;
         private int _upper;
 
         private void Awake()
         {
             _lower = cards.GetLowerBound(0);
             _upper = cards.GetUpperBound(0);
-            _uiFader = gameObject.GetComponent<UIFader>();
+            _fader = gameObject.GetComponent<UIFader>();
         }
 
         public void Reset()
@@ -62,12 +62,12 @@ namespace Scripts
                 if (cards[i].localPosition.x == 0)
                 {
                     cg.interactable = true;
-                    _uiFader.FadeIn(cg);
+                    _fader.FadeIn(cg);
                 }
                 else
                 {
                     cg.interactable = false;
-                    _uiFader.FadeToHalf(cg);
+                    _fader.FadeToQuarter(cg);
                 }
             }
         }
