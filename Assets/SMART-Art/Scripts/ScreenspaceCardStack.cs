@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Scripts
@@ -6,23 +5,25 @@ namespace Scripts
     [RequireComponent(typeof(ScreenspaceDragHandler))]
     public class ScreenspaceCardStack : MonoBehaviour
     {
-        [SerializeField] private float cardMoveSpeed = 8f;
-        [SerializeField] private int cardZMultiplier = 32;
-        [SerializeField] public Transform[] cards;
+        [Tooltip("The distance between the cards in screenspace.")] [SerializeField]
+        private int cardDistance = 1;
 
+        [Tooltip("The speed at which the cards move.")] [SerializeField]
+        private float cardMoveSpeed = 8f;
+
+        public Transform[] cards;
         public int cardArrayOffset;
-        private Vector3[] cardPositions;
-        private int lower;
-        private int upper;
-        private const int XPowerDifference = 11;
-        private UIFader uiFader;
+        private Vector3[] _cardPositions;
+        private UIFader _fader;
+        private int _lower;
+        private int _upper;
 
         public void Awake()
         {
             //cards = new Transform[gameObject.GetComponent<TakeAway>().cardNum];
-            lower = cards.GetLowerBound(0);
-            upper = cards.GetUpperBound(0);
-            uiFader = gameObject.GetComponent<UIFader>();
+            _lower = cards.GetLowerBound(0);
+            _upper = cards.GetUpperBound(0);
+            _fader = gameObject.GetComponent<UIFader>();
         }
 
         public void Reset()
@@ -45,63 +46,54 @@ namespace Scripts
             // This loop moves the cards.
             for (var i = 0; i < cards.Length; i++)
             {
-                cards[i].localPosition = Vector3.Lerp(cards[i].localPosition, cardPositions[i + cardArrayOffset],
+                cards[i].localPosition = Vector3.Lerp(cards[i].localPosition, _cardPositions[i + cardArrayOffset],
                     Time.deltaTime * cardMoveSpeed);
-                if (!(Mathf.Abs(cards[i].localPosition.x - cardPositions[i + cardArrayOffset].x) < 0.01f)) continue;
-                cards[i].localPosition = cardPositions[i + cardArrayOffset];
-                
+                if (!(Mathf.Abs(cards[i].localPosition.x - _cardPositions[i + cardArrayOffset].x) < 0.01f)) continue;
+                cards[i].localPosition = _cardPositions[i + cardArrayOffset];
+
                 var cg = cards[i].gameObject.GetComponent<CanvasGroup>();
-                
+
                 // This disables interaction with cards that are not on top of the stack.
                 if (cards[i].localPosition.x == 0)
-                {
                     cg.interactable = true;
-                    // uiFader.FadeIn(cg);
-                }
+                // uiFader.FadeIn(cg);
                 else
-                {
                     cg.interactable = false;
-                    // uiFader.FadeToHalf(cg);
-                }
+                // uiFader.FadeToHalf(cg);
             }
         }
 
         public void IncreaseOffset()
         {
-            if (cardArrayOffset < upper) cardArrayOffset++;
+            if (cardArrayOffset < _upper) cardArrayOffset++;
         }
 
         public void DecreaseOffset()
         {
-            if (cardArrayOffset > lower) cardArrayOffset--;
+            if (cardArrayOffset > _lower) cardArrayOffset--;
         }
 
         private void CardInit()
         {
             // overflow
-            cardPositions = new Vector3[cards.Length * 2 - 1];
+            _cardPositions = new Vector3[cards.Length * 2 - 1];
 
-            if (cardPositions.Length < 2)
+            if (_cardPositions.Length < 2)
             {
-                cardPositions[0] = Vector3.zero;
+                _cardPositions[0] = Vector3.zero;
             }
             else
             {
                 // This loop is for cards still in the stack.		
                 for (var i = cards.Length; i > -1; i--)
                     if (i < cards.Length - 1)
-                        cardPositions[i] = new Vector3(-Mathf.Pow(2,XPowerDifference) + cardPositions[i + 1].x, 0,
-                            cardZMultiplier * Mathf.Abs(i + 1 - cards.Length));
+                        _cardPositions[i] = new Vector3(-cardDistance + _cardPositions[i + 1].x, 0, 0);
                     else
-                        cardPositions[i] = Vector3.zero;
+                        _cardPositions[i] = Vector3.zero;
 
                 // This loop is for cards outside of the stack.
-                for (var i = cards.Length; i < cardPositions.Length; i++)
-                    cardPositions[i] = new Vector3(Mathf.Pow(2,XPowerDifference) + cardPositions[i - 1].x, 0,
-                        cardZMultiplier * Mathf.Abs(i + 1 - cards.Length));
-                
-                // old way
-                // cardPositions[i] = new Vector3(usedCardXPos + 4 * (i - cards.Length), 0,-2 + -2 * (i - cards.Length));
+                for (var i = cards.Length; i < _cardPositions.Length; i++)
+                    _cardPositions[i] = new Vector3(cardDistance + _cardPositions[i - 1].x, 0, 0);
             }
         }
     }

@@ -8,12 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/SMART-Art/Scenes/EndUserLockedScene.unity
     guid: e756f388714d29049a6a32adde74e540
-  - enabled: 1
+  - enabled: 0
     path: Assets/SMART-Art/Scenes/HARRISON SCENE.unity
     guid: 8bd133e538f9bdb4bbf90ba04f1c426f
   - enabled: 0
     path: Assets/SMART-Art/Scenes/InteractionScene.unity
     guid: d879f57b9cd862e43834226074c761c2
+  - enabled: 1
+    path: Assets/SMART-Art/Scenes/Template.unity
+    guid: 08c2cf3d1ee752947b1466f07431b229
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}
