@@ -22,14 +22,11 @@ namespace Scripts
         {
             // current, most recent swipe
             Vector3 dragVectorDirection = (eventData.position - eventData.pressPosition).normalized;
-            var dragXDistance = Mathf.Abs(eventData.position.x - eventData.pressPosition.x);
-            var dragYDistance = Mathf.Abs(eventData.position.y - eventData.pressPosition.y);
 
             // get direction of that swipe
             var direction = GetDragDirection(dragVectorDirection);
 
-            var minDragDist = 100;
-            if (interactable && (dragXDistance >= minDragDist || dragYDistance >= minDragDist))
+            if (interactable)
                 switch (direction)
                 {
                     case DraggedDirection.Left:

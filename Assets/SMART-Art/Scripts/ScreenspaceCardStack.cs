@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Scripts
 {
+    [RequireComponent(typeof(ScreenspaceDragHandler))]
     public class ScreenspaceCardStack : MonoBehaviour
     {
         [SerializeField] private float cardMoveSpeed = 8f;
