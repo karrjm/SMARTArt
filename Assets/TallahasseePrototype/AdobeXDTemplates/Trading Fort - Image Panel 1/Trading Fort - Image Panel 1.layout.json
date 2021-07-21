@@ -1,0 +1,213 @@
+{
+  "info": {
+    "version": "0.9.8",
+    "dependency": []
+  },
+  "root": {
+    "type": "Group",
+    "name": "Trading Fort - Image Panel 1",
+    "elements": [
+      {
+        "type": "Image",
+        "name": "640",
+        "guid": "b6ff33f4-78a1-490f-87db-e35bd3df3950",
+        "active": true,
+        "global_draw_bounds": {
+          "x": 2230,
+          "y": 220,
+          "width": 640,
+          "height": 640,
+          "ex": 2870,
+          "ey": 860
+        },
+        "rect_transform": {
+          "fix": {
+            "left": null,
+            "right": null,
+            "top": null,
+            "bottom": null,
+            "width": null,
+            "height": null
+          },
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "anchor_min": {
+            "x": 0.30208333333333337,
+            "y": 0.5
+          },
+          "anchor_max": {
+            "x": 0.30208333333333337,
+            "y": 0.5
+          },
+          "offset_min": {
+            "x": -320,
+            "y": -320
+          },
+          "offset_max": {
+            "x": 320,
+            "y": 320
+          }
+        },
+        "layer": "UI",
+        "parsed_names": [
+          "_40"
+        ],
+        "opacity": 100,
+        "image": {
+          "source_image": "640+b6ff3"
+        }
+      },
+      {
+        "type": "Image",
+        "name": "640",
+        "guid": "bd303eb3-82ce-4df7-873d-cc17188bbace",
+        "active": true,
+        "global_draw_bounds": {
+          "x": 2990,
+          "y": 220,
+          "width": 640,
+          "height": 640,
+          "ex": 3630,
+          "ey": 860
+        },
+        "rect_transform": {
+          "fix": {
+            "left": null,
+            "right": null,
+            "top": null,
+            "bottom": null,
+            "width": null,
+            "height": null
+          },
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "anchor_min": {
+            "x": 0.6979166666666666,
+            "y": 0.5
+          },
+          "anchor_max": {
+            "x": 0.6979166666666666,
+            "y": 0.5
+          },
+          "offset_min": {
+            "x": -320,
+            "y": -320
+          },
+          "offset_max": {
+            "x": 320,
+            "y": 320
+          }
+        },
+        "layer": "UI",
+        "parsed_names": [
+          "_40"
+        ],
+        "opacity": 100,
+        "image": {
+          "source_image": "640+bd303"
+        }
+      },
+      {
+        "type": "Image",
+        "name": "Boundry",
+        "guid": "3b235d1e-a119-4de8-a8af-0878271013ab",
+        "active": true,
+        "global_draw_bounds": {
+          "x": 2002,
+          "y": 32,
+          "width": 1856,
+          "height": 1016,
+          "ex": 3858,
+          "ey": 1048
+        },
+        "rect_transform": {
+          "fix": {
+            "left": null,
+            "right": null,
+            "top": null,
+            "bottom": null,
+            "width": null,
+            "height": null
+          },
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "anchor_min": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "anchor_max": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "offset_min": {
+            "x": -928,
+            "y": -508
+          },
+          "offset_max": {
+            "x": 928,
+            "y": 508
+          }
+        },
+        "layer": "UI",
+        "parsed_names": [
+          "Boundry"
+        ],
+        "opacity": 100,
+        "image": {
+          "source_image": "Boundry+3b235"
+        }
+      }
+    ],
+    "guid": "f38855a1-3de2-418d-8253-57c2b82cdab6",
+    "active": true,
+    "global_draw_bounds": {
+      "x": 1970,
+      "y": 0,
+      "width": 1920,
+      "height": 1080,
+      "ex": 3890,
+      "ey": 1080
+    },
+    "rect_transform": {
+      "fix": {
+        "left": null,
+        "right": null,
+        "top": null,
+        "bottom": null,
+        "width": null,
+        "height": null
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "anchor_min": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "anchor_max": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "offset_min": {
+        "x": -960,
+        "y": -540
+      },
+      "offset_max": {
+        "x": 960,
+        "y": 540
+      }
+    },
+    "layer": "UI",
+    "parsed_names": [
+      "Trading_Fort_-_Image_Panel_1"
+    ],
+    "fill_color": "#1e6bc2"
+  }
+}
