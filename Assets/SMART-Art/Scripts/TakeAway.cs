@@ -26,7 +26,7 @@ namespace Scripts
                 // cardStack.GetComponent<ScreenspaceCardStack>().cards[i].transform.parent = cardStack.transform;
                 cardStack.GetComponent<ScreenspaceCardStack>().cards[i].transform.SetParent(cardStack.transform, false);
                 cardStack.GetComponent<ScreenspaceCardStack>().cards[i].GetComponent<RectTransform>().localScale =
-                    new Vector3(800f, 800f, 1f);
+                    new Vector3(400f, 400f, 1f);
                 cardStack.GetComponent<ScreenspaceCardStack>().cards[i].GetComponent<CanvasGroup>().alpha = 1f;
             }
 

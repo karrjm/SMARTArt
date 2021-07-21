@@ -45,6 +45,7 @@ namespace Scripts
                     {
                         gameObject.GetComponent<TakeAway>().TakeSlides();
                         appManager.GetComponent<GameManagerScript>().screenSpaceActive = true;
+                        appManager.GetComponent<GameManagerScript>().activeStack = null;
                         gameObject.SetActive(false);
                     }
                     
@@ -85,6 +86,7 @@ namespace Scripts
                     case DraggedDirection.Down:
                         cardStack.Reset();
                         gameObject.transform.GetComponentInParent<PoiDragHandler>().Unlock();
+                        appManager.GetComponent<GameManagerScript>().NullActiveStack();
                         cardStack.gameObject.SetActive(false);
                         break;
                     case DraggedDirection.Up:

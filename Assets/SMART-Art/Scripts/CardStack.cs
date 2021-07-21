@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Scripts
 {
@@ -23,12 +24,14 @@ namespace Scripts
         private UIFader _fader;
         private int _lower;
         private int _upper;
+        private GameObject appManager;
 
         private void Awake()
         {
             _lower = cards.GetLowerBound(0);
             _upper = cards.GetUpperBound(0);
             _fader = gameObject.GetComponent<UIFader>();
+            appManager = GameObject.Find("AppManager");
         }
 
         public void Reset()
@@ -108,6 +111,16 @@ namespace Scripts
         public int GetOffset()
         {
             return _cardArrayOffset;
+        }
+
+        private void OnEnable()
+        {
+            if (appManager.GetComponent<GameManagerScript>().activeStack != null)
+            {
+                appManager.GetComponent<GameManagerScript>().activeStack.SetActive(false);
+            }
+
+            appManager.GetComponent<GameManagerScript>().activeStack = this.gameObject;
         }
     }
 }

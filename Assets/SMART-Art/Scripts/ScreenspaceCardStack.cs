@@ -6,7 +6,7 @@ namespace Scripts
     public class ScreenspaceCardStack : MonoBehaviour
     {
         [Tooltip("The distance between the cards in screenspace.")] [SerializeField]
-        private int cardDistance = 1;
+        private int cardDistance = 100000;
 
         [Tooltip("The speed at which the cards move.")] [SerializeField]
         private float cardMoveSpeed = 8f;

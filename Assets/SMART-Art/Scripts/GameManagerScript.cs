@@ -15,6 +15,7 @@ namespace Scripts
         public GameObject selectedPanel; //the currently selected panel, only has a value during runtime
         public bool childrenActive = false;
         public bool screenSpaceActive = false;
+        public GameObject activeStack = null;
         
 
         public void Dismiss()//declaration of the Dismiss function
@@ -24,5 +25,9 @@ namespace Scripts
         }
 
 
+        public void NullActiveStack()
+        {
+            activeStack = null;
+        }
     }
 }

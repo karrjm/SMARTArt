@@ -50,7 +50,6 @@ namespace Scripts
                     case DraggedDirection.Down:
                         screenspaceCardStack.Reset();
                         app.Dismiss();
-                        appManager.GetComponent<GameManagerScript>().screenSpaceActive = false;
                         break;
                     case DraggedDirection.Up:
                         break;
