@@ -5,7 +5,13 @@ namespace Scripts.Editor
 {
     public static class PrefabMenu
     {
-        [MenuItem("GameObject/SMART-Art/POI Button", false, 0)]
+        [MenuItem("GameObject/SMART-Art/Utilities", false, 0)]
+        private static void DoSomething()
+        {
+            
+        }
+        
+        [MenuItem("GameObject/SMART-Art/Prefabs/POI Button", false, 0)]
         private static void InstantiatePointOfInterestButton()
         {
             var prefab =
@@ -13,7 +19,7 @@ namespace Scripts.Editor
             PrefabUtility.InstantiatePrefab(prefab);
         }
 
-        [MenuItem("GameObject/SMART-Art/Video Panel", false, 0)]
+        [MenuItem("GameObject/SMART-Art/Prefabs/Video Panel", false, 0)]
         private static void InstantiateVideoPanel()
         {
             var prefab =
@@ -21,7 +27,7 @@ namespace Scripts.Editor
             PrefabUtility.InstantiatePrefab(prefab);
         }
 
-        [MenuItem("GameObject/SMART-Art/Card Stack", false, 0)]
+        [MenuItem("GameObject/SMART-Art/Prefabs/Card Stack", false, 0)]
         private static void InstantiateCardStack()
         {
             var prefab =
