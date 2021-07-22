@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f55903a95ecbc74da2be63619ea3521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardDistance: 100000
+  cardDistance: 2000
   cardMoveSpeed: 12
   cards: []
   cardArrayOffset: 0

@@ -22,6 +22,14 @@ namespace Scripts.Editor
 
         #region Prefabs
 
+        [MenuItem("GameObject/SMART-Art/Prefabs/AR Camera", false, 0)]
+        private static void CreateCamera()
+        {
+            var prefab =
+                AssetDatabase.LoadAssetAtPath<GameObject>("Assets/SMART-Art/Prefabs/ARCamera.prefab");
+            Create(prefab);
+        }
+
         [MenuItem("GameObject/SMART-Art/Prefabs/POI Button", false, 0)]
         private static void CreatePoiButton()
         {
@@ -61,9 +69,17 @@ namespace Scripts.Editor
                 AssetDatabase.LoadAssetAtPath<GameObject>("Assets/SMART-Art/Prefabs/Label Canvas.prefab");
             Create(prefab);
         }
+        
+        [MenuItem("GameObject/SMART-Art/Prefabs/Image Target", false, 0)]
+        private static void CreateImageTarget()
+        {
+            var prefab =
+                AssetDatabase.LoadAssetAtPath<GameObject>("Assets/SMART-Art/Prefabs/ImageTarget.prefab");
+            Create(prefab);
+        }
 
         #endregion
     }
-    
+
 #endif
 }
