@@ -20,7 +20,7 @@ namespace Scripts
 
         private GameObject _appManager;
 
-        private int _cardArrayOffset = 0;
+        private int _cardArrayOffset;
         private Vector3[] _cardPositions;
         private UIFader _fader;
         private int _lower;
@@ -28,8 +28,6 @@ namespace Scripts
 
         private void Awake()
         {
-            // _lower = cards.Length - _cardPositions.Length;
-            // _upper = 0;
             _fader = gameObject.GetComponent<UIFader>();
             _appManager = GameObject.Find("AppManager");
         }
@@ -59,6 +57,8 @@ namespace Scripts
 
         private void MoveCards()
         {
+            print(_cardArrayOffset);
+
             // This loop moves the cards.
             for (var i = 0; i < cards.Length; i++)
             {
@@ -87,19 +87,24 @@ namespace Scripts
 
         public void IncreaseOffset()
         {
-            // if (_cardArrayOffset <= _upper) 
+            if (_cardArrayOffset > _upper) return;
             _cardArrayOffset++;
+            print(_cardArrayOffset);
         }
 
         public void DecreaseOffset()
         {
-            // if (_cardArrayOffset >= _lower)
+            if (_cardArrayOffset < _lower) return;
             _cardArrayOffset--;
+            print(_cardArrayOffset);
         }
 
         private void CardInit()
         {
             _cardPositions = new Vector3[cards.Length * 2 - 1];
+
+            _lower = cards.Length - _cardPositions.Length;
+            _upper = 0;
 
             if (_cardPositions.Length < 2)
             {
