@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Scripts
 {
@@ -19,19 +18,20 @@ namespace Scripts
         [SerializeField]
         public Transform[] cards;
 
-        private int _cardArrayOffset;
+        private GameObject _appManager;
+
+        private int _cardArrayOffset = 0;
         private Vector3[] _cardPositions;
         private UIFader _fader;
         private int _lower;
         private int _upper;
-        private GameObject appManager;
 
         private void Awake()
         {
-            _lower = cards.GetLowerBound(0);
-            _upper = cards.GetUpperBound(0);
+            // _lower = cards.Length - _cardPositions.Length;
+            // _upper = 0;
             _fader = gameObject.GetComponent<UIFader>();
-            appManager = GameObject.Find("AppManager");
+            _appManager = GameObject.Find("AppManager");
         }
 
         public void Reset()
@@ -49,40 +49,52 @@ namespace Scripts
             MoveCards();
         }
 
+        private void OnEnable()
+        {
+            if (_appManager.GetComponent<GameManagerScript>().activeStack != null)
+                _appManager.GetComponent<GameManagerScript>().activeStack.SetActive(false);
+
+            _appManager.GetComponent<GameManagerScript>().activeStack = gameObject;
+        }
+
         private void MoveCards()
         {
             // This loop moves the cards.
             for (var i = 0; i < cards.Length; i++)
             {
-                cards[i].localPosition = Vector3.Lerp(cards[i].localPosition, _cardPositions[i + _cardArrayOffset],
+                cards[i].localPosition = Vector3.Lerp(cards[i].localPosition, _cardPositions[i + 1 + _cardArrayOffset],
                     Time.deltaTime * cardMoveSpeed);
-                if (!(Mathf.Abs(cards[i].localPosition.x - _cardPositions[i + _cardArrayOffset].x) < 0.01f)) continue;
-                cards[i].localPosition = _cardPositions[i + _cardArrayOffset];
-
-                var cg = cards[i].gameObject.GetComponent<CanvasGroup>();
-
-                // Disables interaction with cards that are not on top of the stack and calls the UIFader.
-                if (cards[i].localPosition.x == 0)
+                if (Mathf.Abs(cards[i].localPosition.x - _cardPositions[i + 1 + _cardArrayOffset].x) < 0.01f)
                 {
-                    cg.interactable = true;
-                    _fader.FadeIn(cg);
-                }
-                else
-                {
-                    cg.interactable = false;
-                    _fader.FadeToQuarter(cg);
+                    cards[i].localPosition = _cardPositions[i + 1 + _cardArrayOffset];
+
+                    var cg = cards[i].gameObject.GetComponent<CanvasGroup>();
+
+                    // Disables interaction with cards that are not on top of the stack and calls the UIFader.
+                    if (cards[i].localPosition.x == 0)
+                    {
+                        cg.interactable = true;
+                        _fader.FadeIn(cg);
+                    }
+                    else
+                    {
+                        cg.interactable = false;
+                        _fader.FadeToQuarter(cg);
+                    }
                 }
             }
         }
 
         public void IncreaseOffset()
         {
-            if (_cardArrayOffset < _upper) _cardArrayOffset++;
+            // if (_cardArrayOffset <= _upper) 
+            _cardArrayOffset++;
         }
 
         public void DecreaseOffset()
         {
-            if (_cardArrayOffset > _lower) _cardArrayOffset--;
+            // if (_cardArrayOffset >= _lower)
+            _cardArrayOffset--;
         }
 
         private void CardInit()
@@ -111,16 +123,6 @@ namespace Scripts
         public int GetOffset()
         {
             return _cardArrayOffset;
-        }
-
-        private void OnEnable()
-        {
-            if (appManager.GetComponent<GameManagerScript>().activeStack != null)
-            {
-                appManager.GetComponent<GameManagerScript>().activeStack.SetActive(false);
-            }
-
-            appManager.GetComponent<GameManagerScript>().activeStack = this.gameObject;
         }
     }
 }
