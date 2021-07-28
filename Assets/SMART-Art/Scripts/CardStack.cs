@@ -23,8 +23,8 @@ namespace Scripts
         private int _cardArrayOffset;
         private Vector3[] _cardPositions;
         private UIFader _fader;
-        private int _lower;
-        private int _upper;
+        private int _offsetLowerBound;
+        private int _offsetUpperBound;
 
         private void Awake()
         {
@@ -57,8 +57,6 @@ namespace Scripts
 
         private void MoveCards()
         {
-            print(_cardArrayOffset);
-
             // This loop moves the cards.
             for (var i = 0; i < cards.Length; i++)
             {
@@ -87,24 +85,21 @@ namespace Scripts
 
         public void IncreaseOffset()
         {
-            if (_cardArrayOffset > _upper) return;
-            _cardArrayOffset++;
-            print(_cardArrayOffset);
+            if (_cardArrayOffset < _offsetUpperBound) _cardArrayOffset++;
         }
 
         public void DecreaseOffset()
         {
-            if (_cardArrayOffset < _lower) return;
-            _cardArrayOffset--;
-            print(_cardArrayOffset);
+            if (_cardArrayOffset > _offsetLowerBound) _cardArrayOffset--;
         }
 
         private void CardInit()
         {
             _cardPositions = new Vector3[cards.Length * 2 - 1];
-
-            _lower = cards.Length - _cardPositions.Length;
-            _upper = 0;
+            var lowerBound = cards.GetLowerBound(0);
+            var upperBound = cards.GetUpperBound(0);
+            _offsetLowerBound = lowerBound - upperBound;
+            _offsetUpperBound = 0;
 
             if (_cardPositions.Length < 2)
             {
