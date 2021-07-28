@@ -4,14 +4,14 @@ using UnityEngine.UIElements;
 
 namespace Scripts
 {
-    public class CardDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
+    public class CardDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerUpHandler, IPointerDownHandler
     {
         private CardStack cardStack;
         private GameObject appManager;
         private bool interactable = true;
 
-        private float dragXDistance = -1f;
-        private float dragYDistance = -1f;
+        private float dragXDistance;
+        private float dragYDistance;
         private bool zeroed = false;
 
         private void Awake()
@@ -36,25 +36,6 @@ namespace Scripts
                 }
             }
             
-            if (Input.touchCount == 0)
-            {
-                if (dragXDistance >= 0 || dragYDistance >= 0)
-                {
-                    var minDragDist = 100;
-                    if (interactable && ((dragXDistance < minDragDist && dragYDistance < minDragDist)))
-                    {
-                        gameObject.GetComponent<TakeAway>().TakeSlides();
-                        appManager.GetComponent<GameManagerScript>().screenSpaceActive = true;
-                        appManager.GetComponent<GameManagerScript>().activeStack = null;
-                        gameObject.SetActive(false);
-                    }
-                    
-                }
-                interactable = true;
-                dragXDistance = -1;
-                dragYDistance = -1;
-                zeroed = false;
-            }
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -116,6 +97,32 @@ namespace Scripts
             Right,
             Left,
             Up
+        }
+
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            dragXDistance = Mathf.Abs(eventData.position.x - eventData.pressPosition.x);
+            dragYDistance = Mathf.Abs(eventData.position.y - eventData.pressPosition.y);
+
+            if ((dragXDistance >= 0 || dragYDistance >= 0) && interactable )
+            {
+                var minDragDist = 100;
+                if (interactable && ((dragXDistance < minDragDist && dragYDistance < minDragDist)))
+                {
+                    gameObject.GetComponent<TakeAway>().TakeSlides();
+                    appManager.GetComponent<GameManagerScript>().screenSpaceActive = true;
+                    appManager.GetComponent<GameManagerScript>().activeStack = null;
+                    gameObject.SetActive(false);
+                }
+                    
+            }
+            interactable = true;
+            zeroed = false;
+        }
+
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            
         }
     }
 }
