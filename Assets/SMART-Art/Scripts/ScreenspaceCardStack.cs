@@ -15,14 +15,11 @@ namespace Scripts
         public int cardArrayOffset;
         private Vector3[] _cardPositions;
         private UIFader _fader;
-        private int _lower;
-        private int _upper;
+        private int _offsetLowerBound;
+        private int _offsetUpperBound;
 
         public void Awake()
         {
-            //cards = new Transform[gameObject.GetComponent<TakeAway>().cardNum];
-            _lower = cards.GetLowerBound(0);
-            _upper = cards.GetUpperBound(0);
             _fader = gameObject.GetComponent<UIFader>();
         }
 
@@ -46,37 +43,42 @@ namespace Scripts
             // This loop moves the cards.
             for (var i = 0; i < cards.Length; i++)
             {
-                cards[i].localPosition = Vector3.Lerp(cards[i].localPosition, _cardPositions[i + cardArrayOffset],
+                cards[i].localPosition = Vector3.Lerp(cards[i].localPosition, _cardPositions[i + 1 + cardArrayOffset],
                     Time.deltaTime * cardMoveSpeed);
-                if (!(Mathf.Abs(cards[i].localPosition.x - _cardPositions[i + cardArrayOffset].x) < 0.01f)) continue;
-                cards[i].localPosition = _cardPositions[i + cardArrayOffset];
+                if (Mathf.Abs(cards[i].localPosition.x - _cardPositions[i + 1 + cardArrayOffset].x) < 0.01f)
+                {
+                    cards[i].localPosition = _cardPositions[i + 1 + cardArrayOffset];
 
-                var cg = cards[i].gameObject.GetComponent<CanvasGroup>();
+                    var cg = cards[i].gameObject.GetComponent<CanvasGroup>();
 
-                // This disables interaction with cards that are not on top of the stack.
-                if (cards[i].localPosition.x == 0)
-                    cg.interactable = true;
-                // uiFader.FadeIn(cg);
-                else
-                    cg.interactable = false;
-                // uiFader.FadeToHalf(cg);
+                    // This disables interaction with cards that are not on top of the stack.
+                    if (cards[i].localPosition.x == 0)
+                        cg.interactable = true;
+                    // uiFader.FadeIn(cg);
+                    else
+                        cg.interactable = false;
+                    // uiFader.FadeToHalf(cg);
+                }
             }
         }
 
         public void IncreaseOffset()
         {
-            if (cardArrayOffset < _upper) cardArrayOffset++;
+            if (cardArrayOffset < _offsetUpperBound) cardArrayOffset++;
         }
 
         public void DecreaseOffset()
         {
-            if (cardArrayOffset > _lower) cardArrayOffset--;
+            if (cardArrayOffset > _offsetLowerBound) cardArrayOffset--;
         }
 
         private void CardInit()
         {
-            // overflow
             _cardPositions = new Vector3[cards.Length * 2 - 1];
+            var lowerBound = cards.GetLowerBound(0);
+            var upperBound = cards.GetUpperBound(0);
+            _offsetLowerBound = lowerBound - upperBound;
+            _offsetUpperBound = 0;
 
             if (_cardPositions.Length < 2)
             {
