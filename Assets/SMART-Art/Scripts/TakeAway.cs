@@ -5,7 +5,7 @@ namespace Scripts
 {
     public class TakeAway : MonoBehaviour
     {
-        public GameObject cardStack;
+        private GameObject cardStack;
         private int cardNum;
         public GameObject testUI;
         private int cardOffset;
