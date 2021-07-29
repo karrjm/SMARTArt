@@ -5,7 +5,6 @@ namespace Scripts
 {
     public class Helper : MonoBehaviour
     {
-        [SerializeField] private GameObject XButton;
         public GameObject appManager;
         private int activeTrackers = 0;
         private bool firstFound = false;

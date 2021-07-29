@@ -68,6 +68,7 @@ namespace Scripts
                         cardStack.Reset();
                         gameObject.transform.GetComponentInParent<PoiDragHandler>().Unlock();
                         appManager.GetComponent<GameManagerScript>().NullActiveStack();
+                        gameObject.transform.localScale = Vector3.one;
                         cardStack.gameObject.SetActive(false);
                         break;
                     case DraggedDirection.Up:
