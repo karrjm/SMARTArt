@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using Scripts.Drag_Controllers;
+using Scripts.Utilities;
+using UnityEngine;
 
-namespace Scripts
+namespace Scripts.Stacks
 {
     [RequireComponent(typeof(CardDragHandler))]
     public class CardStack : MonoBehaviour

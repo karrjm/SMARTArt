@@ -1,16 +1,17 @@
+using Scripts.Stacks;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Scripts
+namespace Scripts.Drag_Controllers
 {
-    public class PoiDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
+    public class TopicDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     {
         private bool interactable = true;
-        private PoiStack poiStack;
+        private TopicStack topicStack;
 
         private void Awake()
         {
-            poiStack = gameObject.GetComponent<PoiStack>();
+            topicStack = gameObject.GetComponent<TopicStack>();
         }
 
         // must implement or IEndDragHandler will not work
@@ -30,10 +31,10 @@ namespace Scripts
                 switch (direction)
                 {
                     case DraggedDirection.Left:
-                        poiStack.DecreaseOffset();
+                        topicStack.DecreaseOffset();
                         break;
                     case DraggedDirection.Right:
-                        poiStack.IncreaseOffset();
+                        topicStack.IncreaseOffset();
                         break;
                 }
         }

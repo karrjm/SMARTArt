@@ -3427,7 +3427,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1189142b85c19ca4ab19ccd22c2269ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XButton: {fileID: 0}
   appManager: {fileID: 1725605390}
 --- !u!114 &474053068
 MonoBehaviour:
@@ -16729,7 +16728,7 @@ GameObject:
   - component: {fileID: 140855388}
   - component: {fileID: 7014895623387512328}
   m_Layer: 5
-  m_Name: Card Stack
+  m_Name: Screenspace Card Stack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,8 +1,8 @@
+using Scripts.Stacks;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
 
-namespace Scripts
+namespace Scripts.Drag_Controllers
 {
     public class CardDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerUpHandler, IPointerDownHandler
     {
@@ -66,7 +66,7 @@ namespace Scripts
                         break;
                     case DraggedDirection.Down:
                         cardStack.Reset();
-                        gameObject.transform.GetComponentInParent<PoiDragHandler>().Unlock();
+                        gameObject.transform.GetComponentInParent<TopicDragHandler>().Unlock();
                         appManager.GetComponent<GameManagerScript>().NullActiveStack();
                         gameObject.transform.localScale = Vector3.one;
                         cardStack.gameObject.SetActive(false);

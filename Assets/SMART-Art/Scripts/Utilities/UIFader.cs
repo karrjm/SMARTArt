@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Scripts
+namespace Scripts.Utilities
 {
     public class UIFader : MonoBehaviour
     {

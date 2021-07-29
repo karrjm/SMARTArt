@@ -1,7 +1,8 @@
+using Scripts.Stacks;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Scripts
+namespace Scripts.Drag_Controllers
 {
     public class ScreenspaceDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     {
