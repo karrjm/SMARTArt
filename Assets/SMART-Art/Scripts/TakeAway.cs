@@ -6,7 +6,7 @@ namespace Scripts
     public class TakeAway : MonoBehaviour
     {
         public GameObject cardStack;
-        public int cardNum;
+        private int cardNum;
         public GameObject testUI;
         private int cardOffset;
         private GameObject myGO;
@@ -22,12 +22,10 @@ namespace Scripts
 
             for (var i = 0; i < cardNum; i++)
             {
-                cardStack.GetComponent<ScreenspaceCardStack>().cards[i] =
-                    Instantiate(gameObject.transform.GetChild(cardNum - 1 - i));
+                cardStack.GetComponent<ScreenspaceCardStack>().cards[i] = Instantiate(gameObject.transform.GetChild(i));
                 // cardStack.GetComponent<ScreenspaceCardStack>().cards[i].transform.parent = cardStack.transform;
                 cardStack.GetComponent<ScreenspaceCardStack>().cards[i].transform.SetParent(cardStack.transform, false);
-                cardStack.GetComponent<ScreenspaceCardStack>().cards[i].GetComponent<RectTransform>().localScale =
-                    new Vector3(400f, 400f, 1f);
+                cardStack.GetComponent<ScreenspaceCardStack>().cards[i].GetComponent<RectTransform>().localScale = new Vector3(400f, 400f, 1f);
                 cardStack.GetComponent<ScreenspaceCardStack>().cards[i].GetComponent<CanvasGroup>().alpha = 1f;
             }
 
