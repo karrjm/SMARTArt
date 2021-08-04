@@ -8,7 +8,7 @@ namespace Scripts.Drag_Controllers
     {
         private GameManagerScript app;
         private GameObject appManager;
-        private bool interactable = true;
+        public bool interactable = true;
         private ScreenspaceCardStack screenspaceCardStack;
 
         private void Awake()
@@ -40,6 +40,7 @@ namespace Scripts.Drag_Controllers
             var direction = GetDragDirection(dragVectorDirection);
 
             if (interactable)
+            {
                 switch (direction)
                 {
                     case DraggedDirection.Left:
@@ -55,6 +56,7 @@ namespace Scripts.Drag_Controllers
                     case DraggedDirection.Up:
                         break;
                 }
+            }
         }
 
         // determine the direction of a drag

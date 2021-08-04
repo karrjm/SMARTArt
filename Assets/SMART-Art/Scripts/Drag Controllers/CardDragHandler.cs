@@ -1,3 +1,4 @@
+using System.Collections;
 using Scripts.Stacks;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -117,13 +118,28 @@ namespace Scripts.Drag_Controllers
                 }
                     
             }
-            interactable = true;
+
+            if (gameObject.activeSelf)
+            {
+                StartCoroutine(ReEnableSwipe());
+            }
+            else
+            {
+                interactable = true;
+            }
+
             zeroed = false;
         }
 
         public void OnPointerDown(PointerEventData eventData)
         {
             
+        }
+
+        IEnumerator ReEnableSwipe()
+        {
+            yield return new WaitForSeconds(0.5f);
+            interactable = true;
         }
     }
 }

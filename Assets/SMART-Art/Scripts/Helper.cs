@@ -1,13 +1,12 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Scripts
 {
     public class Helper : MonoBehaviour
     {
         public GameObject appManager;
-        private int activeTrackers = 0;
-        private bool firstFound = false;
+        private int activeTrackers;
+        private bool firstFound;
 
         public void Activate()
         {

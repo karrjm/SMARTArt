@@ -685,35 +685,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!21 &76411403
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'UW_Stout_French_Trappers_on_the_Red_CedarMaterial
-
-    20654'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 6cecb7826f674928a3462c12e7745bdb, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &76675938
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,6 +766,35 @@ MonoBehaviour:
   cards:
   - {fileID: 1943036638}
   - {fileID: 2055491821}
+--- !u!21 &124153804
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'UW_Stout_French_Trappers_on_the_Red_CedarMaterial
+
+    17530'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 6cecb7826f674928a3462c12e7745bdb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &125037928
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,7 +963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f55903a95ecbc74da2be63619ea3521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardDistance: 1500
+  cardDistance: 2000
   cardMoveSpeed: 12
   cards: []
   cardArrayOffset: 0
@@ -979,6 +979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 756741088bfaa8a408beed4253528c14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactable: 1
 --- !u!114 &140855388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1984,7 +1985,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b007dbd43eb2af4418eba8ae232a8f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardStack: {fileID: 333903107}
   testUI: {fileID: 344744224}
 --- !u!114 &333903112
 MonoBehaviour:
@@ -2010,7 +2010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1691428567f44f7893ab18765bb0b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardDistance: 5
+  cardDistance: 4
   cardMoveSpeed: 10
   cards:
   - {fileID: 303902576}
@@ -2985,7 +2985,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b007dbd43eb2af4418eba8ae232a8f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardStack: {fileID: 429785090}
   testUI: {fileID: 344744224}
 --- !u!114 &429785095
 MonoBehaviour:
@@ -3011,7 +3010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1691428567f44f7893ab18765bb0b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardDistance: 5
+  cardDistance: 4
   cardMoveSpeed: 10
   cards:
   - {fileID: 250937226}
@@ -3199,7 +3198,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 76411403}
+  - {fileID: 124153804}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3563,7 +3562,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b007dbd43eb2af4418eba8ae232a8f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardStack: {fileID: 498441849}
   testUI: {fileID: 344744224}
 --- !u!114 &498441854
 MonoBehaviour:
@@ -3589,7 +3587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1691428567f44f7893ab18765bb0b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardDistance: 5
+  cardDistance: 4
   cardMoveSpeed: 10
   cards:
   - {fileID: 1933998811}
@@ -4112,7 +4110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b007dbd43eb2af4418eba8ae232a8f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardStack: {fileID: 631573104}
   testUI: {fileID: 344744224}
 --- !u!114 &631573109
 MonoBehaviour:
@@ -4138,7 +4135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1691428567f44f7893ab18765bb0b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardDistance: 5
+  cardDistance: 4
   cardMoveSpeed: 10
   cards:
   - {fileID: 1001991699}
@@ -5433,7 +5430,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b007dbd43eb2af4418eba8ae232a8f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardStack: {fileID: 952633845}
   testUI: {fileID: 344744224}
 --- !u!114 &952633850
 MonoBehaviour:
@@ -5459,7 +5455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1691428567f44f7893ab18765bb0b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardDistance: 5
+  cardDistance: 4
   cardMoveSpeed: 10
   cards:
   - {fileID: 5295538}
@@ -5937,6 +5933,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102913594}
   m_CullTransparentMesh: 1
+--- !u!21 &1109353956
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'UW_Stout_Perraults_Trading_FortMaterial
+
+    17784'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: d2ccfb0725af437fa270ed2443922595, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1111751138
 GameObject:
   m_ObjectHideFlags: 0
@@ -5985,7 +6010,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1653725849}
+  - {fileID: 1109353956}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6202,7 +6227,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b007dbd43eb2af4418eba8ae232a8f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardStack: {fileID: 1156644527}
   testUI: {fileID: 344744224}
 --- !u!114 &1156644532
 MonoBehaviour:
@@ -6940,7 +6964,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b007dbd43eb2af4418eba8ae232a8f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardStack: {fileID: 1409434868}
   testUI: {fileID: 344744224}
 --- !u!114 &1409434873
 MonoBehaviour:
@@ -7019,7 +7042,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2070987901}
+  - {fileID: 1837433342}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7840,7 +7863,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b007dbd43eb2af4418eba8ae232a8f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardStack: {fileID: 1517332263}
   testUI: {fileID: 344744224}
 --- !u!114 &1517332268
 MonoBehaviour:
@@ -7866,7 +7888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1691428567f44f7893ab18765bb0b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardDistance: 5
+  cardDistance: 4
   cardMoveSpeed: 10
   cards:
   - {fileID: 974250603}
@@ -9105,7 +9127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b007dbd43eb2af4418eba8ae232a8f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardStack: {fileID: 1648926377}
   testUI: {fileID: 344744224}
 --- !u!114 &1648926382
 MonoBehaviour:
@@ -9131,40 +9152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1691428567f44f7893ab18765bb0b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardDistance: 5
+  cardDistance: 4
   cardMoveSpeed: 10
   cards:
   - {fileID: 1246771614}
   - {fileID: 396378515}
---- !u!21 &1653725849
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'UW_Stout_Perraults_Trading_FortMaterial
-
-    20914'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: d2ccfb0725af437fa270ed2443922595, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &1668134636
 GameObject:
   m_ObjectHideFlags: 0
@@ -9506,7 +9498,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b007dbd43eb2af4418eba8ae232a8f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardStack: {fileID: 1716006095}
   testUI: {fileID: 344744224}
 --- !u!114 &1716006100
 MonoBehaviour:
@@ -9532,7 +9523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1691428567f44f7893ab18765bb0b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardDistance: 5
+  cardDistance: 4
   cardMoveSpeed: 10
   cards:
   - {fileID: 1873309455}
@@ -10057,6 +10048,35 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1836981888}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &1837433342
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'Learning_Industry_Skill_and_HonorMaterial
+
+    17878'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 21f3a1ab229e4bc7afaffd0c01932cf1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1841407535
 GameObject:
   m_ObjectHideFlags: 0
@@ -10137,7 +10157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b007dbd43eb2af4418eba8ae232a8f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardStack: {fileID: 1841407535}
   testUI: {fileID: 344744224}
 --- !u!114 &1841407540
 MonoBehaviour:
@@ -11134,7 +11153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b007dbd43eb2af4418eba8ae232a8f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardStack: {fileID: 1964983783}
   testUI: {fileID: 344744224}
 --- !u!114 &1964983788
 MonoBehaviour:
@@ -11625,35 +11643,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064504800}
   m_CullTransparentMesh: 1
---- !u!21 &2070987901
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'Learning_Industry_Skill_and_HonorMaterial
-
-    21010'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 21f3a1ab229e4bc7afaffd0c01932cf1, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &2093896659
 GameObject:
   m_ObjectHideFlags: 0
@@ -12464,7 +12453,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b007dbd43eb2af4418eba8ae232a8f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardStack: {fileID: 7014895623387512327}
   testUI: {fileID: 0}
 --- !u!224 &1955383208668958004
 RectTransform:
@@ -15883,6 +15871,7 @@ GameObject:
   - component: {fileID: 140855387}
   - component: {fileID: 140855388}
   - component: {fileID: 7014895623387512328}
+  - component: {fileID: 7014895623387512329}
   m_Layer: 5
   m_Name: Screenspace Card Stack
   m_TagString: Untagged
@@ -15904,6 +15893,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minScale: 0
   maxScale: 0
+--- !u!114 &7014895623387512329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7014895623387512327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2aeb05511f9ae34ab7616e9926efe04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 344744228}
 --- !u!224 &7014895624032467362
 RectTransform:
   m_ObjectHideFlags: 0
