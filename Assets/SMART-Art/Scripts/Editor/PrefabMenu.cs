@@ -77,6 +77,14 @@ namespace Scripts.Editor
                 AssetDatabase.LoadAssetAtPath<GameObject>("Assets/SMART-Art/Prefabs/ImageTarget.prefab");
             Create(prefab);
         }
+        
+        [MenuItem("GameObject/SMART-Art/Prefabs/Audio Card", false, 0)]
+        private static void CreateAudio()
+        {
+            var prefab =
+                AssetDatabase.LoadAssetAtPath<GameObject>("Assets/SMART-Art/Prefabs/Audio Panel.prefab");
+            Create(prefab);
+        }
 
         #endregion
     }
