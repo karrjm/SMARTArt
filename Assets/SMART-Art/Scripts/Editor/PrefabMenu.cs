@@ -78,8 +78,8 @@ namespace Scripts.Editor
             Create(prefab);
         }
         
-        [MenuItem("GameObject/SMART-Art/Prefabs/Audio Card", false, 0)]
-        private static void CreateAudio()
+        [MenuItem("GameObject/SMART-Art/Prefabs/Audio Panel", false, 0)]
+        private static void CreateAudioPanel()
         {
             var prefab =
                 AssetDatabase.LoadAssetAtPath<GameObject>("Assets/SMART-Art/Prefabs/Audio Panel.prefab");
