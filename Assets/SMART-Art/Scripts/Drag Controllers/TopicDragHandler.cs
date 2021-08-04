@@ -13,10 +13,17 @@ namespace Scripts.Drag_Controllers
         {
             topicStack = gameObject.GetComponent<TopicStack>();
         }
+        
+        private void Update()
+        {
+            if (Input.touchCount == 0) interactable = true;
+        }
+
 
         // must implement or IEndDragHandler will not work
         public void OnDrag(PointerEventData eventData)
         {
+            if (Input.touchCount > 1) interactable = false;
         }
 
         public void OnEndDrag(PointerEventData eventData)
