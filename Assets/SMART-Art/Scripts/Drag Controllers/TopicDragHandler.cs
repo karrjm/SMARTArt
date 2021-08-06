@@ -43,14 +43,25 @@ namespace Scripts.Drag_Controllers
                     case DraggedDirection.Right:
                         topicStack.IncreaseOffset();
                         break;
+                    case DraggedDirection.Down:
+                        break;
+                    case DraggedDirection.Up:
+                        break;
                 }
         }
 
         // determine the direction of a drag
         private DraggedDirection GetDragDirection(Vector3 dragVector)
         {
+            var positiveX = Mathf.Abs(dragVector.x); // min swipe dist?
+            var positiveY = Mathf.Abs(dragVector.y); // min swipe dist?
             DraggedDirection draggedDir;
-            draggedDir = dragVector.x > 0 ? DraggedDirection.Right : DraggedDirection.Left;
+
+            if (positiveX > positiveY)
+                draggedDir = dragVector.x > 0 ? DraggedDirection.Right : DraggedDirection.Left;
+            else
+                draggedDir = dragVector.y > 0 ? DraggedDirection.Up : DraggedDirection.Down;
+
             return draggedDir;
         }
 
@@ -67,7 +78,9 @@ namespace Scripts.Drag_Controllers
         private enum DraggedDirection
         {
             Right,
-            Left
+            Left,
+            Down,
+            Up
         }
     }
 }
