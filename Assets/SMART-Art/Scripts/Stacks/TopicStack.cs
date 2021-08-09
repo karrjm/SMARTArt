@@ -20,7 +20,7 @@ namespace Scripts.Stacks
         [SerializeField]
         private Transform[] cards;
 
-        private int _cardArrayOffset;
+        public int _cardArrayOffset;
         private Vector3[] _cardPositions;
         private UIFader _fader;
         private int _offsetLowerBound;
