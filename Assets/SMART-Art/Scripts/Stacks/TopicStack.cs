@@ -48,14 +48,14 @@ namespace Scripts.Stacks
             {
                 cards[i].localPosition = Vector3.Lerp(cards[i].localPosition, _cardPositions[i + 1 + _cardArrayOffset],
                     Time.deltaTime * cardMoveSpeed);
-                if (Mathf.Abs(cards[i].localPosition.x - _cardPositions[i + 1 + _cardArrayOffset].x) < 0.01f)
+                if (Mathf.Abs(cards[i].localPosition.y - _cardPositions[i + 1 + _cardArrayOffset].y) < 0.01f)
                 {
                     cards[i].localPosition = _cardPositions[i + 1 + _cardArrayOffset];
 
                     var cg = cards[i].gameObject.GetComponent<CanvasGroup>();
 
                     // This disables interaction with cards that are not on top of the stack.
-                    if (cards[i].localPosition.x == 0)
+                    if (cards[i].localPosition.y == 0)
                     {
                         cg.interactable = true;
                         _fader.FadeIn(cg);
@@ -97,13 +97,13 @@ namespace Scripts.Stacks
                 for (var i = cards.Length; i > -1; i--)
                     if (i < cards.Length - 1)
                         _cardPositions[i] =
-                            new Vector3(-topicCardDistance + _cardPositions[i + 1].x, 0, 0);
+                            new Vector3(0, -topicCardDistance + _cardPositions[i + 1].y, 0);
                     else
                         _cardPositions[i] = Vector3.zero;
 
                 // This loop is for cards outside of the stack.
                 for (var i = cards.Length; i < _cardPositions.Length; i++)
-                    _cardPositions[i] = new Vector3(topicCardDistance + _cardPositions[i - 1].x, 0, 0);
+                    _cardPositions[i] = new Vector3(0, topicCardDistance + _cardPositions[i - 1].y, 0);
             }
         }
     }

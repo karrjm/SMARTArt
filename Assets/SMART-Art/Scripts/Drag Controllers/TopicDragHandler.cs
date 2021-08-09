@@ -38,14 +38,16 @@ namespace Scripts.Drag_Controllers
                 switch (direction)
                 {
                     case DraggedDirection.Left:
-                        topicStack.DecreaseOffset();
+                        
                         break;
                     case DraggedDirection.Right:
-                        topicStack.IncreaseOffset();
+                        
                         break;
                     case DraggedDirection.Down:
+                        topicStack.DecreaseOffset();
                         break;
                     case DraggedDirection.Up:
+                        topicStack.IncreaseOffset();
                         break;
                 }
         }
