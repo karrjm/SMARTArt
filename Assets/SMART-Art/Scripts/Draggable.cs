@@ -1,4 +1,3 @@
-using System;
 using Scripts.Drag_Controllers;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -14,18 +13,7 @@ namespace Scripts
         {
             rectTransform = GetComponent<RectTransform>();
         }
-
-        // Start is called before the first frame update
-        void Start()
-        {
         
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
 
         public void OnDrag(PointerEventData eventData)
         {

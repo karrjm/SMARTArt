@@ -6,17 +6,12 @@ namespace Scripts
     public class PinchZoom : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         private bool _isDragging; //bool that determines of the attached object is being dragged
-        private float _currentScale; //takes in the current scale of the object
         public float minScale, maxScale; //stores the minimum and maximum scales the object can be
 
 
         float initialDistance; //stores the distance between both touch points at the start of pinching
         Vector3 initialScale; //stores the initial scale the object is at at the start of pinching
-
-        private void Start()
-        {
-            _currentScale = transform.localScale.x; //set currentScale to the current scale of the object
-        }
+        
 
         public void OnPointerDown(PointerEventData eventData)
         { 
@@ -56,7 +51,7 @@ namespace Scripts
                 }
                 else //or else
                 {
-                    var currentDistance = Vector2.Distance(touchZero.position, touchOne.position); //decalre variable currentDistance and set its value as the distance between the 2 fingers
+                    var currentDistance = Vector2.Distance(touchZero.position, touchOne.position); //declare variable currentDistance and set its value as the distance between the 2 fingers
 
                     //if the initial distance is approximately 0
                     if(Mathf.Approximately(initialDistance, 0))
@@ -64,7 +59,7 @@ namespace Scripts
                         return; //return nothing
                     }
 
-                    var factor = currentDistance / initialDistance; //decalre variable factor and set its value to the current distance divided by the initial distance
+                    var factor = currentDistance / initialDistance; //declare variable factor and set its value to the current distance divided by the initial distance
                     gameObject.transform.localScale = initialScale * factor; //set the object's scale to the initial scale times the factor
                 }
             }

@@ -12,9 +12,9 @@ namespace Scripts
         // Start is called before the first frame update
         void Start()
         {
-            can = gameObject.GetComponent<CanvasScaler>(); //sets the canvas scaler can to the canvas scaler compnent attached to the game object
+            can = gameObject.GetComponent<CanvasScaler>(); //sets the canvas scaler can to the canvas scaler component attached to the game object
             SetInfo(); //call the SetInfo function
-            if (gameObject.tag == "InfoUI")
+            if (gameObject.CompareTag("InfoUI"))
             {
                 gameObject.SetActive(false); //set the game object to inactive
             }
@@ -22,10 +22,10 @@ namespace Scripts
         
         void SetInfo() //declaration of the SetInfo function
         {
-            resoX = (float)Screen.currentResolution.width; //set resoX to the screen width
-            resoY = (float)Screen.currentResolution.height; //set resoY to the screen height
+            resoX = Screen.currentResolution.width; //set resX to the screen width
+            resoY = Screen.currentResolution.height; //set resY to the screen height
 
-            can.referenceResolution = new Vector2(resoX, resoY); //set the reference resolution of the canvas on the object to the same values as resoX and ResoY
+            can.referenceResolution = new Vector2(resoX, resoY); //set the reference resolution of the canvas on the object to the same values as resX and ResY
         }
     }
 }
