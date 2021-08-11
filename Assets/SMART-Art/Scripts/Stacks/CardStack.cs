@@ -27,6 +27,11 @@ namespace Scripts.Stacks
         private UIFader _fader;
         private int _offsetLowerBound;
         private int _offsetUpperBound;
+        
+
+        private int xPowerDifference;
+        [SerializeField]
+        private int cardZMultiplier = 32;
 
         private void Awake()
         {
@@ -97,6 +102,8 @@ namespace Scripts.Stacks
 
         private void CardInit()
         {
+            xPowerDifference = 9 - cards.Length;
+
             _cardPositions = new Vector3[cards.Length * 2 - 1];
             var lowerBound = cards.GetLowerBound(0);
             var upperBound = cards.GetUpperBound(0);
@@ -112,13 +119,15 @@ namespace Scripts.Stacks
                 // This loop is for cards still in the stack.		
                 for (var i = cards.Length; i > -1; i--)
                     if (i < cards.Length - 1)
-                        _cardPositions[i] = new Vector3(-cardDistance + _cardPositions[i + 1].x, 0, 0);
+                        _cardPositions[i] = new Vector3(-4, 0, i*0.5f);
+                        //_cardPositions[i] = new Vector3(-cardDistance + _cardPositions[i + 1].x, 0, 0);
                     else
                         _cardPositions[i] = Vector3.zero;
 
                 // This loop is for cards outside of the stack.
                 for (var i = cards.Length; i < _cardPositions.Length; i++)
-                    _cardPositions[i] = new Vector3(cardDistance + _cardPositions[i - 1].x, 0, 0);
+                    _cardPositions[i] = new Vector3(4, 0, i*0.15f);
+                    //_cardPositions[i] = new Vector3(cardDistance + _cardPositions[i - 1].x, 0, 0);
             }
         }
 
