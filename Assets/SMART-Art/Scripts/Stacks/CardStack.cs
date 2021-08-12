@@ -56,10 +56,10 @@ namespace Scripts.Stacks
 
         private void OnEnable()
         {
-            if (_appManager.GetComponent<GameManagerScript>().activeStack != null)
-                _appManager.GetComponent<GameManagerScript>().activeStack.SetActive(false);
+            if (_appManager.GetComponent<AppManagerScript>().activeStack != null)
+                _appManager.GetComponent<AppManagerScript>().activeStack.SetActive(false);
 
-            _appManager.GetComponent<GameManagerScript>().activeStack = gameObject;
+            _appManager.GetComponent<AppManagerScript>().activeStack = gameObject;
         }
 
         private void MoveCards()

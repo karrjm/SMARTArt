@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Scripts
 {
-    public class GameManagerScript : MonoBehaviour
+    public class AppManagerScript : MonoBehaviour
     { 
         public bool screenSpaceActive;
         public GameObject activeStack;

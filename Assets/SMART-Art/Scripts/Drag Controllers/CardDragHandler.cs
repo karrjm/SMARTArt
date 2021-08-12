@@ -68,7 +68,7 @@ namespace Scripts.Drag_Controllers
                     case DraggedDirection.Down:
                         cardStack.Reset();
                         gameObject.transform.GetComponentInParent<TopicDragHandler>().Unlock();
-                        appManager.GetComponent<GameManagerScript>().NullActiveStack();
+                        appManager.GetComponent<AppManagerScript>().NullActiveStack();
                         gameObject.transform.localScale = Vector3.one;
                         cardStack.gameObject.SetActive(false);
                         break;
@@ -112,8 +112,8 @@ namespace Scripts.Drag_Controllers
                 if (interactable && ((dragXDistance < minDragDist && dragYDistance < minDragDist)))
                 {
                     gameObject.GetComponent<TakeAway>().TakeSlides();
-                    appManager.GetComponent<GameManagerScript>().screenSpaceActive = true;
-                    appManager.GetComponent<GameManagerScript>().activeStack = null;
+                    appManager.GetComponent<AppManagerScript>().screenSpaceActive = true;
+                    appManager.GetComponent<AppManagerScript>().activeStack = null;
                     gameObject.SetActive(false);
                 }
                     
