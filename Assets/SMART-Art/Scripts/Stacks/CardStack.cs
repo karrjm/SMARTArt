@@ -20,6 +20,8 @@ namespace Scripts.Stacks
         [SerializeField]
         public Transform[] cards;
 
+        [SerializeField] private int cardZMultiplier = 32;
+
         private GameObject _appManager;
 
         private int _cardArrayOffset;
@@ -27,11 +29,10 @@ namespace Scripts.Stacks
         private UIFader _fader;
         private int _offsetLowerBound;
         private int _offsetUpperBound;
-        
+        private int scale;
+
 
         private int xPowerDifference;
-        [SerializeField]
-        private int cardZMultiplier = 32;
 
         private void Awake()
         {
@@ -67,11 +68,12 @@ namespace Scripts.Stacks
             // This loop moves the cards.
             for (var i = 0; i < cards.Length; i++)
             {
-                cards[i].localPosition = Vector3.Lerp(cards[i].localPosition, _cardPositions[i + 1 + _cardArrayOffset],
+                cards[i].localPosition = Vector3.Lerp(cards[i].localPosition,
+                    _cardPositions[i + scale + _cardArrayOffset],
                     Time.deltaTime * cardMoveSpeed);
-                if (Mathf.Abs(cards[i].localPosition.x - _cardPositions[i + 1 + _cardArrayOffset].x) < 0.01f)
+                if (Mathf.Abs(cards[i].localPosition.x - _cardPositions[i + scale + _cardArrayOffset].x) < 0.01f)
                 {
-                    cards[i].localPosition = _cardPositions[i + 1 + _cardArrayOffset];
+                    cards[i].localPosition = _cardPositions[i + scale + _cardArrayOffset];
 
                     var cg = cards[i].gameObject.GetComponent<CanvasGroup>();
 
@@ -110,6 +112,8 @@ namespace Scripts.Stacks
             _offsetLowerBound = lowerBound - upperBound;
             _offsetUpperBound = 0;
 
+            scale = cards.Length - 1;
+
             if (_cardPositions.Length < 2)
             {
                 _cardPositions[0] = Vector3.zero;
@@ -119,15 +123,14 @@ namespace Scripts.Stacks
                 // This loop is for cards still in the stack.		
                 for (var i = cards.Length; i > -1; i--)
                     if (i < cards.Length - 1)
-                        _cardPositions[i] = new Vector3(-4, 0, i*0.5f);
-                        //_cardPositions[i] = new Vector3(-cardDistance + _cardPositions[i + 1].x, 0, 0);
+                        // I changed it to a fixed z of one, it would be great if we figured out the math to increase the z as the cards get further on the x
+                        _cardPositions[i] = new Vector3(-cardDistance + _cardPositions[i + 1].x, 0, 1);
                     else
                         _cardPositions[i] = Vector3.zero;
 
                 // This loop is for cards outside of the stack.
                 for (var i = cards.Length; i < _cardPositions.Length; i++)
-                    _cardPositions[i] = new Vector3(4, 0, i*0.15f);
-                    //_cardPositions[i] = new Vector3(cardDistance + _cardPositions[i - 1].x, 0, 0);
+                    _cardPositions[i] = new Vector3(cardDistance + _cardPositions[i - 1].x, 0, 1);
             }
         }
 
