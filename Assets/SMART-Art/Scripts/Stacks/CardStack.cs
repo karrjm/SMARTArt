@@ -31,7 +31,7 @@ namespace Scripts.Stacks
         private void Awake()
         {
             _fader = gameObject.GetComponent<UIFader>();
-            _appManager = GameObject.Find("AppManager");
+            _appManager = GameObject.Find("ARCamera");
         }
 
         public void Reset()
@@ -113,16 +113,16 @@ namespace Scripts.Stacks
             else
             {
                 // This loop is for cards still in the stack.		
-                for (var i = cards.Length; i > -1; i--)
+                for (var i = 0; i < cards.Length; i++)
                     if (i < cards.Length - 1)
                         // I changed it to a fixed z of one, it would be great if we figured out the math to increase the z as the cards get further on the x
-                        _cardPositions[i] = new Vector3(-cardDistance + _cardPositions[i + 1].x, 0, 1);
+                        _cardPositions[i] = new Vector3(-4, 0, i*6);
                     else
                         _cardPositions[i] = Vector3.zero;
 
                 // This loop is for cards outside of the stack.
                 for (var i = cards.Length; i < _cardPositions.Length; i++)
-                    _cardPositions[i] = new Vector3(cardDistance + _cardPositions[i - 1].x, 0, 1);
+                    _cardPositions[i] = new Vector3(4, 0, i*2);
             }
         }
 

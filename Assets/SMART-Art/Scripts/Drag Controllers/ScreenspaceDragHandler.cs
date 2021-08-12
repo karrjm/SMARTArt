@@ -18,7 +18,7 @@ namespace Scripts.Drag_Controllers
                     .GetComponent<
                         ScreenspaceCardStack>(); //set the previously declared CardStack variable to the card stack script attached to the object
             app = FindObjectOfType<AppManagerScript>();
-            appManager = GameObject.Find("AppManager");
+            appManager = GameObject.Find("ARCamera");
         }
 
         private void Update()

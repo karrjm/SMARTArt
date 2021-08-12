@@ -18,7 +18,7 @@ namespace Scripts.Drag_Controllers
         private void Awake()
         {
             cardStack = gameObject.GetComponent<CardStack>();
-            appManager = GameObject.Find("AppManager");
+            appManager = GameObject.Find("ARCamera");
         }
 
         private void Update()
