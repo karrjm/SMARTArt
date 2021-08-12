@@ -20,19 +20,13 @@ namespace Scripts.Stacks
         [SerializeField]
         public Transform[] cards;
 
-        [SerializeField] private int cardZMultiplier = 32;
-
         private GameObject _appManager;
-
         private int _cardArrayOffset;
         private Vector3[] _cardPositions;
         private UIFader _fader;
         private int _offsetLowerBound;
         private int _offsetUpperBound;
-        private int scale;
-
-
-        private int xPowerDifference;
+        private int stackScale;
 
         private void Awake()
         {
@@ -69,11 +63,11 @@ namespace Scripts.Stacks
             for (var i = 0; i < cards.Length; i++)
             {
                 cards[i].localPosition = Vector3.Lerp(cards[i].localPosition,
-                    _cardPositions[i + scale + _cardArrayOffset],
+                    _cardPositions[i + stackScale + _cardArrayOffset],
                     Time.deltaTime * cardMoveSpeed);
-                if (Mathf.Abs(cards[i].localPosition.x - _cardPositions[i + scale + _cardArrayOffset].x) < 0.01f)
+                if (Mathf.Abs(cards[i].localPosition.x - _cardPositions[i + stackScale + _cardArrayOffset].x) < 0.01f)
                 {
-                    cards[i].localPosition = _cardPositions[i + scale + _cardArrayOffset];
+                    cards[i].localPosition = _cardPositions[i + stackScale + _cardArrayOffset];
 
                     var cg = cards[i].gameObject.GetComponent<CanvasGroup>();
 
@@ -104,15 +98,13 @@ namespace Scripts.Stacks
 
         private void CardInit()
         {
-            xPowerDifference = 9 - cards.Length;
-
             _cardPositions = new Vector3[cards.Length * 2 - 1];
             var lowerBound = cards.GetLowerBound(0);
             var upperBound = cards.GetUpperBound(0);
             _offsetLowerBound = lowerBound - upperBound;
             _offsetUpperBound = 0;
 
-            scale = cards.Length - 1;
+            stackScale = cards.Length - 1;
 
             if (_cardPositions.Length < 2)
             {

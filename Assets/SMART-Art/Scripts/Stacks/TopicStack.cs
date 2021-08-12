@@ -20,11 +20,13 @@ namespace Scripts.Stacks
         [SerializeField]
         private Transform[] cards;
 
-        public int _cardArrayOffset;
+        public int cardArrayOffset;
         private Vector3[] _cardPositions;
         private UIFader _fader;
         private int _offsetLowerBound;
         private int _offsetUpperBound;
+
+        private int stackScale;
 
         private void Awake()
         {
@@ -46,11 +48,12 @@ namespace Scripts.Stacks
             // This loop moves the cards.
             for (var i = 0; i < cards.Length; i++)
             {
-                cards[i].localPosition = Vector3.Lerp(cards[i].localPosition, _cardPositions[i + 1 + _cardArrayOffset],
+                cards[i].localPosition = Vector3.Lerp(cards[i].localPosition,
+                    _cardPositions[i + stackScale + cardArrayOffset],
                     Time.deltaTime * cardMoveSpeed);
-                if (Mathf.Abs(cards[i].localPosition.y - _cardPositions[i + 1 + _cardArrayOffset].y) < 0.01f)
+                if (Mathf.Abs(cards[i].localPosition.y - _cardPositions[i + stackScale + cardArrayOffset].y) < 0.01f)
                 {
-                    cards[i].localPosition = _cardPositions[i + 1 + _cardArrayOffset];
+                    cards[i].localPosition = _cardPositions[i + stackScale + cardArrayOffset];
 
                     var cg = cards[i].gameObject.GetComponent<CanvasGroup>();
 
@@ -71,12 +74,12 @@ namespace Scripts.Stacks
 
         public void IncreaseOffset()
         {
-            if (_cardArrayOffset < _offsetUpperBound) _cardArrayOffset++;
+            if (cardArrayOffset < _offsetUpperBound) cardArrayOffset++;
         }
 
         public void DecreaseOffset()
         {
-            if (_cardArrayOffset > _offsetLowerBound) _cardArrayOffset--;
+            if (cardArrayOffset > _offsetLowerBound) cardArrayOffset--;
         }
 
         private void CardInit()
@@ -86,6 +89,8 @@ namespace Scripts.Stacks
             var upperBound = cards.GetUpperBound(0);
             _offsetLowerBound = lowerBound - upperBound;
             _offsetUpperBound = 0;
+
+            stackScale = cards.Length - 1;
 
             if (_cardPositions.Length < 2)
             {
