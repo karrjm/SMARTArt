@@ -66,7 +66,7 @@ namespace Scripts.Stacks
                     else
                     {
                         cg.interactable = false;
-                        _fader.FadeToQuarter(cg);
+                        _fader.FadeOut(cg);
                     }
                 }
             }
