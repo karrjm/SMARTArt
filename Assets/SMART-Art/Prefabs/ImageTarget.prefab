@@ -431,6 +431,7 @@ MonoBehaviour:
   cards:
   - {fileID: 3975339139742305374}
   - {fileID: 3975339140258927762}
+  cardArrayOffset: 0
 --- !u!114 &3975339139861404412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,6 +456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c5d947754d6424b8ea687055890d4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alpha: 0
 --- !u!1 &3975339140020849800
 GameObject:
   m_ObjectHideFlags: 0
