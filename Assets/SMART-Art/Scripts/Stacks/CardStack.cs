@@ -8,7 +8,10 @@ namespace Scripts.Stacks
     public class CardStack : MonoBehaviour
     {
         [Tooltip("The distance between the cards.")] [SerializeField]
-        private int cardDistance = 1;
+        private int cardXDistance = 8;
+        
+        [Tooltip("The Z distance between the cards.")] [SerializeField]
+        private int cardZDistance = 8;
 
         [Tooltip("The speed at which the cards move.")] [SerializeField]
         private float cardMoveSpeed = 8f;
@@ -116,13 +119,13 @@ namespace Scripts.Stacks
                 for (var i = 0; i < cards.Length; i++)
                     if (i < cards.Length - 1)
                         // I changed it to a fixed z of one, it would be great if we figured out the math to increase the z as the cards get further on the x
-                        _cardPositions[i] = new Vector3(-4, 0, i*6);
+                        _cardPositions[i] = new Vector3(-cardXDistance, 0, cardZDistance);
                     else
                         _cardPositions[i] = Vector3.zero;
 
                 // This loop is for cards outside of the stack.
                 for (var i = cards.Length; i < _cardPositions.Length; i++)
-                    _cardPositions[i] = new Vector3(4, 0, i*2);
+                    _cardPositions[i] = new Vector3(cardXDistance, 0, cardZDistance);
             }
         }
 
