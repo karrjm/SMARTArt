@@ -2,6 +2,7 @@ using System.Collections;
 using Scripts.Stacks;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace Scripts.Drag_Controllers
 {
@@ -82,6 +83,8 @@ namespace Scripts.Drag_Controllers
                 var minDragDist = 100;
                 if (interactable && dragXDistance < minDragDist && dragYDistance < minDragDist)
                 {
+                    appManager.GetComponent<AppManagerScript>().NullActiveStack();
+                    /*
                     // return to first
                     cardStack.Reset();
                     // unlock topic swipe ability
@@ -92,6 +95,7 @@ namespace Scripts.Drag_Controllers
                     gameObject.transform.localScale = Vector3.one;
                     // set the card stack inactive
                     cardStack.gameObject.SetActive(false);
+                    */
                 }
             }
 
@@ -123,6 +127,7 @@ namespace Scripts.Drag_Controllers
             yield return new WaitForSeconds(0.5f);
             interactable = true;
         }
+
 
         private enum DraggedDirection
         {

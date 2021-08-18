@@ -1,6 +1,7 @@
 ﻿using Scripts.Drag_Controllers;
 using Scripts.Utilities;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Scripts.Stacks
 {
@@ -55,9 +56,14 @@ namespace Scripts.Stacks
         private void OnEnable()
         {
             if (_appManager.GetComponent<AppManagerScript>().activeStack != null)
+            {
                 _appManager.GetComponent<AppManagerScript>().activeStack.SetActive(false);
+                _appManager.GetComponent<AppManagerScript>().currentButton.GetComponent<Button>().interactable = true;
+            }
 
             _appManager.GetComponent<AppManagerScript>().activeStack = gameObject;
+            _appManager.GetComponent<AppManagerScript>().currentButton = transform.parent.gameObject;
+
         }
 
         private void MoveCards()
