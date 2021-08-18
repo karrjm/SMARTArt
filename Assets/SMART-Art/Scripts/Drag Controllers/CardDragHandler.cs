@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 namespace Scripts.Drag_Controllers
 {
-    public class CardDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerUpHandler, IPointerDownHandler
+    public class CardDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     {
         private CardStack cardStack;
         private GameObject appManager;
@@ -100,41 +100,7 @@ namespace Scripts.Drag_Controllers
             Left,
             Up
         }
-
-        public void OnPointerUp(PointerEventData eventData)
-        {
-            dragXDistance = Mathf.Abs(eventData.position.x - eventData.pressPosition.x);
-            dragYDistance = Mathf.Abs(eventData.position.y - eventData.pressPosition.y);
-
-            if ((dragXDistance >= 0 || dragYDistance >= 0) && interactable )
-            {
-                var minDragDist = 100;
-                if (interactable && ((dragXDistance < minDragDist && dragYDistance < minDragDist)))
-                {
-                    gameObject.GetComponent<TakeAway>().TakeSlides();
-                    appManager.GetComponent<AppManagerScript>().screenSpaceActive = true;
-                    appManager.GetComponent<AppManagerScript>().activeStack = null;
-                    gameObject.SetActive(false);
-                }
-                    
-            }
-
-            if (gameObject.activeSelf)
-            {
-                StartCoroutine(ReEnableSwipe());
-            }
-            else
-            {
-                interactable = true;
-            }
-
-            zeroed = false;
-        }
-
-        public void OnPointerDown(PointerEventData eventData)
-        {
-            
-        }
+        
 
         IEnumerator ReEnableSwipe()
         {

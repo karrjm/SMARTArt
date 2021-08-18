@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace Scripts.Stacks
 {
-    [RequireComponent(typeof(ScreenspaceDragHandler))]
-    public class ScreenspaceCardStack : MonoBehaviour
+    [RequireComponent(typeof(TutorialDragHandler))]
+    public class TutorialCardStack : MonoBehaviour
     {
         [Tooltip("The distance between the cards in screenspace.")] [SerializeField]
         private int cardDistance = 100000;

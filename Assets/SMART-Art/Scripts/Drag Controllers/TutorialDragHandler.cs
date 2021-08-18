@@ -4,19 +4,19 @@ using UnityEngine.EventSystems;
 
 namespace Scripts.Drag_Controllers
 {
-    public class ScreenspaceDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
+    public class TutorialDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     {
         private AppManagerScript app;
         private GameObject appManager;
         public bool interactable = true;
-        private ScreenspaceCardStack screenspaceCardStack;
+        private TutorialCardStack screenspaceCardStack;
 
         private void Awake()
         {
             screenspaceCardStack =
                 gameObject
                     .GetComponent<
-                        ScreenspaceCardStack>(); //set the previously declared CardStack variable to the card stack script attached to the object
+                        TutorialCardStack>(); //set the previously declared CardStack variable to the card stack script attached to the object
             app = FindObjectOfType<AppManagerScript>();
             appManager = GameObject.Find("ARCamera");
         }
@@ -50,8 +50,6 @@ namespace Scripts.Drag_Controllers
                         screenspaceCardStack.IncreaseOffset();
                         break;
                     case DraggedDirection.Down:
-                        screenspaceCardStack.Reset();
-                        app.Dismiss();
                         break;
                     case DraggedDirection.Up:
                         break;
