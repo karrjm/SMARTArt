@@ -81,9 +81,11 @@ namespace Scripts.Stacks
                     var cg = cards[i].gameObject.GetComponent<CanvasGroup>();
 
                     // Disables interaction with cards that are not on top of the stack and calls the UIFader.
+                    
                     if (cards[i].localPosition.x == 0)
                     {
                         cg.interactable = true;
+                        cards[i].SetAsLastSibling();
                         _fader.FadeIn(cg);
                     }
                     else
