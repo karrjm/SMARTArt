@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 namespace Scripts.Drag_Controllers
 {
-    public class CardDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
+    public class CardDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerUpHandler, IPointerDownHandler
     {
         private CardStack cardStack;
         private GameObject appManager;
@@ -66,11 +66,6 @@ namespace Scripts.Drag_Controllers
                         cardStack.IncreaseOffset();
                         break;
                     case DraggedDirection.Down:
-                        cardStack.Reset();
-                        gameObject.transform.GetComponentInParent<TopicDragHandler>().Unlock();
-                        appManager.GetComponent<AppManagerScript>().NullActiveStack();
-                        gameObject.transform.localScale = Vector3.one;
-                        cardStack.gameObject.SetActive(false);
                         break;
                     case DraggedDirection.Up:
                         break;
@@ -100,7 +95,42 @@ namespace Scripts.Drag_Controllers
             Left,
             Up
         }
-        
+
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            dragXDistance = Mathf.Abs(eventData.position.x - eventData.pressPosition.x);
+            dragYDistance = Mathf.Abs(eventData.position.y - eventData.pressPosition.y);
+
+            if ((dragXDistance >= 0 || dragYDistance >= 0) && interactable )
+            {
+                var minDragDist = 100;
+                if (interactable && ((dragXDistance < minDragDist && dragYDistance < minDragDist)))
+                {
+                    cardStack.Reset();
+                    gameObject.transform.GetComponentInParent<TopicDragHandler>().Unlock();
+                    appManager.GetComponent<AppManagerScript>().NullActiveStack();
+                    gameObject.transform.localScale = Vector3.one;
+                    cardStack.gameObject.SetActive(false);
+                }
+                    
+            }
+
+            if (gameObject.activeSelf)
+            {
+                StartCoroutine(ReEnableSwipe());
+            }
+            else
+            {
+                interactable = true;
+            }
+
+            zeroed = false;
+        }
+
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            
+        }
 
         IEnumerator ReEnableSwipe()
         {
