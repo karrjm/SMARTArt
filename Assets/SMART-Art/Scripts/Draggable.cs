@@ -17,7 +17,7 @@ namespace Scripts
 
         public void OnDrag(PointerEventData eventData)
         {
-            if (!gameObject.GetComponent<ScreenspaceDragHandler>().interactable)
+            if (!gameObject.GetComponent<TutorialDragHandler>().interactable)
             {
                 rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
             }

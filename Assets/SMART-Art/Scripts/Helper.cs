@@ -10,7 +10,7 @@ namespace Scripts
 
         public void Activate()
         {
-            if (appManager.GetComponent<AppManagerScript>().screenSpaceActive || activeTrackers > 0)
+            if (activeTrackers > 0)
             {
                 
             }
