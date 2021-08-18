@@ -7,13 +7,13 @@ namespace Scripts.Drag_Controllers
 {
     public class CardDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerUpHandler, IPointerDownHandler
     {
-        private CardStack cardStack;
         private GameObject appManager;
-        private bool interactable = true;
+        private CardStack cardStack;
 
         private float dragXDistance;
         private float dragYDistance;
-        private bool zeroed = false;
+        private bool interactable = true;
+        private bool zeroed;
 
         private void Awake()
         {
@@ -31,12 +31,9 @@ namespace Scripts.Drag_Controllers
                     dragYDistance = 0;
                     zeroed = true;
                 }
-                if (Input.touchCount > 1)
-                {
-                    interactable = false;
-                }
+
+                if (Input.touchCount > 1) interactable = false;
             }
-            
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -56,7 +53,6 @@ namespace Scripts.Drag_Controllers
 
             var minDragDist = 100;
             if (interactable && (dragXDistance >= minDragDist || dragYDistance >= minDragDist))
-            {
                 switch (direction)
                 {
                     case DraggedDirection.Left:
@@ -70,7 +66,41 @@ namespace Scripts.Drag_Controllers
                     case DraggedDirection.Up:
                         break;
                 }
+        }
+
+        public void OnPointerDown(PointerEventData eventData)
+        {
+        }
+
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            dragXDistance = Mathf.Abs(eventData.position.x - eventData.pressPosition.x);
+            dragYDistance = Mathf.Abs(eventData.position.y - eventData.pressPosition.y);
+
+            if ((dragXDistance >= 0 || dragYDistance >= 0) && interactable)
+            {
+                var minDragDist = 100;
+                if (interactable && dragXDistance < minDragDist && dragYDistance < minDragDist)
+                {
+                    // return to first
+                    cardStack.Reset();
+                    // unlock topic swipe ability
+                    gameObject.transform.GetComponentInParent<TopicDragHandler>().Unlock();
+                    // tell app manager there is no active stack
+                    appManager.GetComponent<AppManagerScript>().NullActiveStack();
+                    // set any pinch zoom back to default
+                    gameObject.transform.localScale = Vector3.one;
+                    // set the card stack inactive
+                    cardStack.gameObject.SetActive(false);
+                }
             }
+
+            if (gameObject.activeSelf)
+                StartCoroutine(ReEnableSwipe());
+            else
+                interactable = true;
+
+            zeroed = false;
         }
 
         // determine the direction of a drag
@@ -88,54 +118,18 @@ namespace Scripts.Drag_Controllers
             return draggedDir;
         }
 
+        private IEnumerator ReEnableSwipe()
+        {
+            yield return new WaitForSeconds(0.5f);
+            interactable = true;
+        }
+
         private enum DraggedDirection
         {
             Down,
             Right,
             Left,
             Up
-        }
-
-        public void OnPointerUp(PointerEventData eventData)
-        {
-            dragXDistance = Mathf.Abs(eventData.position.x - eventData.pressPosition.x);
-            dragYDistance = Mathf.Abs(eventData.position.y - eventData.pressPosition.y);
-
-            if ((dragXDistance >= 0 || dragYDistance >= 0) && interactable )
-            {
-                var minDragDist = 100;
-                if (interactable && ((dragXDistance < minDragDist && dragYDistance < minDragDist)))
-                {
-                    cardStack.Reset();
-                    gameObject.transform.GetComponentInParent<TopicDragHandler>().Unlock();
-                    appManager.GetComponent<AppManagerScript>().NullActiveStack();
-                    gameObject.transform.localScale = Vector3.one;
-                    cardStack.gameObject.SetActive(false);
-                }
-                    
-            }
-
-            if (gameObject.activeSelf)
-            {
-                StartCoroutine(ReEnableSwipe());
-            }
-            else
-            {
-                interactable = true;
-            }
-
-            zeroed = false;
-        }
-
-        public void OnPointerDown(PointerEventData eventData)
-        {
-            
-        }
-
-        IEnumerator ReEnableSwipe()
-        {
-            yield return new WaitForSeconds(0.5f);
-            interactable = true;
         }
     }
 }
