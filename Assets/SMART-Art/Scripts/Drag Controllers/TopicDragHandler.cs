@@ -44,10 +44,12 @@ namespace Scripts.Drag_Controllers
                         
                         break;
                     case DraggedDirection.Down:
-                        topicStack.DecreaseOffset();
+                        transform.parent.GetChild(0).gameObject.GetComponent<TopicStack>().DecreaseOffset();
+                        transform.parent.GetChild(1).gameObject.GetComponent<TopicStack>().DecreaseOffset();
                         break;
                     case DraggedDirection.Up:
-                        topicStack.IncreaseOffset();
+                        transform.parent.GetChild(0).gameObject.GetComponent<TopicStack>().IncreaseOffset();
+                        transform.parent.GetChild(1).gameObject.GetComponent<TopicStack>().IncreaseOffset();
                         break;
                 }
         }

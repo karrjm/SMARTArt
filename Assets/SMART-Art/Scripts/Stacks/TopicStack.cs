@@ -8,7 +8,7 @@ namespace Scripts.Stacks
     public class TopicStack : MonoBehaviour
     {
         [Tooltip("The distance between the topic cards.")] [SerializeField]
-        private int topicCardDistance = 1;
+        private float topicCardDistance = 1;
 
         [Tooltip("The speed at which the topic cards move.")] [SerializeField]
         private float cardMoveSpeed = 8f;
