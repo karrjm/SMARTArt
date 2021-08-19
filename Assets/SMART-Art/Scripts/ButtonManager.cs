@@ -10,15 +10,11 @@ namespace Scripts
         private void Awake()
         {
             buttons = FindObjectsOfType<Button>();
-            foreach (var button in buttons)
-            {
-                print(button);
-            }
+            foreach (var button in buttons) print(button);
         }
 
         private void Update()
         {
-        
         }
     }
 }

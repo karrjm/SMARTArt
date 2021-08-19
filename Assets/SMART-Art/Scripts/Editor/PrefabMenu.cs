@@ -45,7 +45,7 @@ namespace Scripts.Editor
                 AssetDatabase.LoadAssetAtPath<GameObject>("Assets/SMART-Art/Prefabs/POI.prefab");
             Create(prefab);
         }
-        
+
         [MenuItem("GameObject/SMART-Art/Prefabs/Card", false, 0)]
         private static void CreateCard()
         {

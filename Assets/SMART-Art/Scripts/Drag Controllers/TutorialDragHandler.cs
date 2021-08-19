@@ -38,7 +38,6 @@ namespace Scripts.Drag_Controllers
             var direction = GetDragDirection(dragVectorDirection);
 
             if (interactable)
-            {
                 switch (direction)
                 {
                     case DraggedDirection.Left:
@@ -52,7 +51,6 @@ namespace Scripts.Drag_Controllers
                     case DraggedDirection.Up:
                         break;
                 }
-            }
         }
 
         // determine the direction of a drag

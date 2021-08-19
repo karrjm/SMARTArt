@@ -12,7 +12,7 @@ namespace Scripts.Drag_Controllers
         {
             gameObject.GetComponent<TopicStack>();
         }
-        
+
         private void Update()
         {
             if (Input.touchCount == 0) interactable = true;
@@ -37,10 +37,10 @@ namespace Scripts.Drag_Controllers
                 switch (direction)
                 {
                     case DraggedDirection.Left:
-                        
+
                         break;
                     case DraggedDirection.Right:
-                        
+
                         break;
                     case DraggedDirection.Down:
                         var parent = transform.parent;

@@ -21,9 +21,8 @@ namespace Scripts.Stacks
         [SerializeField]
         private Transform[] cards;
 
-        [HideInInspector]
-        public int cardArrayOffset;
-        
+        [HideInInspector] public int cardArrayOffset;
+
         private Vector3[] _cardPositions;
         private UIFader _fader;
         private int _offsetLowerBound;

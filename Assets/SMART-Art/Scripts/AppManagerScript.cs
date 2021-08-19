@@ -7,13 +7,12 @@ using UnityEngine.UI;
 namespace Scripts
 {
     public class AppManagerScript : MonoBehaviour
-    { 
+    {
         public GameObject activeStack;
         public GameObject currentButton;
-        
+
         public void NullActiveStack()
         {
-
             activeStack.GetComponent<CardStack>().Reset();
             // unlock topic swipe ability
             activeStack.transform.GetComponentInParent<TopicDragHandler>().Unlock();
@@ -25,7 +24,6 @@ namespace Scripts
 
 
             StartCoroutine(ReEnableButton());
-
         }
 
         private IEnumerator ReEnableButton()
@@ -34,6 +32,5 @@ namespace Scripts
             currentButton.GetComponent<Button>().interactable = true;
             currentButton = null;
         }
-
     }
 }

@@ -45,14 +45,12 @@ namespace Scripts
         {
             audioSource.Play();
             print("play button");
-
         }
 
         public void StopAudio()
         {
             audioSource.Stop();
             print("stop button");
-
         }
     }
 }

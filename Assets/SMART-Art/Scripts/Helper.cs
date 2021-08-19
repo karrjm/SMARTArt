@@ -16,7 +16,6 @@ namespace Scripts
         {
             if (activeTrackers > 0)
             {
-                
             }
             else
             {
@@ -27,18 +26,12 @@ namespace Scripts
         public void IncreaseTrackers()
         {
             activeTrackers++;
-            if (!firstFound)
-            {
-                firstFound = true;
-            }
+            if (!firstFound) firstFound = true;
         }
 
         public void DecreaseTrackers()
         {
-            if (firstFound)
-            {
-                activeTrackers--;
-            }
+            if (firstFound) activeTrackers--;
         }
     }
 }

@@ -66,7 +66,6 @@ namespace Scripts.Stacks
 
             _appManager.GetComponent<AppManagerScript>().activeStack = gameObject;
             _appManager.GetComponent<AppManagerScript>().currentButton = transform.parent.gameObject;
-
         }
 
         private void MoveCards()
@@ -84,7 +83,7 @@ namespace Scripts.Stacks
                     var cg = cards[i].gameObject.GetComponent<CanvasGroup>();
 
                     // Disables interaction with cards that are not on top of the stack and calls the UIFader.
-                    
+
                     if (cards[i].localPosition.x == 0)
                     {
                         cg.interactable = true;

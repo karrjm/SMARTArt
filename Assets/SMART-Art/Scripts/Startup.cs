@@ -6,6 +6,7 @@ namespace Scripts
     public class Startup : MonoBehaviour
     {
         private CanvasRenderer _cRenderer;
+
         private void Awake()
         {
             // _cRenderer=FindObjectOfType<>()
@@ -13,7 +14,7 @@ namespace Scripts
 
         private void Start()
         {
-            TutorialFade(_cRenderer,_cRenderer.GetAlpha(),0);
+            TutorialFade(_cRenderer, _cRenderer.GetAlpha(), 0);
         }
 
         private IEnumerator TutorialFade(CanvasRenderer cRenderer, float start, float end, float duration = 1f)
@@ -22,7 +23,7 @@ namespace Scripts
             while (elapsedTime <= duration)
             {
                 elapsedTime += Time.deltaTime;
-                var lerpingAlpha=Mathf.Lerp(start, end, elapsedTime / duration);
+                var lerpingAlpha = Mathf.Lerp(start, end, elapsedTime / duration);
                 cRenderer.SetAlpha(lerpingAlpha);
                 yield return null;
             }
