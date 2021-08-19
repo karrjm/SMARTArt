@@ -993,7 +993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1691428567f44f7893ab18765bb0b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardXDistance: 1
+  cardXDistance: 4
   cardZMultiplier: 1
   cardMoveSpeed: 8
   cards:
@@ -2840,7 +2840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1691428567f44f7893ab18765bb0b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardXDistance: 1
+  cardXDistance: 4
   cardZMultiplier: 1
   cardMoveSpeed: 8
   cards:
@@ -3157,7 +3157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1691428567f44f7893ab18765bb0b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardXDistance: 1
+  cardXDistance: 4
   cardZMultiplier: 1
   cardMoveSpeed: 8
   cards:
@@ -3787,7 +3787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1691428567f44f7893ab18765bb0b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardXDistance: 1
+  cardXDistance: 4
   cardZMultiplier: 1
   cardMoveSpeed: 8
   cards:
@@ -4399,7 +4399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1691428567f44f7893ab18765bb0b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardXDistance: 1
+  cardXDistance: 4
   cardZMultiplier: 1
   cardMoveSpeed: 8
   cards:
@@ -6991,7 +6991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1691428567f44f7893ab18765bb0b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardXDistance: 1
+  cardXDistance: 4
   cardZMultiplier: 1
   cardMoveSpeed: 8
   cards:
@@ -9101,7 +9101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1691428567f44f7893ab18765bb0b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardXDistance: 1
+  cardXDistance: 4
   cardZMultiplier: 1
   cardMoveSpeed: 8
   cards:
@@ -10272,7 +10272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1691428567f44f7893ab18765bb0b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardXDistance: 1
+  cardXDistance: 4
   cardZMultiplier: 1
   cardMoveSpeed: 8
   cards:
@@ -10428,7 +10428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1691428567f44f7893ab18765bb0b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardXDistance: 1
+  cardXDistance: 4
   cardZMultiplier: 1
   cardMoveSpeed: 8
   cards:
@@ -11557,7 +11557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1691428567f44f7893ab18765bb0b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardXDistance: 1
+  cardXDistance: 4
   cardZMultiplier: 1
   cardMoveSpeed: 8
   cards: []
