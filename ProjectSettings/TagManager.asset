@@ -6,6 +6,7 @@ TagManager:
   tags:
   - InfoUI
   - StartUI
+  - Card
   layers:
   - Default
   - TransparentFX

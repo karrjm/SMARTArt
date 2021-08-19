@@ -1,4 +1,5 @@
-﻿using Scripts.Drag_Controllers;
+﻿using System.Linq;
+using Scripts.Drag_Controllers;
 using Scripts.Utilities;
 using UnityEngine;
 using UnityEngine.UI;
@@ -34,6 +35,8 @@ namespace Scripts.Stacks
 
         private void Awake()
         {
+            cards = GetComponentsInChildren<Transform>();
+            cards = cards.Where(child => child.CompareTag("Card")).ToArray();
             _fader = gameObject.GetComponent<UIFader>();
             _appManager = GameObject.Find("ARCamera");
         }
