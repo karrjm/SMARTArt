@@ -6,8 +6,6 @@ namespace Scripts.Drag_Controllers
 {
     public class TutorialDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     {
-        private AppManagerScript app;
-        private GameObject appManager;
         public bool interactable = true;
         private TutorialCardStack screenspaceCardStack;
 
@@ -17,8 +15,8 @@ namespace Scripts.Drag_Controllers
                 gameObject
                     .GetComponent<
                         TutorialCardStack>(); //set the previously declared CardStack variable to the card stack script attached to the object
-            app = FindObjectOfType<AppManagerScript>();
-            appManager = GameObject.Find("ARCamera");
+            FindObjectOfType<AppManagerScript>();
+            GameObject.Find("ARCamera");
         }
 
         private void Update()

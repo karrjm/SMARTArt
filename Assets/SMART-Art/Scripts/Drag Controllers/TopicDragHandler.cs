@@ -7,11 +7,10 @@ namespace Scripts.Drag_Controllers
     public class TopicDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     {
         private bool interactable = true;
-        private TopicStack topicStack;
 
         private void Awake()
         {
-            topicStack = gameObject.GetComponent<TopicStack>();
+            gameObject.GetComponent<TopicStack>();
         }
         
         private void Update()
@@ -44,12 +43,14 @@ namespace Scripts.Drag_Controllers
                         
                         break;
                     case DraggedDirection.Down:
-                        transform.parent.GetChild(0).gameObject.GetComponent<TopicStack>().DecreaseOffset();
-                        transform.parent.GetChild(1).gameObject.GetComponent<TopicStack>().DecreaseOffset();
+                        var parent = transform.parent;
+                        parent.GetChild(0).gameObject.GetComponent<TopicStack>().DecreaseOffset();
+                        parent.GetChild(1).gameObject.GetComponent<TopicStack>().DecreaseOffset();
                         break;
                     case DraggedDirection.Up:
-                        transform.parent.GetChild(0).gameObject.GetComponent<TopicStack>().IncreaseOffset();
-                        transform.parent.GetChild(1).gameObject.GetComponent<TopicStack>().IncreaseOffset();
+                        var parent1 = transform.parent;
+                        parent1.GetChild(0).gameObject.GetComponent<TopicStack>().IncreaseOffset();
+                        parent1.GetChild(1).gameObject.GetComponent<TopicStack>().IncreaseOffset();
                         break;
                 }
         }

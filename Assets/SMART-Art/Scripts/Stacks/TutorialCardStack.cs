@@ -16,7 +16,6 @@ namespace Scripts.Stacks
         public Transform[] cards;
         public int cardArrayOffset;
         private Vector3[] _cardPositions;
-        private UIFader _fader;
         private int _offsetLowerBound;
         private int _offsetUpperBound;
 
@@ -24,7 +23,7 @@ namespace Scripts.Stacks
 
         public void Awake()
         {
-            _fader = gameObject.GetComponent<UIFader>();
+            gameObject.GetComponent<UIFader>();
         }
 
         public void Reset()

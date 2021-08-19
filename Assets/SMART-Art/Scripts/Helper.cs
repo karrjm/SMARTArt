@@ -4,9 +4,13 @@ namespace Scripts
 {
     public class Helper : MonoBehaviour
     {
-        public GameObject appManager;
         private int activeTrackers;
         private bool firstFound;
+
+        public void Awake()
+        {
+            GameObject.Find("ARCamera");
+        }
 
         public void Activate()
         {

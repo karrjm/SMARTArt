@@ -6,7 +6,6 @@ namespace Scripts
     public class PinchZoom : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         private bool _isDragging; //bool that determines of the attached object is being dragged
-        public float minScale, maxScale; //stores the minimum and maximum scales the object can be
 
 
         float initialDistance; //stores the distance between both touch points at the start of pinching
