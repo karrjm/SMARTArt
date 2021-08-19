@@ -1,4 +1,5 @@
-﻿using Scripts.Drag_Controllers;
+﻿using System.Linq;
+using Scripts.Drag_Controllers;
 using Scripts.Utilities;
 using UnityEngine;
 
@@ -20,7 +21,9 @@ namespace Scripts.Stacks
         [SerializeField]
         private Transform[] cards;
 
+        [HideInInspector]
         public int cardArrayOffset;
+        
         private Vector3[] _cardPositions;
         private UIFader _fader;
         private int _offsetLowerBound;
@@ -30,6 +33,8 @@ namespace Scripts.Stacks
 
         private void Awake()
         {
+            cards = GetComponentsInChildren<Transform>();
+            cards = cards.Where(child => child.CompareTag("Topic Card")).ToArray();
             _fader = gameObject.GetComponent<UIFader>();
         }
 
