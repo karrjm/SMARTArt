@@ -6,6 +6,7 @@ namespace Scripts
     {
         private int activeTrackers;
         private bool firstFound;
+        private bool screenActive = true;
 
         public void Awake()
         {
@@ -14,13 +15,18 @@ namespace Scripts
 
         public void Activate()
         {
-            if (activeTrackers > 0)
+            if (activeTrackers > 0 || screenActive)
             {
             }
             else
             {
                 gameObject.SetActive(true);
             }
+        }
+
+        public void SetScreenActive()
+        {
+            screenActive = !screenActive;
         }
 
         public void IncreaseTrackers()
