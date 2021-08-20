@@ -231,7 +231,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: 5a7ce791dc77a8a439613356c0947561, type: 2}
+  m_Texture: {fileID: 8400000, guid: 0085dac4f57d1bf4fbd065302e3dd671, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -632,7 +632,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: 2751dc0184216a54c9ec24dffe119b3a, type: 2}
+  m_Texture: {fileID: 8400000, guid: fd2751a56c4000c42874b3c093486802, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -4703,7 +4703,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1011, y: 0}
+  m_SizeDelta: {x: 1620, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &740981629
 MonoBehaviour:
@@ -4767,7 +4767,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 105.25
+  m_fontSize: 140.65
   m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5636,7 +5636,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -861, y: 0}
+  m_SizeDelta: {x: -1380, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &872914687
 MonoBehaviour:
@@ -5699,7 +5699,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 85.75
+  m_fontSize: 115.4
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5735,7 +5735,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.013000439, y: 4.0496597, z: -65.16351, w: -1.2713624}
+  m_margin: {x: -0.013000439, y: 4.0496597, z: -1.1424866, w: -1.2713624}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5919,11 +5919,11 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 912132873}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: d8f11ceadae47ad4ea56e92a99032750, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 67985ab90e1799e47b55ad7e52d73479, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: c872b2dfd72ebf04bb7ee01b84ca0de8, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 1890e080ce352c940b1103376f959e48, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: _MainTex
@@ -5932,12 +5932,14 @@ VideoPlayer:
   m_DataSource: 0
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 0
-  m_TargetAudioSources: []
-  m_DirectAudioVolumes: []
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
   m_Url: https://www.youtube.com/watch?v=tCT2CVBOlws
-  m_EnabledAudioTracks: 
-  m_DirectAudioMutes: 
-  m_ControlledAudioTrackCount: 0
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 0
   m_Looping: 1
@@ -6586,11 +6588,11 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003070045}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: d5fb50add7a6b2046936e5ac33961464, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: f73506f9d6ffbcf499834bd1a72e6a21, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: 2751dc0184216a54c9ec24dffe119b3a, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: fd2751a56c4000c42874b3c093486802, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: _MainTex
@@ -6599,12 +6601,14 @@ VideoPlayer:
   m_DataSource: 0
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 0
-  m_TargetAudioSources: []
-  m_DirectAudioVolumes: []
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
   m_Url: https://www.youtube.com/watch?v=tCT2CVBOlws
-  m_EnabledAudioTracks: 
-  m_DirectAudioMutes: 
-  m_ControlledAudioTrackCount: 0
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 0
   m_Looping: 1
@@ -6862,7 +6866,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1968240098}
+  - {fileID: 1710086054}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8514,11 +8518,11 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1396921276}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: f427bda7fae5973418f24b5496b4bcf7, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: d997492c9e6580e428ffb1e349b22e72, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: fc46bb74df2c890488987f25d0646dcd, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 8d1939007c5e2b247a59de15ab5722c1, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: _MainTex
@@ -8527,12 +8531,14 @@ VideoPlayer:
   m_DataSource: 0
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 0
-  m_TargetAudioSources: []
-  m_DirectAudioVolumes: []
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
   m_Url: https://www.youtube.com/watch?v=tCT2CVBOlws
-  m_EnabledAudioTracks: 
-  m_DirectAudioMutes: 
-  m_ControlledAudioTrackCount: 0
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 0
   m_Looping: 1
@@ -10656,7 +10662,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -861, y: 0}
+  m_SizeDelta: {x: -1380, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1612836445
 MonoBehaviour:
@@ -10719,7 +10725,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 89.35
+  m_fontSize: 90.25
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -10735,7 +10741,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -10755,7 +10761,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -427.5448, y: 7.752861, z: -2.8414345, w: 566.4166}
+  m_margin: {x: -104.131165, y: 22.617104, z: -2.8414345, w: 67.47037}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -11226,6 +11232,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1689331758}
   m_CullTransparentMesh: 1
+--- !u!21 &1710086054
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'UW_Stout_Perraults_Trading_FortMaterial
+
+    17772'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: d2ccfb0725af437fa270ed2443922595, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1711109279
 GameObject:
   m_ObjectHideFlags: 0
@@ -11809,7 +11844,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1011, y: 0}
+  m_SizeDelta: {x: 1620, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1835562685
 MonoBehaviour:
@@ -11845,7 +11880,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n\n\nMitchell Ogden\n\nMCSII - Menard Center\n for the Study of Institutions\nand
+  m_text: "\n\nMitchell Ogden\n\nMCSII - Menard Center\n for the Study of Institutions\nand
     Innovation\n      Programming, Tech Art"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11873,7 +11908,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 98.4
+  m_fontSize: 156.35
   m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -12611,11 +12646,11 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950320905}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 98d851bc1047def43a7054610d532110, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: a7cf0c3565cb9e94cbebba4acb52cf46, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: 5a7ce791dc77a8a439613356c0947561, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 0085dac4f57d1bf4fbd065302e3dd671, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: _MainTex
@@ -12624,47 +12659,20 @@ VideoPlayer:
   m_DataSource: 0
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 0
-  m_TargetAudioSources: []
-  m_DirectAudioVolumes: []
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
   m_Url: https://www.youtube.com/watch?v=tCT2CVBOlws
-  m_EnabledAudioTracks: 
-  m_DirectAudioMutes: 
-  m_ControlledAudioTrackCount: 0
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 0
   m_Looping: 1
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
---- !u!21 &1968240098
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'UW_Stout_Perraults_Trading_FortMaterial
-
-    17774'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: d2ccfb0725af437fa270ed2443922595, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &1986094726
 GameObject:
   m_ObjectHideFlags: 0
@@ -12736,7 +12744,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: c872b2dfd72ebf04bb7ee01b84ca0de8, type: 2}
+  m_Texture: {fileID: 8400000, guid: 1890e080ce352c940b1103376f959e48, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -13678,7 +13686,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: fc46bb74df2c890488987f25d0646dcd, type: 2}
+  m_Texture: {fileID: 8400000, guid: 8d1939007c5e2b247a59de15ab5722c1, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -13718,11 +13726,11 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4532705236891397612}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: f6572f628f52f7f4babc1c503aae1138, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 245b656eda452d14b9e071b729143506, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: b611d17aedb658142ad090ae0c667c1a, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 4bff730ec690b5a43afd7c7e5e0293bc, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: _MainTex
@@ -13731,12 +13739,14 @@ VideoPlayer:
   m_DataSource: 0
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 0
-  m_TargetAudioSources: []
-  m_DirectAudioVolumes: []
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
   m_Url: https://www.youtube.com/watch?v=tCT2CVBOlws
-  m_EnabledAudioTracks: 
-  m_DirectAudioMutes: 
-  m_ControlledAudioTrackCount: 0
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 0
   m_Looping: 1
@@ -13801,7 +13811,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: b611d17aedb658142ad090ae0c667c1a, type: 2}
+  m_Texture: {fileID: 8400000, guid: 4bff730ec690b5a43afd7c7e5e0293bc, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
