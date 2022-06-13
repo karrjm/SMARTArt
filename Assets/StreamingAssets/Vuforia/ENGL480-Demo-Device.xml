@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="perraults-trading-fort" size="6.096000 2.074002" />
+    <ImageTarget name="french-trappers-on-the-red-cedar" size="5.486400 2.221950" />
+    <ImageTarget name="wildeview" size="1.016000 0.644407" />
+    <ImageTarget name="trestle" size="1.447800 1.273430" />
+    <ImageTarget name="the-carol-painting" size="1.447800 1.708659" />
+    <ImageTarget name="sunrise-or-sunset" size="0.596900 0.960972" />
+    <ImageTarget name="rain" size="0.177800 0.101522" />
+    <ImageTarget name="portrait-of-dracula" size="0.838200 1.125868" />
+    <ImageTarget name="night-times-square" size="0.635000 0.431663" />
+    <ImageTarget name="dorvian" size="2.438400 1.520347" />
+    <ImageTarget name="carboniferious" size="2.438400 1.506329" />
+    <ImageTarget name="american-dream" size="1.320800 1.760191" />
+  </Tracking>
+</QCARConfig>
