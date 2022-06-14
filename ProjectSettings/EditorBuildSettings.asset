@@ -5,21 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/_SMART-Art/Scenes/Template.unity
-    guid: 08c2cf3d1ee752947b1466f07431b229
   - enabled: 1
-    path: Assets/_SMART-Art/Scenes/ENGL480-Demo-Cloud.unity
-    guid: b714ecc16fd9ac54088d51f58234e2a1
+    path: Assets/_SMART-Art/Scenes/ENGL480-Demo-Device.unity
+    guid: 53f62c811c9b1c24b92dea9ef7417257
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}
