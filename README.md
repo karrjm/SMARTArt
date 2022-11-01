@@ -3,6 +3,7 @@ SMART-Art aka Stout's Mobile Augmented Reality Tour of Art is an AR template for
 
 # How to Install and Use SMART-Art
 Follow this guide to learn how setup and use the SMART-Art templates to make augmented reality experiences.
+_IMPORTANT_ this guide will make more sense with included images and gifs, which can be found [here] (https://liveuwstout-my.sharepoint.com/:w:/r/personal/karrj8285_my_uwstout_edu/Documents/SMART-Art%20Wiki.docx?d=w937f007bb79749f2836ff99d60620523&csf=1&web=1&e=p4U1Fq)
 
 ## Setup
 Before we can start creating, we need to make sure we have the correct programs. The programs required include Git, Unity, Adobe XD, and the Xuid plugins for Unity and Adobe XD.
