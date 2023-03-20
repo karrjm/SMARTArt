@@ -1,12 +1,13 @@
 {
   "dependencies": {
     "com.ptc.vuforia.engine": {
-      "version": "file:com.ptc.vuforia.engine-10.13.3.tgz",
+      "version": "git+https://git-packages.developer.vuforia.com/#9.6.3",
       "depth": 0,
-      "source": "local-tarball",
+      "source": "git",
       "dependencies": {
         "com.unity.ugui": "1.0.0"
-      }
+      },
+      "hash": "e4643556bb2f5f0fcc19554952916d5a71c22ff2"
     },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
