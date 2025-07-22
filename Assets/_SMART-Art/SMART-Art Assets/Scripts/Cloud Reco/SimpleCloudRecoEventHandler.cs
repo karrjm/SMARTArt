@@ -3,6 +3,9 @@ using Vuforia;
 
 public class SimpleCloudRecoEventHandler : MonoBehaviour
 {
+    //commented out for updating unity and vuforia
+
+    /*
     private CloudRecoBehaviour mCloudRecoBehaviour;
     private bool mIsScanning = false;
     private string mTargetMetadata = "";
@@ -87,5 +90,5 @@ public class SimpleCloudRecoEventHandler : MonoBehaviour
                 mCloudRecoBehaviour.CloudRecoEnabled = true;
             }
         }
-    }
+    }*/
 }

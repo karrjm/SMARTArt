@@ -19,14 +19,14 @@ public class ImageTargetSetter : MonoBehaviour
         UnityWebRequest request = UnityWebRequestTexture.GetTexture(link);
         yield return request.SendWebRequest();
 
-        if (request.isNetworkError || request.isHttpError)
+        if (request.result == UnityWebRequest.Result.ProtocolError)
         {
             Debug.Log(request.error);
         }
         else
         {
             Texture2D myTex = ((DownloadHandlerTexture)request.downloadHandler).texture;
-            //imageTargetBehaviour.SetRuntimeTargetTexture(myTex);
+            var mTarget = VuforiaBehaviour.Instance.ObserverFactory.CreateImageTarget(myTex, 100, "TEST");
         }
     }
 
