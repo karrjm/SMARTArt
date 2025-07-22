@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2162730073130540572
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1129939656093101538, guid: ec5667e51854e43bf817277b2858230f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 64eb5745e8abd4a3a9ae848525c44aab, type: 2}
+    - target: {fileID: 2413215267085721775, guid: ec5667e51854e43bf817277b2858230f,
+        type: 3}
+      propertyPath: m_Name
+      value: ValidationAreaIcon_URP
+      objectReference: {fileID: 0}
+    - target: {fileID: 2695630238941963410, guid: ec5667e51854e43bf817277b2858230f,
+        type: 3}
+      propertyPath: FailIconMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: b5f619e33840e4221bc1c2f6042a0a41, type: 2}
+    - target: {fileID: 2695630238941963410, guid: ec5667e51854e43bf817277b2858230f,
+        type: 3}
+      propertyPath: PassIconMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a77c5d6c4be04916b4692c1fb5ceab0, type: 2}
+    - target: {fileID: 2695630238941963410, guid: ec5667e51854e43bf817277b2858230f,
+        type: 3}
+      propertyPath: UndecidableIconMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 64eb5745e8abd4a3a9ae848525c44aab, type: 2}
+    - target: {fileID: 2888293973988233545, guid: ec5667e51854e43bf817277b2858230f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2888293973988233545, guid: ec5667e51854e43bf817277b2858230f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2888293973988233545, guid: ec5667e51854e43bf817277b2858230f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ec5667e51854e43bf817277b2858230f, type: 3}
