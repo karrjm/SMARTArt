@@ -7,6 +7,7 @@ public class InageScalar : MonoBehaviour
     [SerializeField] private GameObject topicStack;
     public void scaleUI()
     {
-
+        var rect = topicStack.GetComponent<RectTransform>();
+        //rect.sizeDelta = new Vector2(image.rectTransform.rect.width, image.rectTransform.rect.height);
     }
 }

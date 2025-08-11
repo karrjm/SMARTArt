@@ -1,33 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
-using UnityEngine.Networking;
 using Vuforia;
 
-public class ImageTargetSetter : MonoBehaviour
+public class CreateFromDatabase : MonoBehaviour
 {
-    private string imageLink = "https://www.furlonggallery.net/files/square_thumbnails/21d80099f0176bd2fa914a08d5dc69d8.jpg";
+    string dataSetPath = "Vuforia/ENGL480-Demo-Device.xml";
+    string targetName = "portrait-of-dracula";
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(LoadImage(imageLink));
+        VuforiaApplication.Instance.OnVuforiaInitialized += OnVuforiaInitialized;
     }
 
-    IEnumerator LoadImage(string link)
+    void OnVuforiaInitialized(VuforiaInitError error)
     {
-        UnityWebRequest request = UnityWebRequestTexture.GetTexture(link);
-        yield return request.SendWebRequest();
-
-        if (request.result == UnityWebRequest.Result.ProtocolError)
-        {
-            Debug.Log(request.error);
-        }
-        else
-        {
-            Texture2D myTex = ((DownloadHandlerTexture)request.downloadHandler).texture;
-            var mTarget = VuforiaBehaviour.Instance.ObserverFactory.CreateImageTarget(myTex, 100, "TEST");
-        }
+        if (error == VuforiaInitError.NONE)
+            OnVuforiaStarted();
     }
 
+    // Load and activate a data set at the given path.
+    void OnVuforiaStarted()
+    {
+        // Create an Image Target from the database.
+        var mImageTarget = VuforiaBehaviour.Instance.ObserverFactory.CreateImageTarget(
+            dataSetPath,
+            targetName);
+        mImageTarget.OnTargetStatusChanged += OnTargetStatusChanged;
+        GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        cube.transform.SetParent(mImageTarget.transform, false);
+    }
+
+    void OnTargetStatusChanged(ObserverBehaviour behaviour, TargetStatus status)
+    {
+        Debug.Log($"target status: {status.Status}");
+    }
 }
